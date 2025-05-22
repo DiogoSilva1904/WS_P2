@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    body {
+        background-color: #f4f4f9;
+        font-family: 'Arial', sans-serif;
+    }
+    .character-container {
+        max-width: 600px;
+        margin: auto;
+    }
+    .character-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    .character-title {
+        text-align: center;
+        color: #333;
+    }
+    .icon {
+        margin-right: 8px;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block title %}{{ vehicle.label|first }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="character-container">
+        <h2 class="character-title"><i class="fa-brands fa-galactic-senate"></i> {{ vehicle.label|first }}</h2> <!-- Vehicle Name -->
+        <div class="card character-card">
+            <div class="card-body">
+                <p><i class="fa-solid fa-cogs icon"></i><strong>Model:</strong> {{ vehicle.model|join:", " }}</p>
+                <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer:</strong> {{ vehicle.manufacturer|first }}</p>
+                <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length:</strong> {{ vehicle.length|first }}m</p>
+                <p><i class="fa-solid fa-gauge-high icon"></i><strong>Max Speed:</strong> {{ vehicle.max_atmosphering_speed|first }} km/h</p>
+                <p><i class="fa-solid fa-boxes-stacked icon"></i><strong>Cargo Capacity:</strong> {{ vehicle.cargo_capacity|first }} kg</p>
+                <p><i class="fa-solid fa-users icon"></i><strong>Crew:</strong> {{ vehicle.crew|first }}</p>
+                <p><i class="fa-solid fa-user-group icon"></i><strong>Passengers:</strong> {{ vehicle.passengers|first }}</p>
+                <p><i class="fa-solid fa-clock icon"></i><strong>Consumables:</strong> {{ vehicle.consumables|first }}</p>
+                <p><i class="fa-solid fa-coins icon"></i><strong>Cost:</strong> {{ vehicle.cost_in_credits|first }} credits</p>
+                <p><i class="fa-solid fa-car-side icon"></i><strong>Class:</strong> {{ vehicle.vehicle_class|first }}</p>
+
+                <!-- Pilots -->
+                <p><i class="fa-solid fa-user-astronaut icon"></i><strong>Pilot:</strong> 
+                    {% for url,label in vehicle.pilot %}
+                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+
+                <!-- Films Appeared In -->
+                <p><i class="fa-solid fa-film icon"></i><strong>Appears In:</strong> 
+                    {% for url,label in vehicle.appears_in %}
+                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

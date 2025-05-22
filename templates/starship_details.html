@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    body {
+        background-color: #f4f4f9;
+        font-family: 'Arial', sans-serif;
+    }
+    .character-container {
+        max-width: 600px;
+        margin: auto;
+    }
+    .character-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    .character-title {
+        text-align: center;
+        color: #333;
+    }
+    .icon {
+        margin-right: 8px;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block title %}{{ starship.label|first }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="character-container">
+        <h2 class="character-title"><i class="fa-solid fa-space-shuttle icon"></i> {{ starship.label|first }}</h2> <!-- Starship Name -->
+        <div class="card character-card">
+            <div class="card-body">
+                <p><i class="fa-solid fa-cogs icon"></i><strong>Model:</strong> {{ starship.model|first }}</p>
+                <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer:</strong> {{ starship.manufacturer|first }}</p>
+                <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length:</strong> {{ starship.length|first }}m</p>
+                <p><i class="fa-solid fa-gauge-high icon"></i><strong>Max Speed:</strong> {{ starship.max_atmosphering_speed|first }} km/h</p>
+                <p><i class="fa-solid fa-boxes-stacked icon"></i><strong>Cargo Capacity:</strong> {{ starship.cargo_capacity|first }} kg</p>
+                <p><i class="fa-solid fa-star icon"></i><strong>Hyperdrive Rating:</strong> {{ starship.hyperdrive_rating|first }}</p>
+                <p><i class="fa-solid fa-users icon"></i><strong>Crew:</strong> {{ starship.crew|first }}</p>
+                <p><i class="fa-solid fa-user-group icon"></i><strong>Passengers:</strong> {{ starship.passengers|first }}</p>
+                <p><i class="fa-solid fa-clock icon"></i><strong>Consumables:</strong> {{ starship.consumables|first }}</p>
+                <p><i class="fa-solid fa-coins icon"></i><strong>Cost:</strong> {{ starship.cost_in_credits|first }} credits</p>
+                <p><i class="fa-solid fa-rocket icon"></i><strong>Class:</strong> {{ starship.starship_class|first }}</p>
+
+                <!-- Pilots -->
+                <p><i class="fa-solid fa-user-astronaut icon"></i><strong>Pilots:</strong> 
+                    {% for url,label in starship.pilot %}
+                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+
+                <!-- Films Appeared In -->
+                <p><i class="fa-solid fa-film icon"></i><strong>Appears In:</strong> 
+                    {% for url,label in starship.appears_in %}
+                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

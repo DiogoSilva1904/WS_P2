@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    body {
+        background-color: #f4f4f9;
+        font-family: 'Arial', sans-serif;
+    }
+    .character-container {
+        max-width: 600px;
+        margin: auto;
+    }
+    .character-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    .character-title {
+        text-align: center;
+        color: #333;
+    }
+    .icon {
+        margin-right: 8px;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block title %}{{ weapon.label|first }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="character-container">
+        <h2 class="character-title"><i class="fa-solid fa-gun"></i> {{ weapon.label|first }}</h2> <!-- Weapon Name -->
+        <div class="card character-card">
+            <div class="card-body">
+                <p><i class="fa-solid fa-file-lines icon"></i><strong>Description:</strong> {{ weapon.description|first }}</p>
+                <p><i class="fa-solid fa-atom icon"></i><strong>Weapon Type:</strong> {{ weapon.type|slice:"1:2"|first|default:"Unknown" }}</p>
+                <p><i class="fa-solid fa-cogs icon"></i><strong>Model:</strong> {{ weapon.model|join:", " }}</p>
+                <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer:</strong> {{ weapon.manufacturer|first }}</p>
+                <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length:</strong> {{ weapon.length|first }}m</p>
+                <p><i class="fa-solid fa-coins icon"></i><strong>Cost:</strong> {{ weapon.cost_in_credits|first }} credits</p>
+
+                <!-- Films Appeared In -->
+                <p><i class="fa-solid fa-film icon"></i><strong>Appears In:</strong> 
+                    {% for url,label in weapon.appears_in %}
+                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

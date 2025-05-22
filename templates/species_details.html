@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    body {
+        background-color: #f4f4f9;
+        font-family: 'Arial', sans-serif;
+    }
+    .character-container {
+        max-width: 600px;
+        margin: auto;
+    }
+    .character-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    .character-title {
+        text-align: center;
+        color: #333;
+    }
+    .icon {
+        margin-right: 8px;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block title %}{{ specie.label|first }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="character-container">
+        <h2 class="character-title"><i class="fa-solid fa-dna icon"></i> {{ specie.label|first }}</h2> <!-- Species Name -->
+        <div class="card character-card">
+            <div class="card-body">
+                <a><i class="fa-solid fa-globe icon"></i><strong>Homeworld: </strong><a href="{{ specie.homeworld.0.0 }}">{{ specie.homeworld.0.1 }}</a></p>
+                <p><i class="fa-solid fa-palette icon"></i><strong>Skin Colors: </strong> {{ specie.skin_color|join:", " }}</p>
+                <p><i class="fa-solid fa-paw icon"></i><strong>Classification: </strong> {{ specie.classification|first }}</p>
+                <p><i class="fa-solid fa-brain icon"></i><strong>Designation: </strong> {{ specie.designation|first }}</p>
+                <p><i class="fa-solid fa-eye icon"></i><strong>Eye Colors: </strong> {{ specie.eye_colors|join:", " }}</p>
+                <p><i class="fa-solid fa-language icon"></i><strong>Language: </strong> {{ specie.language|first }}</p>
+                <p><i class="fa-solid fa-ruler-vertical icon"></i><strong>Average Height: </strong> {{ specie.average_height|first }}m</p>
+                <p><i class="fa-solid fa-hourglass-half icon"></i><strong>Average Lifespan: </strong> {{ specie.average_lifespan|first }} years</p>
+                <p><i class="fa-solid fa-scissors icon"></i><strong>Hair Colors: </strong> {{ specie.hair_colors|join:", " }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

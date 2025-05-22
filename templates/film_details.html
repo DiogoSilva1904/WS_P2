@@ -1,0 +1,50 @@
+    {% extends 'base.html' %}
+
+    {% block styles %}
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .character-container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .character-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .character-title {
+            text-align: center;
+            color: #333;
+        }
+        .icon {
+            margin-right: 8px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    {% endblock %}
+
+    {% block title %}{{ film.label|first }}{% endblock %}
+
+    {% block content %}
+    <div class="container mt-5">
+        <div class="character-container">
+            <h2 class="character-title"><i class="fas fa-film"></i> {{ film.label|first }}</h2> <!-- Display the first value of label -->
+            <div class="card character-card">
+                <div class="card-body">
+                    <p><i class="fas fa-calendar-alt icon"></i><strong>Release Date:</strong> {{ film.release_date|first }}</p>
+                    <p><i class="fas fa-user-tie icon"></i><strong>Director:</strong> {{ film.director|first }}</p>
+                    <p><i class="fas fa-users icon"></i><strong>Producers:</strong> 
+                        {% for producer in film.producer %}
+                            {{ producer }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p><i class="fas fa-paragraph icon"></i><strong>Opening Crawl:</strong> {{ film.opening_crawl|first }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
