@@ -324,4 +324,16 @@ with open("starwars_rdf.xml","w") as f:
     f.write(rdf_xml)
 
 
+import pandas as pd
+
+df = pd.DataFrame({
+    "Character": [
+        "Luke Skywalker"
+    ]
+})
+
+from reconciler import reconcile
+
+# Reconcile as humans (Q5)
+reconciled = reconcile(df["Character"]
 
