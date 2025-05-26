@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:wdt="http://www.wikidata.org/prop/direct/"
+>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51725">
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:label xml:lang="en">Mace Windu</rdfs:label>
+    <rdfs:comment xml:lang="en">fictional character from Star Wars</rdfs:comment>
+    <wdt:P18 rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Mace%20Windu%20%28cropped%29.jpg"/>
+    <wdt:P19 rdf:resource="http://www.wikidata.org/entity/Q1062542"/>
+    <wdt:P20 rdf:resource="http://www.wikidata.org/entity/Q719329"/>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q6581097"/>
+    <wdt:P27 rdf:resource="http://www.wikidata.org/entity/Q733195"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q1569167"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q3658341"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15632617"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15711870"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15773317"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15773347"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P157 rdf:resource="http://www.wikidata.org/entity/Q51770"/>
+    <wdt:P170 rdf:resource="http://www.wikidata.org/entity/Q38222"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q172678"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q3494419"/>
+    <wdt:P373>Mace Windu</wdt:P373>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P520 rdf:resource="http://www.wikidata.org/entity/Q109322287"/>
+    <wdt:P646>/m/0g_rz</wdt:P646>
+    <wdt:P734 rdf:resource="http://www.wikidata.org/entity/Q116259599"/>
+    <wdt:P735 rdf:resource="http://www.wikidata.org/entity/Q95282567"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q1060406"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q2738825"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q51730"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q3511870"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q19786052"/>
+    <wdt:P1165 rdf:resource="http://www.wikidata.org/entity/Q1062542"/>
+    <wdt:P1196 rdf:resource="http://www.wikidata.org/entity/Q149086"/>
+    <wdt:P1412 rdf:resource="http://www.wikidata.org/entity/Q2524477"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q42051"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q165713"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q181069"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q382289"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q616313"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q632672"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q5226246"/>
+    <wdt:P1559>Mace Windu</wdt:P1559>
+    <wdt:P3417>Mace-Windu-4</wdt:P3417>
+    <wdt:P3798>mace-windu</wdt:P3798>
+    <wdt:P3909>He has control of the Senate and the Courts! He's too dangerous to be left alive!</wdt:P3909>
+    <wdt:P5107>Star-Wars/Mace-Windu</wdt:P5107>
+    <wdt:P5247>3005-3783</wdt:P5247>
+    <wdt:P5421>48592</wdt:P5421>
+    <wdt:P5905>4005-5395</wdt:P5905>
+    <wdt:P6262>starwars:Mace_Windu</wdt:P6262>
+    <wdt:P6327>5437</wdt:P6327>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+    <wdt:P10757>1324</wdt:P10757>
+    <wdt:P11137>mace_windu</wdt:P11137>
+    <wdt:P12800>fr:Mace_Windu</wdt:P12800>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51727">
+    <rdfs:label xml:lang="en">Count Dooku</rdfs:label>
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:comment xml:lang="en">fictional character in the Star Wars universe</rdfs:comment>
+    <wdt:P18 rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Dooku.jpg"/>
+    <wdt:P20 rdf:resource="http://www.wikidata.org/entity/Q1065477"/>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q6581097"/>
+    <wdt:P27 rdf:resource="http://www.wikidata.org/entity/Q733195"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q1569167"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15632617"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15711870"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15773317"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15773347"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P97 rdf:resource="http://www.wikidata.org/entity/Q51758"/>
+    <wdt:P97 rdf:resource="http://www.wikidata.org/entity/Q3519259"/>
+    <wdt:P140 rdf:resource="http://www.wikidata.org/entity/Q51771"/>
+    <wdt:P157 rdf:resource="http://www.wikidata.org/entity/Q51752"/>
+    <wdt:P170 rdf:resource="http://www.wikidata.org/entity/Q38222"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q180338"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q965261"/>
+    <wdt:P373>Count Dooku</wdt:P373>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51771"/>
+    <wdt:P520 rdf:resource="http://www.wikidata.org/entity/Q109322282"/>
+    <wdt:P571>2002-01-01T00:00:00Z</wdt:P571>
+    <wdt:P646>/m/0gzf3</wdt:P646>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q14417"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51736"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51792"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q1059976"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q1188045"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q3474440"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q3992380"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q51730"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q51770"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q19786052"/>
+    <wdt:P1196 rdf:resource="http://www.wikidata.org/entity/Q149086"/>
+    <wdt:P1412 rdf:resource="http://www.wikidata.org/entity/Q2524477"/>
+    <wdt:P1416 rdf:resource="http://www.wikidata.org/entity/Q1006293"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q42051"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q181069"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q382289"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q616313"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q632672"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q29154231"/>
+    <wdt:P3798>count-dooku</wdt:P3798>
+    <wdt:P4584 rdf:resource="http://www.wikidata.org/entity/Q181069"/>
+    <wdt:P5107>Star-Wars/Count-Dooku</wdt:P5107>
+    <wdt:P5247>3005-5119</wdt:P5247>
+    <wdt:P5421>48601</wdt:P5421>
+    <wdt:P5800 rdf:resource="http://www.wikidata.org/entity/Q247297"/>
+    <wdt:P5905>4005-5392</wdt:P5905>
+    <wdt:P6262>disney:Count_Dooku</wdt:P6262>
+    <wdt:P6262>fr.starwars:Dooku</wdt:P6262>
+    <wdt:P6262>lucasfilm:Count_Dooku</wdt:P6262>
+    <wdt:P6262>starwars:Dooku</wdt:P6262>
+    <wdt:P6327>113827</wdt:P6327>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q51752"/>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q51755"/>
+    <wdt:P7157>10110</wdt:P7157>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+    <wdt:P10757>1326</wdt:P10757>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3551295">
+    <rdfs:label xml:lang="en">Star Wars Legends</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51736">
+    <rdfs:label xml:lang="en">Qui-Gon Jinn</rdfs:label>
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:comment xml:lang="en">fictional character from Star Wars</rdfs:comment>
+    <wdt:P18 rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Wax%20Museum%20Plus%20%286344782431%29.jpg"/>
+    <wdt:P20 rdf:resource="http://www.wikidata.org/entity/Q257155"/>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q6581097"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q1569167"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q3658341"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15632617"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15711870"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15773317"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15773347"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P157 rdf:resource="http://www.wikidata.org/entity/Q51766"/>
+    <wdt:P170 rdf:resource="http://www.wikidata.org/entity/Q38222"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q58444"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q847133"/>
+    <wdt:P244>no2019134077</wdt:P244>
+    <wdt:P373>Qui-Gon Jinn</wdt:P373>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P520 rdf:resource="http://www.wikidata.org/entity/Q109322278"/>
+    <wdt:P571>1999-01-01T00:00:00Z</wdt:P571>
+    <wdt:P646>/m/0gzgj</wdt:P646>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51740"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51759"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q51727"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q19786052"/>
+    <wdt:P1165 rdf:resource="http://www.wikidata.org/entity/Q719329"/>
+    <wdt:P1196 rdf:resource="http://www.wikidata.org/entity/Q149086"/>
+    <wdt:P1412 rdf:resource="http://www.wikidata.org/entity/Q2524477"/>
+    <wdt:P1416 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P1416 rdf:resource="http://www.wikidata.org/entity/Q733195"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q165713"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q632672"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q20977110"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q66707670"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q104187661"/>
+    <wdt:P1559>Qui-Gon Jinn</wdt:P1559>
+    <wdt:P2048>1.93</wdt:P2048>
+    <wdt:P3798>qui-gon-jinn</wdt:P3798>
+    <wdt:P5107>Star-Wars/Qui-Gon-Jinn</wdt:P5107>
+    <wdt:P5247>3005-3271</wdt:P5247>
+    <wdt:P5421>48790</wdt:P5421>
+    <wdt:P5905>4005-5411</wdt:P5905>
+    <wdt:P6262>disney:Qui-Gon_Jinn</wdt:P6262>
+    <wdt:P6262>fr.starwars:Qui-Gon_Jinn</wdt:P6262>
+    <wdt:P6262>lucasfilm:Qui-Gon_Jinn</wdt:P6262>
+    <wdt:P6262>starwars:Qui-Gon_Jinn</wdt:P6262>
+    <wdt:P6262>sv.starwars:Qui-Gon_Jinn</wdt:P6262>
+    <wdt:P6327>26871</wdt:P6327>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q51759"/>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q51766"/>
+    <wdt:P8189>987007542251105171</wdt:P8189>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+    <wdt:P10757>61</wdt:P10757>
+    <wdt:P11137>quigon_jinn</wdt:P11137>
+    <wdt:P12800>fr:Qui-Gon_Jinn</wdt:P12800>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q19907">
+    <rdfs:label xml:lang="en">Death Star</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q181795">
+    <rdfs:label xml:lang="en">Star Wars: Episode V – The Empire Strikes Back</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q14417">
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:label xml:lang="en">Asajj Ventress</rdfs:label>
+    <rdfs:comment xml:lang="en">fictional character in the Star Wars universe</rdfs:comment>
+    <wdt:P4839>Entity["FictionalCharacter", "AsajjVentress::m8456"]</wdt:P4839>
+    <wdt:P5107>Star-Wars/Asajj-Ventress</wdt:P5107>
+    <wdt:P5247>3005-3062</wdt:P5247>
+    <wdt:P5421>49361</wdt:P5421>
+    <wdt:P5905>4005-46932</wdt:P5905>
+    <wdt:P6262>disney:Asajj_Ventress</wdt:P6262>
+    <wdt:P6262>starwars:Asajj_Ventress</wdt:P6262>
+    <wdt:P6327>40394</wdt:P6327>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+    <wdt:P18 rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Star%20Wars%20Celebration%20IV%20-%20Asajj%20Ventress%20cropped.jpg"/>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q6581072"/>
+    <wdt:P27 rdf:resource="http://www.wikidata.org/entity/Q733195"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q3658341"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15711870"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15773317"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q22074477"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q106474072"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q2326326"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q3834368"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q55983771"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q60319535"/>
+    <wdt:P170 rdf:resource="http://www.wikidata.org/entity/Q38222"/>
+    <wdt:P170 rdf:resource="http://www.wikidata.org/entity/Q347111"/>
+    <wdt:P373>Asajj Ventress</wdt:P373>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51771"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q1006293"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q18667444"/>
+    <wdt:P571>2003-01-01T00:00:00Z</wdt:P571>
+    <wdt:P646>/m/054ng5</wdt:P646>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q51727"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q3551295"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q19786052"/>
+    <wdt:P1165 rdf:resource="http://www.wikidata.org/entity/Q5799688"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q55228"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q382289"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q616313"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q632672"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q840167"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q22570384"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q23763227"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q104187661"/>
+    <wdt:P3798>asajj-ventress</wdt:P3798>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51740">
+    <rdfs:label xml:lang="en">Obi-Wan Kenobi</rdfs:label>
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:comment xml:lang="en">fictional character in the Star Wars universe</rdfs:comment>
+    <wdt:P18 rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Obi-Wan.jpg"/>
+    <wdt:P20 rdf:resource="http://www.wikidata.org/entity/Q19907"/>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q6581097"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P157 rdf:resource="http://www.wikidata.org/entity/Q12206942"/>
+    <wdt:P170 rdf:resource="http://www.wikidata.org/entity/Q38222"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q103894"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q165518"/>
+    <wdt:P244>no2019077639</wdt:P244>
+    <wdt:P373>Obi-Wan Kenobi</wdt:P373>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P520 rdf:resource="http://www.wikidata.org/entity/Q109322284"/>
+    <wdt:P551 rdf:resource="http://www.wikidata.org/entity/Q719329"/>
+    <wdt:P551 rdf:resource="http://www.wikidata.org/entity/Q723764"/>
+    <wdt:P571>1977-01-01T00:00:00Z</wdt:P571>
+    <wdt:P607 rdf:resource="http://www.wikidata.org/entity/Q1133061"/>
+    <wdt:P646>/m/0fkm7</wdt:P646>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51746"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51752"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q1080988"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q3782512"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q51736"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q19786052"/>
+    <wdt:P1196 rdf:resource="http://www.wikidata.org/entity/Q149086"/>
+    <wdt:P1340 rdf:resource="http://www.wikidata.org/entity/Q17122705"/>
+    <wdt:P1412 rdf:resource="http://www.wikidata.org/entity/Q2524477"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q17738"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q28787"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q42051"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q55216"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q165713"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q181069"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q181795"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q181803"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q382289"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q616313"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q632672"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q20977110"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q21190230"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q29154231"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q104154217"/>
+    <wdt:P1559>Obi-Wan Kenobi</wdt:P1559>
+    <wdt:P1884 rdf:resource="http://www.wikidata.org/entity/Q10509939"/>
+    <wdt:P1889 rdf:resource="http://www.wikidata.org/entity/Q104154217"/>
+    <wdt:P2048>183</wdt:P2048>
+    <wdt:P2283 rdf:resource="http://www.wikidata.org/entity/Q19873"/>
+    <wdt:P2283 rdf:resource="http://www.wikidata.org/entity/Q1093766"/>
+    <wdt:P3373 rdf:resource="http://www.wikidata.org/entity/Q112607488"/>
+    <wdt:P3417>Obi-Wan-Kenobi-Star-Wars-character</wdt:P3417>
+    <wdt:P3798>obi-wan-kenobi</wdt:P3798>
+    <wdt:P3909>You can't win, Darth. If you strike me down, I shall become more powerful than you can possibly imagine.</wdt:P3909>
+    <wdt:P4584 rdf:resource="http://www.wikidata.org/entity/Q17738"/>
+    <wdt:P4839>Entity["FictionalCharacter", "ObiWanKenobi"]</wdt:P4839>
+    <wdt:P4969 rdf:resource="http://www.wikidata.org/entity/Q125307110"/>
+    <wdt:P5107>Star-Wars/Obi-Wan-Kenobi</wdt:P5107>
+    <wdt:P5247>3005-669</wdt:P5247>
+    <wdt:P5421>47411</wdt:P5421>
+    <wdt:P5905>4005-2206</wdt:P5905>
+    <wdt:P6262>disney:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>fr.starwars:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>lucasfilm:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>movies:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>star-wars-canon:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>star-wars-legends:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>star-wars-rebels:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>starwars:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>sv.starwars:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>sv.stjarnornaskrig:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6262>theclonewars:Obi-Wan_Kenobi</wdt:P6262>
+    <wdt:P6327>70176</wdt:P6327>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q51766"/>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q51792"/>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q51795"/>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q12206942"/>
+    <wdt:P7704>agent/base/147065</wdt:P7704>
+    <wdt:P8189>987007537222805171</wdt:P8189>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+    <wdt:P10757>41</wdt:P10757>
+    <wdt:P12800>fr:Obi-Wan_Kenobi</wdt:P12800>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51730">
+    <rdfs:label xml:lang="en">Yoda</rdfs:label>
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:comment xml:lang="en">fictional character in the Star Wars universe</rdfs:comment>
+    <wdt:P18 rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/2015-07-31%20Cologne%20Star%20Wars%20Exhibition%2003.jpg"/>
+    <wdt:P20 rdf:resource="http://www.wikidata.org/entity/Q848609"/>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q44148"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q1569167"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q3658341"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15711870"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15773317"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15773347"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q89050960"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q14904358"/>
+    <wdt:P144 rdf:resource="http://www.wikidata.org/entity/Q1114471"/>
+    <wdt:P166 rdf:resource="http://www.wikidata.org/entity/Q734036"/>
+    <wdt:P170 rdf:resource="http://www.wikidata.org/entity/Q38222"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q311319"/>
+    <wdt:P214>36157340768909922600</wdt:P214>
+    <wdt:P244>no2019160529</wdt:P244>
+    <wdt:P373>Yoda</wdt:P373>
+    <wdt:P413 rdf:resource="http://www.wikidata.org/entity/Q56605613"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P520 rdf:resource="http://www.wikidata.org/entity/Q109322279"/>
+    <wdt:P551 rdf:resource="http://www.wikidata.org/entity/Q719329"/>
+    <wdt:P551 rdf:resource="http://www.wikidata.org/entity/Q848609"/>
+    <wdt:P607 rdf:resource="http://www.wikidata.org/entity/Q1133061"/>
+    <wdt:P646>/m/0g_tb</wdt:P646>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51725"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51727"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51746"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q54271"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q932724"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q1245387"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q2248111"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q9298092"/>
+    <wdt:P941 rdf:resource="http://www.wikidata.org/entity/Q937"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q3869298"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q19786052"/>
+    <wdt:P1340 rdf:resource="http://www.wikidata.org/entity/Q17122705"/>
+    <wdt:P1412 rdf:resource="http://www.wikidata.org/entity/Q2524477"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q28787"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q42051"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q54865"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q55265"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q165713"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q181069"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q181795"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q181803"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q632672"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q1300262"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q6586871"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q8054262"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q18486021"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q25540859"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q25540924"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q29154231"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q116763978"/>
+    <wdt:P1814>ヨーダ</wdt:P1814>
+    <wdt:P1884 rdf:resource="http://www.wikidata.org/entity/Q6933946"/>
+    <wdt:P1889 rdf:resource="http://www.wikidata.org/entity/Q77001957"/>
+    <wdt:P1889 rdf:resource="http://www.wikidata.org/entity/Q131456974"/>
+    <wdt:P2048>0.66</wdt:P2048>
+    <wdt:P2283 rdf:resource="http://www.wikidata.org/entity/Q19873"/>
+    <wdt:P2283 rdf:resource="http://www.wikidata.org/entity/Q1093766"/>
+    <wdt:P3417>Yoda-Star-Wars-character</wdt:P3417>
+    <wdt:P3430>w64r8mvb</wdt:P3430>
+    <wdt:P3798>yoda</wdt:P3798>
+    <wdt:P4584 rdf:resource="http://www.wikidata.org/entity/Q181795"/>
+    <wdt:P4839>Entity["FictionalCharacter", "Yoda"]</wdt:P4839>
+    <wdt:P4969 rdf:resource="http://www.wikidata.org/entity/Q131787398"/>
+    <wdt:P5107>Star-Wars/Yoda</wdt:P5107>
+    <wdt:P5247>3005-7</wdt:P5247>
+    <wdt:P5421>47425</wdt:P5421>
+    <wdt:P5905>4005-5396</wdt:P5905>
+    <wdt:P6262>disney:Yoda</wdt:P6262>
+    <wdt:P6262>fr.starwars:Yoda</wdt:P6262>
+    <wdt:P6262>lucasfilm:Yoda</wdt:P6262>
+    <wdt:P6262>starwars:Yoda</wdt:P6262>
+    <wdt:P6262>sv.starwars:Yoda</wdt:P6262>
+    <wdt:P6262>sv.stjarnornaskrig:Yoda</wdt:P6262>
+    <wdt:P6262>star-wars-canon:Yoda</wdt:P6262>
+    <wdt:P6262>star-wars-legends:Yoda</wdt:P6262>
+    <wdt:P6262>jedipedia:Yoda</wdt:P6262>
+    <wdt:P6327>973723</wdt:P6327>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q51770"/>
+    <wdt:P8189>987007540749105171</wdt:P8189>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+    <wdt:P10757>237784</wdt:P10757>
+    <wdt:P11137>yoda</wdt:P11137>
+    <wdt:P12800>fr:Yoda</wdt:P12800>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q180338">
+    <rdfs:label xml:lang="en">Christopher Lee</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51721">
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:label xml:lang="en">Bastila Shan</rdfs:label>
+    <rdfs:comment xml:lang="en">fictional character from Star Wars: Knights of the Old Republic</rdfs:comment>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q6581072"/>
+    <wdt:P26 rdf:resource="http://www.wikidata.org/entity/Q51745"/>
+    <wdt:P27 rdf:resource="http://www.wikidata.org/entity/Q733195"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q1569167"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15632617"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P646>/m/03l8j1</wdt:P646>
+    <wdt:P725 rdf:resource="http://www.wikidata.org/entity/Q195041"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q2704488"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q3551295"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q74669"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q725902"/>
+    <wdt:P1559>Bastila Shan</wdt:P1559>
+    <wdt:P2671>/g/11bc5md1q8</wdt:P2671>
+    <wdt:P5247>3005-846</wdt:P5247>
+    <wdt:P5421>162413</wdt:P5421>
+    <wdt:P5905>4005-56320</wdt:P5905>
+    <wdt:P6262>starwars:Bastila_Shan</wdt:P6262>
+    <wdt:P6327>69375</wdt:P6327>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q2704488"/>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q55075643">
+    <rdfs:label xml:lang="en">Scourge</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q55295">
+    <rdfs:label xml:lang="en">Star Wars Jedi Knight: Jedi Academy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3992380">
+    <rdfs:label xml:lang="en">Tol Skorr</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q22074477">
+    <rdfs:label xml:lang="en">cyborg in a work of fiction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51742">
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:label xml:lang="en">Agen Kolar</rdfs:label>
+    <rdfs:comment xml:lang="en">character in Star Wars</rdfs:comment>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q6581097"/>
+    <wdt:P27 rdf:resource="http://www.wikidata.org/entity/Q733195"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q1073343"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q60319535"/>
+    <wdt:P157 rdf:resource="http://www.wikidata.org/entity/Q51770"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q2019458"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q2250258"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q3551295"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q19786052"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q181069"/>
+    <wdt:P2671>/g/11bc6jhmpj</wdt:P2671>
+    <wdt:P5421>162400</wdt:P5421>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q10509939">
+    <rdfs:label xml:lang="en">grey hair</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51745">
+    <rdfs:label xml:lang="en">Revan</rdfs:label>
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:comment xml:lang="en">fictional character from  Star Wars: Knights of the Old Republic</rdfs:comment>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q2704488"/>
+    <wdt:P7047 rdf:resource="http://www.wikidata.org/entity/Q3518053"/>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+    <wdt:P12800>fr:Revan_et_Malak</wdt:P12800>
+    <wdt:P18 rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Darth%20Revan%20Cosplay%20Comic-Con.png"/>
+    <wdt:P20 rdf:resource="http://www.wikidata.org/entity/Q837921"/>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q6581097"/>
+    <wdt:P26 rdf:resource="http://www.wikidata.org/entity/Q51721"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q1569167"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q3658341"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15632617"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P97 rdf:resource="http://www.wikidata.org/entity/Q51758"/>
+    <wdt:P170 rdf:resource="http://www.wikidata.org/entity/Q1258747"/>
+    <wdt:P373>Revan</wdt:P373>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q51771"/>
+    <wdt:P520 rdf:resource="http://www.wikidata.org/entity/Q19873"/>
+    <wdt:P646>/m/02_mlv</wdt:P646>
+    <wdt:P725 rdf:resource="http://www.wikidata.org/entity/Q311103"/>
+    <wdt:P725 rdf:resource="http://www.wikidata.org/entity/Q2707980"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q2704488"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q2704496"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q55075643"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q2250762"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q5705382"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q3551295"/>
+    <wdt:P1416 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P1416 rdf:resource="http://www.wikidata.org/entity/Q51771"/>
+    <wdt:P1416 rdf:resource="http://www.wikidata.org/entity/Q733195"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q500038"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q725902"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q737308"/>
+    <wdt:P5247>3005-959</wdt:P5247>
+    <wdt:P6327>974119</wdt:P6327>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51735">
+    <rdf:type rdf:resource="http://www.wikidata.org/entity/Q95074"/>
+    <rdfs:label xml:lang="en">Kyle Katarn</rdfs:label>
+    <rdfs:comment xml:lang="en">fictional character from Star Wars</rdfs:comment>
+    <wdt:P5107>Star-Wars/Kyle-Katarn</wdt:P5107>
+    <wdt:P5247>3005-721</wdt:P5247>
+    <wdt:P5905>4005-48287</wdt:P5905>
+    <wdt:P8345 rdf:resource="http://www.wikidata.org/entity/Q462"/>
+    <wdt:P21 rdf:resource="http://www.wikidata.org/entity/Q6581097"/>
+    <wdt:P27 rdf:resource="http://www.wikidata.org/entity/Q52347"/>
+    <wdt:P27 rdf:resource="http://www.wikidata.org/entity/Q733195"/>
+    <wdt:P27 rdf:resource="http://www.wikidata.org/entity/Q964252"/>
+    <wdt:P27 rdf:resource="http://www.wikidata.org/entity/Q2346271"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q1569167"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q3658341"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q15632617"/>
+    <wdt:P31 rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q131512"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q178197"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q189290"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q327029"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q482980"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q9352089"/>
+    <wdt:P106 rdf:resource="http://www.wikidata.org/entity/Q60319535"/>
+    <wdt:P170 rdf:resource="http://www.wikidata.org/entity/Q38222"/>
+    <wdt:P175 rdf:resource="http://www.wikidata.org/entity/Q3807395"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q52316"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q2019458"/>
+    <wdt:P463 rdf:resource="http://www.wikidata.org/entity/Q106463990"/>
+    <wdt:P520 rdf:resource="http://www.wikidata.org/entity/Q19873"/>
+    <wdt:P646>/m/0389ww</wdt:P646>
+    <wdt:P735 rdf:resource="http://www.wikidata.org/entity/Q1326816"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q51748"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q907262"/>
+    <wdt:P802 rdf:resource="http://www.wikidata.org/entity/Q3160424"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q51746"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q51748"/>
+    <wdt:P1066 rdf:resource="http://www.wikidata.org/entity/Q9298092"/>
+    <wdt:P1080 rdf:resource="http://www.wikidata.org/entity/Q3551295"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q55287"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q55291"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q55295"/>
+    <wdt:P1441 rdf:resource="http://www.wikidata.org/entity/Q55298"/>
+    <wdt:P1830 rdf:resource="http://www.wikidata.org/entity/Q20872003"/>
+    <wdt:P2048>1.8</wdt:P2048>
+    <wdt:P3417>Kyle-Katarn-5</wdt:P3417>
+    <wdt:P3798>kylekatarn</wdt:P3798>
+    <wdt:P4839>Entity["FictionalCharacter", "KyleKatarn::3r599"]</wdt:P4839>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q257155">
+    <rdfs:label xml:lang="en">Naboo</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q104187661">
+    <rdfs:label xml:lang="en">Dooku: Jedi Lost</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q33125444">
+    <rdfs:label xml:lang="en">character from Star Wars</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q25540924">
+    <rdfs:label xml:lang="en">Star Wars prequel trilogy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q737308">
+    <rdfs:label xml:lang="en">Star Wars: The Old Republic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q500038">
+    <rdfs:label xml:lang="en">Star Wars: The Old Republic: Revan</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51771">
+    <rdfs:label xml:lang="en">Sith</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2707980">
+    <rdfs:label xml:lang="en">Rino Romano</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q616313">
+    <rdfs:label xml:lang="en">Star Wars: Clone Wars</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q18667444">
+    <rdfs:label xml:lang="en">Nightsisters</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2704496">
+    <rdfs:label xml:lang="en">Meetra Surik</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q327029">
+    <rdfs:label xml:lang="en">mechanic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q38222">
+    <rdfs:label xml:lang="en">George Lucas</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q55265">
+    <rdfs:label xml:lang="en">Star Wars: Yoda Stories</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q89050960">
+    <rdfs:label xml:lang="en">fictional humanoid extraterrestrial</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q189290">
+    <rdfs:label xml:lang="en">military officer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q66707670">
+    <rdfs:label xml:lang="en">Master &amp; Apprentice</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51752">
+    <rdfs:label xml:lang="en">Anakin Skywalker</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3807395">
+    <rdfs:label xml:lang="en">Jason Court</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q19873">
+    <rdfs:label xml:lang="en">lightsaber</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2524477">
+    <rdfs:label xml:lang="en">languages in Star Wars</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q28787">
+    <rdfs:label xml:lang="en">Star Wars Rebels</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51766">
+    <rdfs:label xml:lang="en">Darth Maul</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2250258">
+    <rdfs:label xml:lang="en">Tan Yuster</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q56605613">
+    <rdfs:label xml:lang="en">Mentor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q109322287">
+    <rdfs:label xml:lang="en">Mace Windu's lightsaber</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2019458">
+    <rdfs:label xml:lang="en">Jedi Council</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1065477">
+    <rdfs:label xml:lang="en">Invisible Hand</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q311103">
+    <rdfs:label xml:lang="en">Jeff Bennett</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q103894">
+    <rdfs:label xml:lang="en">Alec Guinness</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q77001957">
+    <rdfs:label xml:lang="en">Grogu</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1059976">
+    <rdfs:label xml:lang="en">Sora Bulq</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q58444">
+    <rdfs:label xml:lang="en">Liam Neeson</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q12206942">
+    <rdfs:label xml:lang="en">Darth Vader</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q181069">
+    <rdfs:label xml:lang="en">Star Wars: Episode II – Attack of the Clones</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q719329">
+    <rdfs:label xml:lang="en">Coruscant</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q6581097">
+    <rdfs:label xml:lang="en">male</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q21190230">
+    <rdfs:label xml:lang="en">Star Wars Galaxies: Trials of Obi-Wan</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q109322278">
+    <rdfs:label xml:lang="en">Qui-Gon's lightsaber</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q178197">
+    <rdfs:label xml:lang="en">mercenary</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q22570384">
+    <rdfs:label xml:lang="en">Lego Star Wars: The Force Awakens</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51792">
+    <rdfs:label xml:lang="en">General Grievous</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://commons.wikimedia.org/wiki/Special:FilePath/Star%20Wars%20Celebration%20IV%20-%20Asajj%20Ventress%20cropped.jpg">
+    <rdfs:label xml:lang="en">http://commons.wikimedia.org/wiki/Special:FilePath/Star%20Wars%20Celebration%20IV%20-%20Asajj%20Ventress%20cropped.jpg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q55228">
+    <rdfs:label xml:lang="en">Lego Star Wars III: The Clone Wars</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q18486021">
+    <rdfs:label xml:lang="en">Star Wars: Episode VIII – The Last Jedi</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q55983771">
+    <rdfs:label xml:lang="en">assassin</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q8054262">
+    <rdfs:label xml:lang="en">Yoda: Dark Rendezvous</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q195041">
+    <rdfs:label xml:lang="en">Jennifer Hale</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q52316">
+    <rdfs:label xml:lang="en">Rebel Alliance</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://commons.wikimedia.org/wiki/Special:FilePath/Darth%20Revan%20Cosplay%20Comic-Con.png">
+    <rdfs:label xml:lang="en">http://commons.wikimedia.org/wiki/Special:FilePath/Darth%20Revan%20Cosplay%20Comic-Con.png</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q6586871">
+    <rdfs:label xml:lang="en">Star Wars sequel trilogy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q9352089">
+    <rdfs:label xml:lang="en">spy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1133061">
+    <rdfs:label xml:lang="en">Clone Wars</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1073343">
+    <rdfs:label xml:lang="en">Zabrak</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2346271">
+    <rdfs:label xml:lang="en">New Republic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q29154231">
+    <rdfs:label xml:lang="en">Star Wars Battlefront II</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q17122705">
+    <rdfs:label xml:lang="en">brown</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q55287">
+    <rdfs:label xml:lang="en">Star Wars: Dark Forces</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2250762">
+    <rdfs:label xml:lang="en">Darth Traya</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1060406">
+    <rdfs:label xml:lang="en">Echuu Shen-Jon</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q116763978">
+    <rdfs:label xml:lang="en">Star Wars: Young Jedi Adventures</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q20872003">
+    <rdfs:label xml:lang="en">Moldy Crow</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q131456974">
+    <rdfs:label xml:lang="en">Yoda</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q733195">
+    <rdfs:label xml:lang="en">Galactic Republic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1326816">
+    <rdfs:label xml:lang="en">Kyle</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://commons.wikimedia.org/wiki/Special:FilePath/Dooku.jpg">
+    <rdfs:label xml:lang="en">http://commons.wikimedia.org/wiki/Special:FilePath/Dooku.jpg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q181803">
+    <rdfs:label xml:lang="en">Star Wars: Episode VI – Return of the Jedi</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q247297">
+    <rdfs:label xml:lang="en">henchperson</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q55291">
+    <rdfs:label xml:lang="en">Star Wars Jedi Knight: Dark Forces II</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1093766">
+    <rdfs:label xml:lang="en">The Force</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3511870">
+    <rdfs:label xml:lang="en">T'ra Saa</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q462">
+    <rdfs:label xml:lang="en">Star Wars</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q937">
+    <rdfs:label xml:lang="en">Albert Einstein</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3494419">
+    <rdfs:label xml:lang="en">Terrence C. Carson</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q149086">
+    <rdfs:label xml:lang="en">homicide</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q15711870">
+    <rdfs:label xml:lang="en">animated character</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q932724">
+    <rdfs:label xml:lang="en">Kit Fisto</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q14904358">
+    <rdfs:label xml:lang="en">Jedi Master</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q632672">
+    <rdfs:label xml:lang="en">Star Wars: The Clone Wars</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51758">
+    <rdfs:label xml:lang="en">Darth</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2326326">
+    <rdfs:label xml:lang="en">Dark Jedi</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q116259599">
+    <rdfs:label xml:lang="en">Windu</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q482980">
+    <rdfs:label xml:lang="en">author</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q109322279">
+    <rdfs:label xml:lang="en">Yoda's lightsaber</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q15773317">
+    <rdfs:label xml:lang="en">television character</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1080988">
+    <rdfs:label xml:lang="en">Ferus Olin</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q55298">
+    <rdfs:label xml:lang="en">Star Wars Jedi Knight II: Jedi Outcast</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51724">
+    <rdfs:label xml:lang="en">Jedi</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1114471">
+    <rdfs:label xml:lang="en">Tarsier</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q9298092">
+    <rdfs:label xml:lang="en">Qu Rahn</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://commons.wikimedia.org/wiki/Special:FilePath/Mace%20Windu%20%28cropped%29.jpg">
+    <rdfs:label xml:lang="en">http://commons.wikimedia.org/wiki/Special:FilePath/Mace%20Windu%20%28cropped%29.jpg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q19786052">
+    <rdfs:label xml:lang="en">Star Wars universe</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1062542">
+    <rdfs:label xml:lang="en">Haruun Kal</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3474440">
+    <rdfs:label xml:lang="en">Savage Opress</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1300262">
+    <rdfs:label xml:lang="en">Soulcalibur IV</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q25540859">
+    <rdfs:label xml:lang="en">Star Wars original trilogy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q104154217">
+    <rdfs:label xml:lang="en">Obi-Wan Kenobi</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3160424">
+    <rdfs:label xml:lang="en">Jaden Korr</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q17738">
+    <rdfs:label xml:lang="en">Star Wars: Episode IV – A New Hope</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51759">
+    <rdfs:label xml:lang="en">Xanatos</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3518053">
+    <rdfs:label xml:lang="en">Tenebrae</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2704488">
+    <rdfs:label xml:lang="en">Darth Malak</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q125307110">
+    <rdfs:label xml:lang="en">Ben Kenobi</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q5799688">
+    <rdfs:label xml:lang="en">Dathomir</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q172678">
+    <rdfs:label xml:lang="en">Samuel L. Jackson</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1006293">
+    <rdfs:label xml:lang="en">Confederacy of Independent Systems</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3658341">
+    <rdfs:label xml:lang="en">literary character</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q112607488">
+    <rdfs:label xml:lang="en">Obi-Wan Kenobi's brother</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3834368">
+    <rdfs:label xml:lang="en">bounty hunter</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q42051">
+    <rdfs:label xml:lang="en">Star Wars: Episode III – Revenge of the Sith</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3519259">
+    <rdfs:label xml:lang="en">count</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3782512">
+    <rdfs:label xml:lang="en">Halagad Ventor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q20977110">
+    <rdfs:label xml:lang="en">Star Wars: Episode IX – The Rise of Skywalker</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://commons.wikimedia.org/wiki/Special:FilePath/2015-07-31%20Cologne%20Star%20Wars%20Exhibition%2003.jpg">
+    <rdfs:label xml:lang="en">http://commons.wikimedia.org/wiki/Special:FilePath/2015-07-31%20Cologne%20Star%20Wars%20Exhibition%2003.jpg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q965261">
+    <rdfs:label xml:lang="en">Corey Burton</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q964252">
+    <rdfs:label xml:lang="en">Galactic Federation of Free Alliances</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1188045">
+    <rdfs:label xml:lang="en">Quinlan Vos</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q847133">
+    <rdfs:label xml:lang="en">Fred Tatasciore</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q347111">
+    <rdfs:label xml:lang="en">Genndy Tartakovsky</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q734036">
+    <rdfs:label xml:lang="en">MTV Movie Award for Best Fight</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q52347">
+    <rdfs:label xml:lang="en">Galactic Empire</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51770">
+    <rdfs:label xml:lang="en">Palpatine</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1245387">
+    <rdfs:label xml:lang="en">Rahm Kota</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1258747">
+    <rdfs:label xml:lang="en">Drew Karpyshyn</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q106474072">
+    <rdfs:label xml:lang="en">Dathomirian</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://commons.wikimedia.org/wiki/Special:FilePath/Obi-Wan.jpg">
+    <rdfs:label xml:lang="en">http://commons.wikimedia.org/wiki/Special:FilePath/Obi-Wan.jpg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q725902">
+    <rdfs:label xml:lang="en">Star Wars: Knights of the Old Republic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q44148">
+    <rdfs:label xml:lang="en">male organism</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q3869298">
+    <rdfs:label xml:lang="en">N'Kata Del Gormo</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q837921">
+    <rdfs:label xml:lang="en">Yavin IV</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q6933946">
+    <rdfs:label xml:lang="en">white hair</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q165518">
+    <rdfs:label xml:lang="en">Ewan McGregor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q382289">
+    <rdfs:label xml:lang="en">Star Wars: The Clone Wars</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q15632617">
+    <rdfs:label xml:lang="en">fictional human</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q54271">
+    <rdfs:label xml:lang="en">Ki-Adi-Mundi</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q131512">
+    <rdfs:label xml:lang="en">farmer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q95282567">
+    <rdfs:label xml:lang="en">Mace</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q109322282">
+    <rdfs:label xml:lang="en">Count Dooku's lightsaber</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q5226246">
+    <rdfs:label xml:lang="en">Shatterpoint</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q165713">
+    <rdfs:label xml:lang="en">Star Wars: Episode I – The Phantom Menace</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q723764">
+    <rdfs:label xml:lang="en">Tatooine</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q106463990">
+    <rdfs:label xml:lang="en">New Jedi Order</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2248111">
+    <rdfs:label xml:lang="en">Cin Drallig</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q60319535">
+    <rdfs:label xml:lang="en">starship pilot</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51755">
+    <rdfs:label xml:lang="en">Ahsoka Tano</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://commons.wikimedia.org/wiki/Special:FilePath/Wax%20Museum%20Plus%20%286344782431%29.jpg">
+    <rdfs:label xml:lang="en">http://commons.wikimedia.org/wiki/Special:FilePath/Wax%20Museum%20Plus%20%286344782431%29.jpg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q74669">
+    <rdfs:label xml:lang="en">Star Wars Knights of the Old Republic II: The Sith Lords</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1569167">
+    <rdfs:label xml:lang="en">video game character</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q6581072">
+    <rdfs:label xml:lang="en">female</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51748">
+    <rdfs:label xml:lang="en">Mara Jade</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q55216">
+    <rdfs:label xml:lang="en">Lego Star Wars: The Video Game</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q23763227">
+    <rdfs:label xml:lang="en">Dark Disciple</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2738825">
+    <rdfs:label xml:lang="en">Depa Billaba</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q848609">
+    <rdfs:label xml:lang="en">Dagobah</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51795">
+    <rdfs:label xml:lang="en">Jango Fett</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q840167">
+    <rdfs:label xml:lang="en">Star Wars: The Force Unleashed</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q5705382">
+    <rdfs:label xml:lang="en">Arren Kae</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q54865">
+    <rdfs:label xml:lang="en">Star Wars: Battlefront II</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q311319">
+    <rdfs:label xml:lang="en">Frank Oz</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q109322284">
+    <rdfs:label xml:lang="en">Obi-Wan's lightsaber</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q131787398">
+    <rdfs:label xml:lang="en">Yoda</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q907262">
+    <rdfs:label xml:lang="en">Rosh Penin</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q15773347">
+    <rdfs:label xml:lang="en">film character</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q51746">
+    <rdfs:label xml:lang="en">Luke Skywalker</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

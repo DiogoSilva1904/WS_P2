@@ -1,0 +1,41 @@
+@prefix sw: <http://localhost:8000/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sw:Character a owl:Class .
+sw:Planet a owl:Class .
+sw:Film a owl:Class .
+sw:Quote a owl:Class .
+sw:Droid a owl:Class .
+sw:Specie a owl:Class .
+sw:Weapon a owl:Class .
+
+sw:homeworld a owl:ObjectProperty ;
+  rdfs:domain sw:Character ;
+  rdfs:range sw:Planet .
+
+sw:appears_in a owl:ObjectProperty ;
+  rdfs:domain owl:Thing ;
+  rdfs:range sw:Film .
+
+sw:said_by a owl:ObjectProperty ;
+  rdfs:domain sw:Quote ;
+  rdfs:range sw:Character .
+
+sw:release_date a owl:DatatypeProperty ;
+  rdfs:domain sw:Film ;
+  rdfs:range xsd:date .
+
+sw:director a owl:DatatypeProperty ;
+  rdfs:domain sw:Film ;
+  rdfs:range xsd:string .
+
+sw:gender a owl:DatatypeProperty ;
+  rdfs:domain sw:Character ;
+  rdfs:range xsd:string .
+
+sw:height a owl:DatatypeProperty ;
+  rdfs:domain sw:Character ;
+  rdfs:range xsd:float .

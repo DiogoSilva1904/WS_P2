@@ -1,0 +1,1439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:sw="http://localhost:8000/ontology#"
+>
+  <rdf:Description rdf:about="http://localhost:8000/external/tarsier">
+    <rdfs:label xml:lang="en">Tarsier</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1114471"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/kyle-katarn">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Kyle Katarn</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51735"/>
+    <sw:behind-the-voice-actors-character-id>Star-Wars/Kyle-Katarn</sw:behind-the-voice-actors-character-id>
+    <sw:giant-bomb-id>3005-721</sw:giant-bomb-id>
+    <sw:comic-vine-id>4005-48287</sw:comic-vine-id>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/male"/>
+    <sw:country-of-citizenship rdf:resource="http://localhost:8000/external/galactic-empire"/>
+    <sw:country-of-citizenship rdf:resource="http://localhost:8000/external/galactic-republic"/>
+    <sw:country-of-citizenship rdf:resource="http://localhost:8000/external/galactic-federation-of-free-alliances"/>
+    <sw:country-of-citizenship rdf:resource="http://localhost:8000/external/new-republic"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/video-game-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/literary-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/fictional-human"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/farmer"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/mercenary"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/military-officer"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/mechanic"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/author"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/spy"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/starship-pilot"/>
+    <sw:creator rdf:resource="http://localhost:8000/external/george-lucas"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/jason-court"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/rebel-alliance"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi-council"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/new-jedi-order"/>
+    <sw:armament rdf:resource="http://localhost:8000/external/lightsaber"/>
+    <sw:freebase-id>/m/0389ww</sw:freebase-id>
+    <sw:given-name rdf:resource="http://localhost:8000/external/kyle"/>
+    <sw:student rdf:resource="http://localhost:8000/external/mara-jade"/>
+    <sw:student rdf:resource="http://localhost:8000/external/rosh-penin"/>
+    <sw:student rdf:resource="http://localhost:8000/external/jaden-korr"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/luke-skywalker"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/mara-jade"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/qu-rahn"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-legends"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-dark-forces"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-jedi-knight-dark-forces-ii"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-jedi-knight-jedi-academy"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-jedi-knight-ii-jedi-outcast"/>
+    <sw:owner-of rdf:resource="http://localhost:8000/external/moldy-crow"/>
+    <sw:height>1.8</sw:height>
+    <sw:quora-topic-id>Kyle-Katarn-5</sw:quora-topic-id>
+    <sw:star-wars-databank-id>kylekatarn</sw:star-wars-databank-id>
+    <sw:wolfram-language-entity-code>Entity["FictionalCharacter", "KyleKatarn::3r599"]</sw:wolfram-language-entity-code>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/yoda">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Yoda</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51730"/>
+    <sw:snac-ark-id>w64r8mvb</sw:snac-ark-id>
+    <sw:star-wars-databank-id>yoda</sw:star-wars-databank-id>
+    <sw:first-appearance rdf:resource="http://localhost:8000/external/star-wars-episode-v-the-empire-strikes-back"/>
+    <sw:wolfram-language-entity-code>Entity["FictionalCharacter", "Yoda"]</sw:wolfram-language-entity-code>
+    <sw:derivative-work rdf:resource="http://localhost:8000/external/yoda"/>
+    <sw:behind-the-voice-actors-character-id>Star-Wars/Yoda</sw:behind-the-voice-actors-character-id>
+    <sw:giant-bomb-id>3005-7</sw:giant-bomb-id>
+    <sw:trading-card-database-person-id>47425</sw:trading-card-database-person-id>
+    <sw:comic-vine-id>4005-5396</sw:comic-vine-id>
+    <sw:fandom-article-id>disney:Yoda</sw:fandom-article-id>
+    <sw:fandom-article-id>fr.starwars:Yoda</sw:fandom-article-id>
+    <sw:fandom-article-id>lucasfilm:Yoda</sw:fandom-article-id>
+    <sw:fandom-article-id>starwars:Yoda</sw:fandom-article-id>
+    <sw:fandom-article-id>sv.starwars:Yoda</sw:fandom-article-id>
+    <sw:fandom-article-id>sv.stjarnornaskrig:Yoda</sw:fandom-article-id>
+    <sw:fandom-article-id>star-wars-canon:Yoda</sw:fandom-article-id>
+    <sw:fandom-article-id>star-wars-legends:Yoda</sw:fandom-article-id>
+    <sw:fandom-article-id>jedipedia:Yoda</sw:fandom-article-id>
+    <sw:goodreads-character-id>973723</sw:goodreads-character-id>
+    <sw:enemy rdf:resource="http://localhost:8000/external/palpatine"/>
+    <sw:j9u-id>987007540749105171</sw:j9u-id>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+    <sw:personality-database-profile-id>237784</sw:personality-database-profile-id>
+    <sw:reddit-topic-id>yoda</sw:reddit-topic-id>
+    <sw:vikidia-article-id>fr:Yoda</sw:vikidia-article-id>
+    <sw:image rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/2015-07-31%20Cologne%20Star%20Wars%20Exhibition%2003.jpg"/>
+    <sw:place-of-death rdf:resource="http://localhost:8000/external/dagobah"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/male-organism"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/video-game-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/literary-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/animated-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/television-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/film-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/fictional-humanoid-extraterrestrial"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/jedi-master"/>
+    <sw:based-on rdf:resource="http://localhost:8000/external/tarsier"/>
+    <sw:award-received rdf:resource="http://localhost:8000/external/mtv-movie-award-for-best-fight"/>
+    <sw:creator rdf:resource="http://localhost:8000/external/george-lucas"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/frank-oz"/>
+    <sw:viaf-cluster-id>36157340768909922600</sw:viaf-cluster-id>
+    <sw:library-of-congress-authority-id>no2019160529</sw:library-of-congress-authority-id>
+    <sw:commons-category>Yoda</sw:commons-category>
+    <sw:position-played-on-team-speciality rdf:resource="http://localhost:8000/external/mentor"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:armament rdf:resource="http://localhost:8000/external/yoda-s-lightsaber"/>
+    <sw:residence rdf:resource="http://localhost:8000/external/coruscant"/>
+    <sw:residence rdf:resource="http://localhost:8000/external/dagobah"/>
+    <sw:participated-in-conflict rdf:resource="http://localhost:8000/external/clone-wars"/>
+    <sw:freebase-id>/m/0g_tb</sw:freebase-id>
+    <sw:student rdf:resource="http://localhost:8000/external/mace-windu"/>
+    <sw:student rdf:resource="http://localhost:8000/external/count-dooku"/>
+    <sw:student rdf:resource="http://localhost:8000/external/luke-skywalker"/>
+    <sw:student rdf:resource="http://localhost:8000/external/ki-adi-mundi"/>
+    <sw:student rdf:resource="http://localhost:8000/external/kit-fisto"/>
+    <sw:student rdf:resource="http://localhost:8000/external/rahm-kota"/>
+    <sw:student rdf:resource="http://localhost:8000/external/cin-drallig"/>
+    <sw:student rdf:resource="http://localhost:8000/external/qu-rahn"/>
+    <sw:inspired-by rdf:resource="http://localhost:8000/external/albert-einstein"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/n-kata-del-gormo"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-universe"/>
+    <sw:eye-color rdf:resource="http://localhost:8000/external/brown"/>
+    <sw:languages-spoken-written-or-signed rdf:resource="http://localhost:8000/external/languages-in-star-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-rebels"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-iii-revenge-of-the-sith"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-battlefront-ii"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-yoda-stories"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-i-the-phantom-menace"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-ii-attack-of-the-clones"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-v-the-empire-strikes-back"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-vi-return-of-the-jedi"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-the-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/soulcalibur-iv"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-sequel-trilogy"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/yoda-dark-rendezvous"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-viii-the-last-jedi"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-original-trilogy"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-prequel-trilogy"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-young-jedi-adventures"/>
+    <sw:name-in-kana>ヨーダ</sw:name-in-kana>
+    <sw:hair-color rdf:resource="http://localhost:8000/external/white-hair"/>
+    <sw:different-from rdf:resource="http://localhost:8000/external/grogu"/>
+    <sw:different-from rdf:resource="http://localhost:8000/external/yoda"/>
+    <sw:height>0.66</sw:height>
+    <sw:uses rdf:resource="http://localhost:8000/external/lightsaber"/>
+    <sw:uses rdf:resource="http://localhost:8000/external/the-force"/>
+    <sw:quora-topic-id>Yoda-Star-Wars-character</sw:quora-topic-id>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#image">
+    <rdfs:label xml:lang="en">image</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/obi-wan-kenobi">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Obi-Wan Kenobi</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51740"/>
+    <sw:fandom-article-id>disney:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>fr.starwars:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>lucasfilm:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>movies:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>star-wars-canon:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>star-wars-legends:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>star-wars-rebels:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>starwars:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>sv.starwars:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>sv.stjarnornaskrig:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:fandom-article-id>theclonewars:Obi-Wan_Kenobi</sw:fandom-article-id>
+    <sw:goodreads-character-id>70176</sw:goodreads-character-id>
+    <sw:enemy rdf:resource="http://localhost:8000/external/darth-maul"/>
+    <sw:enemy rdf:resource="http://localhost:8000/external/general-grievous"/>
+    <sw:enemy rdf:resource="http://localhost:8000/external/jango-fett"/>
+    <sw:enemy rdf:resource="http://localhost:8000/external/darth-vader"/>
+    <sw:europeana-entity>agent/base/147065</sw:europeana-entity>
+    <sw:j9u-id>987007537222805171</sw:j9u-id>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+    <sw:personality-database-profile-id>41</sw:personality-database-profile-id>
+    <sw:vikidia-article-id>fr:Obi-Wan_Kenobi</sw:vikidia-article-id>
+    <sw:image rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Obi-Wan.jpg"/>
+    <sw:place-of-death rdf:resource="http://localhost:8000/external/death-star"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/male"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:killed-by rdf:resource="http://localhost:8000/external/darth-vader"/>
+    <sw:creator rdf:resource="http://localhost:8000/external/george-lucas"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/alec-guinness"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/ewan-mcgregor"/>
+    <sw:library-of-congress-authority-id>no2019077639</sw:library-of-congress-authority-id>
+    <sw:commons-category>Obi-Wan Kenobi</sw:commons-category>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:armament rdf:resource="http://localhost:8000/external/obi-wan-s-lightsaber"/>
+    <sw:residence rdf:resource="http://localhost:8000/external/coruscant"/>
+    <sw:residence rdf:resource="http://localhost:8000/external/tatooine"/>
+    <sw:inception>1977-01-01T00:00:00Z</sw:inception>
+    <sw:participated-in-conflict rdf:resource="http://localhost:8000/external/clone-wars"/>
+    <sw:freebase-id>/m/0fkm7</sw:freebase-id>
+    <sw:student rdf:resource="http://localhost:8000/external/luke-skywalker"/>
+    <sw:student rdf:resource="http://localhost:8000/external/anakin-skywalker"/>
+    <sw:student rdf:resource="http://localhost:8000/external/ferus-olin"/>
+    <sw:student rdf:resource="http://localhost:8000/external/halagad-ventor"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/qui-gon-jinn"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-universe"/>
+    <sw:manner-of-death rdf:resource="http://localhost:8000/external/homicide"/>
+    <sw:eye-color rdf:resource="http://localhost:8000/external/brown"/>
+    <sw:languages-spoken-written-or-signed rdf:resource="http://localhost:8000/external/languages-in-star-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-iv-a-new-hope"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-rebels"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-iii-revenge-of-the-sith"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/lego-star-wars-the-video-game"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-i-the-phantom-menace"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-ii-attack-of-the-clones"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-v-the-empire-strikes-back"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-vi-return-of-the-jedi"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-the-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-ix-the-rise-of-skywalker"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-galaxies-trials-of-obi-wan"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-battlefront-ii"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/obi-wan-kenobi"/>
+    <sw:name-in-native-language>Obi-Wan Kenobi</sw:name-in-native-language>
+    <sw:hair-color rdf:resource="http://localhost:8000/external/grey-hair"/>
+    <sw:different-from rdf:resource="http://localhost:8000/external/obi-wan-kenobi"/>
+    <sw:height>183</sw:height>
+    <sw:uses rdf:resource="http://localhost:8000/external/lightsaber"/>
+    <sw:uses rdf:resource="http://localhost:8000/external/the-force"/>
+    <sw:sibling rdf:resource="http://localhost:8000/external/obi-wan-kenobi-s-brother"/>
+    <sw:quora-topic-id>Obi-Wan-Kenobi-Star-Wars-character</sw:quora-topic-id>
+    <sw:star-wars-databank-id>obi-wan-kenobi</sw:star-wars-databank-id>
+    <sw:last-words>You can't win, Darth. If you strike me down, I shall become more powerful than you can possibly imagine.</sw:last-words>
+    <sw:first-appearance rdf:resource="http://localhost:8000/external/star-wars-episode-iv-a-new-hope"/>
+    <sw:wolfram-language-entity-code>Entity["FictionalCharacter", "ObiWanKenobi"]</sw:wolfram-language-entity-code>
+    <sw:derivative-work rdf:resource="http://localhost:8000/external/ben-kenobi"/>
+    <sw:behind-the-voice-actors-character-id>Star-Wars/Obi-Wan-Kenobi</sw:behind-the-voice-actors-character-id>
+    <sw:giant-bomb-id>3005-669</sw:giant-bomb-id>
+    <sw:trading-card-database-person-id>47411</sw:trading-card-database-person-id>
+    <sw:comic-vine-id>4005-2206</sw:comic-vine-id>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/mace-windu">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Mace Windu</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51725"/>
+    <sw:image rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Mace%20Windu%20%28cropped%29.jpg"/>
+    <sw:place-of-birth rdf:resource="http://localhost:8000/external/haruun-kal"/>
+    <sw:place-of-death rdf:resource="http://localhost:8000/external/coruscant"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/male"/>
+    <sw:country-of-citizenship rdf:resource="http://localhost:8000/external/galactic-republic"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/video-game-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/literary-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/fictional-human"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/animated-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/television-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/film-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:killed-by rdf:resource="http://localhost:8000/external/palpatine"/>
+    <sw:creator rdf:resource="http://localhost:8000/external/george-lucas"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/samuel-l-jackson"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/terrence-c-carson"/>
+    <sw:commons-category>Mace Windu</sw:commons-category>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:armament rdf:resource="http://localhost:8000/external/mace-windu-s-lightsaber"/>
+    <sw:freebase-id>/m/0g_rz</sw:freebase-id>
+    <sw:family-name rdf:resource="http://localhost:8000/external/windu"/>
+    <sw:given-name rdf:resource="http://localhost:8000/external/mace"/>
+    <sw:student rdf:resource="http://localhost:8000/external/echuu-shen-jon"/>
+    <sw:student rdf:resource="http://localhost:8000/external/depa-billaba"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/yoda"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/t-ra-saa"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-universe"/>
+    <sw:home-world rdf:resource="http://localhost:8000/external/haruun-kal"/>
+    <sw:manner-of-death rdf:resource="http://localhost:8000/external/homicide"/>
+    <sw:languages-spoken-written-or-signed rdf:resource="http://localhost:8000/external/languages-in-star-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-iii-revenge-of-the-sith"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-i-the-phantom-menace"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-ii-attack-of-the-clones"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-the-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/shatterpoint"/>
+    <sw:name-in-native-language>Mace Windu</sw:name-in-native-language>
+    <sw:quora-topic-id>Mace-Windu-4</sw:quora-topic-id>
+    <sw:star-wars-databank-id>mace-windu</sw:star-wars-databank-id>
+    <sw:last-words>He has control of the Senate and the Courts! He's too dangerous to be left alive!</sw:last-words>
+    <sw:behind-the-voice-actors-character-id>Star-Wars/Mace-Windu</sw:behind-the-voice-actors-character-id>
+    <sw:giant-bomb-id>3005-3783</sw:giant-bomb-id>
+    <sw:trading-card-database-person-id>48592</sw:trading-card-database-person-id>
+    <sw:comic-vine-id>4005-5395</sw:comic-vine-id>
+    <sw:fandom-article-id>starwars:Mace_Windu</sw:fandom-article-id>
+    <sw:goodreads-character-id>5437</sw:goodreads-character-id>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+    <sw:personality-database-profile-id>1324</sw:personality-database-profile-id>
+    <sw:reddit-topic-id>mace_windu</sw:reddit-topic-id>
+    <sw:vikidia-article-id>fr:Mace_Windu</sw:vikidia-article-id>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#position-played-on-team-speciality">
+    <rdfs:label xml:lang="en">position played on team / speciality</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/asajj-ventress">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Asajj Ventress</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q14417"/>
+    <sw:wolfram-language-entity-code>Entity["FictionalCharacter", "AsajjVentress::m8456"]</sw:wolfram-language-entity-code>
+    <sw:behind-the-voice-actors-character-id>Star-Wars/Asajj-Ventress</sw:behind-the-voice-actors-character-id>
+    <sw:giant-bomb-id>3005-3062</sw:giant-bomb-id>
+    <sw:trading-card-database-person-id>49361</sw:trading-card-database-person-id>
+    <sw:comic-vine-id>4005-46932</sw:comic-vine-id>
+    <sw:fandom-article-id>disney:Asajj_Ventress</sw:fandom-article-id>
+    <sw:fandom-article-id>starwars:Asajj_Ventress</sw:fandom-article-id>
+    <sw:goodreads-character-id>40394</sw:goodreads-character-id>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+    <sw:image rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Star%20Wars%20Celebration%20IV%20-%20Asajj%20Ventress%20cropped.jpg"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/female"/>
+    <sw:country-of-citizenship rdf:resource="http://localhost:8000/external/galactic-republic"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/literary-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/animated-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/television-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/cyborg-in-a-work-of-fiction"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/dathomirian"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/dark-jedi"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/bounty-hunter"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/assassin"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/starship-pilot"/>
+    <sw:creator rdf:resource="http://localhost:8000/external/george-lucas"/>
+    <sw:creator rdf:resource="http://localhost:8000/external/genndy-tartakovsky"/>
+    <sw:commons-category>Asajj Ventress</sw:commons-category>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/sith"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/confederacy-of-independent-systems"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/nightsisters"/>
+    <sw:inception>2003-01-01T00:00:00Z</sw:inception>
+    <sw:freebase-id>/m/054ng5</sw:freebase-id>
+    <sw:student-of rdf:resource="http://localhost:8000/external/count-dooku"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-legends"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-universe"/>
+    <sw:home-world rdf:resource="http://localhost:8000/external/dathomir"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/lego-star-wars-iii-the-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-the-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-the-force-unleashed"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/lego-star-wars-the-force-awakens"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/dark-disciple"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/dooku-jedi-lost"/>
+    <sw:star-wars-databank-id>asajj-ventress</sw:star-wars-databank-id>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/female">
+    <rdfs:label xml:lang="en">female</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q6581072"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/count-dooku">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Count Dooku</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51727"/>
+    <sw:image rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Dooku.jpg"/>
+    <sw:place-of-death rdf:resource="http://localhost:8000/external/invisible-hand"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/male"/>
+    <sw:country-of-citizenship rdf:resource="http://localhost:8000/external/galactic-republic"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/video-game-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/fictional-human"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/animated-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/television-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/film-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:noble-title rdf:resource="http://localhost:8000/external/darth"/>
+    <sw:noble-title rdf:resource="http://localhost:8000/external/count"/>
+    <sw:religion-or-worldview rdf:resource="http://localhost:8000/external/sith"/>
+    <sw:killed-by rdf:resource="http://localhost:8000/external/anakin-skywalker"/>
+    <sw:creator rdf:resource="http://localhost:8000/external/george-lucas"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/christopher-lee"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/corey-burton"/>
+    <sw:commons-category>Count Dooku</sw:commons-category>
+    <sw:member-of rdf:resource="http://localhost:8000/external/sith"/>
+    <sw:armament rdf:resource="http://localhost:8000/external/count-dooku-s-lightsaber"/>
+    <sw:inception>2002-01-01T00:00:00Z</sw:inception>
+    <sw:freebase-id>/m/0gzf3</sw:freebase-id>
+    <sw:student rdf:resource="http://localhost:8000/external/asajj-ventress"/>
+    <sw:student rdf:resource="http://localhost:8000/external/qui-gon-jinn"/>
+    <sw:student rdf:resource="http://localhost:8000/external/general-grievous"/>
+    <sw:student rdf:resource="http://localhost:8000/external/sora-bulq"/>
+    <sw:student rdf:resource="http://localhost:8000/external/quinlan-vos"/>
+    <sw:student rdf:resource="http://localhost:8000/external/savage-opress"/>
+    <sw:student rdf:resource="http://localhost:8000/external/tol-skorr"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/yoda"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/palpatine"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-universe"/>
+    <sw:manner-of-death rdf:resource="http://localhost:8000/external/homicide"/>
+    <sw:languages-spoken-written-or-signed rdf:resource="http://localhost:8000/external/languages-in-star-wars"/>
+    <sw:affiliation rdf:resource="http://localhost:8000/external/confederacy-of-independent-systems"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-iii-revenge-of-the-sith"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-ii-attack-of-the-clones"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-the-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-battlefront-ii"/>
+    <sw:star-wars-databank-id>count-dooku</sw:star-wars-databank-id>
+    <sw:first-appearance rdf:resource="http://localhost:8000/external/star-wars-episode-ii-attack-of-the-clones"/>
+    <sw:behind-the-voice-actors-character-id>Star-Wars/Count-Dooku</sw:behind-the-voice-actors-character-id>
+    <sw:giant-bomb-id>3005-5119</sw:giant-bomb-id>
+    <sw:trading-card-database-person-id>48601</sw:trading-card-database-person-id>
+    <sw:narrative-role rdf:resource="http://localhost:8000/external/henchperson"/>
+    <sw:comic-vine-id>4005-5392</sw:comic-vine-id>
+    <sw:fandom-article-id>disney:Count_Dooku</sw:fandom-article-id>
+    <sw:fandom-article-id>fr.starwars:Dooku</sw:fandom-article-id>
+    <sw:fandom-article-id>lucasfilm:Count_Dooku</sw:fandom-article-id>
+    <sw:fandom-article-id>starwars:Dooku</sw:fandom-article-id>
+    <sw:goodreads-character-id>113827</sw:goodreads-character-id>
+    <sw:enemy rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:enemy rdf:resource="http://localhost:8000/external/anakin-skywalker"/>
+    <sw:enemy rdf:resource="http://localhost:8000/external/ahsoka-tano"/>
+    <sw:the-top-tens-id>10110</sw:the-top-tens-id>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+    <sw:personality-database-profile-id>1326</sw:personality-database-profile-id>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-episode-vi-return-of-the-jedi">
+    <rdfs:label xml:lang="en">Star Wars: Episode VI – Return of the Jedi</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q181803"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/jedi-master">
+    <rdfs:label xml:lang="en">Jedi Master</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q14904358"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/bastila-shan">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Bastila Shan</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51721"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/female"/>
+    <sw:spouse rdf:resource="http://localhost:8000/external/revan"/>
+    <sw:country-of-citizenship rdf:resource="http://localhost:8000/external/galactic-republic"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/video-game-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/fictional-human"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:freebase-id>/m/03l8j1</sw:freebase-id>
+    <sw:voice-actor rdf:resource="http://localhost:8000/external/jennifer-hale"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/darth-malak"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-legends"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-knights-of-the-old-republic-ii-the-sith-lords"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-knights-of-the-old-republic"/>
+    <sw:name-in-native-language>Bastila Shan</sw:name-in-native-language>
+    <sw:google-knowledge-graph-id>/g/11bc5md1q8</sw:google-knowledge-graph-id>
+    <sw:giant-bomb-id>3005-846</sw:giant-bomb-id>
+    <sw:trading-card-database-person-id>162413</sw:trading-card-database-person-id>
+    <sw:comic-vine-id>4005-56320</sw:comic-vine-id>
+    <sw:fandom-article-id>starwars:Bastila_Shan</sw:fandom-article-id>
+    <sw:goodreads-character-id>69375</sw:goodreads-character-id>
+    <sw:enemy rdf:resource="http://localhost:8000/external/darth-malak"/>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/terrence-c-carson">
+    <rdfs:label xml:lang="en">Terrence C. Carson</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3494419"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/ewan-mcgregor">
+    <rdfs:label xml:lang="en">Ewan McGregor</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q165518"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/qui-gon-jinn">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Qui-Gon Jinn</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51736"/>
+    <sw:image rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Wax%20Museum%20Plus%20%286344782431%29.jpg"/>
+    <sw:place-of-death rdf:resource="http://localhost:8000/external/naboo"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/male"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/video-game-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/literary-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/fictional-human"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/animated-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/television-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/film-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:killed-by rdf:resource="http://localhost:8000/external/darth-maul"/>
+    <sw:creator rdf:resource="http://localhost:8000/external/george-lucas"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/liam-neeson"/>
+    <sw:performer rdf:resource="http://localhost:8000/external/fred-tatasciore"/>
+    <sw:library-of-congress-authority-id>no2019134077</sw:library-of-congress-authority-id>
+    <sw:commons-category>Qui-Gon Jinn</sw:commons-category>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:armament rdf:resource="http://localhost:8000/external/qui-gon-s-lightsaber"/>
+    <sw:inception>1999-01-01T00:00:00Z</sw:inception>
+    <sw:freebase-id>/m/0gzgj</sw:freebase-id>
+    <sw:student rdf:resource="http://localhost:8000/external/obi-wan-kenobi"/>
+    <sw:student rdf:resource="http://localhost:8000/external/xanatos"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/count-dooku"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-universe"/>
+    <sw:home-world rdf:resource="http://localhost:8000/external/coruscant"/>
+    <sw:manner-of-death rdf:resource="http://localhost:8000/external/homicide"/>
+    <sw:languages-spoken-written-or-signed rdf:resource="http://localhost:8000/external/languages-in-star-wars"/>
+    <sw:affiliation rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:affiliation rdf:resource="http://localhost:8000/external/galactic-republic"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-i-the-phantom-menace"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-the-clone-wars"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-ix-the-rise-of-skywalker"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/master-apprentice"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/dooku-jedi-lost"/>
+    <sw:name-in-native-language>Qui-Gon Jinn</sw:name-in-native-language>
+    <sw:height>1.93</sw:height>
+    <sw:star-wars-databank-id>qui-gon-jinn</sw:star-wars-databank-id>
+    <sw:behind-the-voice-actors-character-id>Star-Wars/Qui-Gon-Jinn</sw:behind-the-voice-actors-character-id>
+    <sw:giant-bomb-id>3005-3271</sw:giant-bomb-id>
+    <sw:trading-card-database-person-id>48790</sw:trading-card-database-person-id>
+    <sw:comic-vine-id>4005-5411</sw:comic-vine-id>
+    <sw:fandom-article-id>disney:Qui-Gon_Jinn</sw:fandom-article-id>
+    <sw:fandom-article-id>fr.starwars:Qui-Gon_Jinn</sw:fandom-article-id>
+    <sw:fandom-article-id>lucasfilm:Qui-Gon_Jinn</sw:fandom-article-id>
+    <sw:fandom-article-id>starwars:Qui-Gon_Jinn</sw:fandom-article-id>
+    <sw:fandom-article-id>sv.starwars:Qui-Gon_Jinn</sw:fandom-article-id>
+    <sw:goodreads-character-id>26871</sw:goodreads-character-id>
+    <sw:enemy rdf:resource="http://localhost:8000/external/xanatos"/>
+    <sw:enemy rdf:resource="http://localhost:8000/external/darth-maul"/>
+    <sw:j9u-id>987007542251105171</sw:j9u-id>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+    <sw:personality-database-profile-id>61</sw:personality-database-profile-id>
+    <sw:reddit-topic-id>quigon_jinn</sw:reddit-topic-id>
+    <sw:vikidia-article-id>fr:Qui-Gon_Jinn</sw:vikidia-article-id>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/scourge">
+    <rdfs:label xml:lang="en">Scourge</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q55075643"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/general-grievous">
+    <rdfs:label xml:lang="en">General Grievous</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51792"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/frank-oz">
+    <rdfs:label xml:lang="en">Frank Oz</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q311319"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-the-force-unleashed">
+    <rdfs:label xml:lang="en">Star Wars: The Force Unleashed</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q840167"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/assassin">
+    <rdfs:label xml:lang="en">assassin</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q55983771"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-episode-v-the-empire-strikes-back">
+    <rdfs:label xml:lang="en">Star Wars: Episode V – The Empire Strikes Back</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q181795"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#hair-color">
+    <rdfs:label xml:lang="en">hair color</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/homicide">
+    <rdfs:label xml:lang="en">homicide</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q149086"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/palpatine">
+    <rdfs:label xml:lang="en">Palpatine</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51770"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/revan">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Revan</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51745"/>
+    <sw:image rdf:resource="http://commons.wikimedia.org/wiki/Special:FilePath/Darth%20Revan%20Cosplay%20Comic-Con.png"/>
+    <sw:place-of-death rdf:resource="http://localhost:8000/external/yavin-iv"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/male"/>
+    <sw:spouse rdf:resource="http://localhost:8000/external/bastila-shan"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/video-game-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/literary-character"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/fictional-human"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:noble-title rdf:resource="http://localhost:8000/external/darth"/>
+    <sw:creator rdf:resource="http://localhost:8000/external/drew-karpyshyn"/>
+    <sw:commons-category>Revan</sw:commons-category>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/sith"/>
+    <sw:armament rdf:resource="http://localhost:8000/external/lightsaber"/>
+    <sw:freebase-id>/m/02_mlv</sw:freebase-id>
+    <sw:voice-actor rdf:resource="http://localhost:8000/external/jeff-bennett"/>
+    <sw:voice-actor rdf:resource="http://localhost:8000/external/rino-romano"/>
+    <sw:student rdf:resource="http://localhost:8000/external/darth-malak"/>
+    <sw:student rdf:resource="http://localhost:8000/external/meetra-surik"/>
+    <sw:student rdf:resource="http://localhost:8000/external/scourge"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/darth-traya"/>
+    <sw:student-of rdf:resource="http://localhost:8000/external/arren-kae"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-legends"/>
+    <sw:affiliation rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:affiliation rdf:resource="http://localhost:8000/external/sith"/>
+    <sw:affiliation rdf:resource="http://localhost:8000/external/galactic-republic"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-the-old-republic-revan"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-knights-of-the-old-republic"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-the-old-republic"/>
+    <sw:giant-bomb-id>3005-959</sw:giant-bomb-id>
+    <sw:goodreads-character-id>974119</sw:goodreads-character-id>
+    <sw:enemy rdf:resource="http://localhost:8000/external/darth-malak"/>
+    <sw:enemy rdf:resource="http://localhost:8000/external/tenebrae"/>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+    <sw:vikidia-article-id>fr:Revan_et_Malak</sw:vikidia-article-id>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-episode-iii-revenge-of-the-sith">
+    <rdfs:label xml:lang="en">Star Wars: Episode III – Revenge of the Sith</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q42051"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#voice-actor">
+    <rdfs:label xml:lang="en">voice actor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-the-clone-wars">
+    <rdfs:label xml:lang="en">Star Wars: The Clone Wars</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q382289"/>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q632672"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/clone-wars">
+    <rdfs:label xml:lang="en">Clone Wars</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1133061"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/agen-kolar">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Agen Kolar</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51742"/>
+    <sw:sex-or-gender rdf:resource="http://localhost:8000/external/male"/>
+    <sw:country-of-citizenship rdf:resource="http://localhost:8000/external/galactic-republic"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/zabrak"/>
+    <sw:instance-of rdf:resource="http://localhost:8000/external/character-from-star-wars"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:occupation rdf:resource="http://localhost:8000/external/starship-pilot"/>
+    <sw:killed-by rdf:resource="http://localhost:8000/external/palpatine"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi"/>
+    <sw:member-of rdf:resource="http://localhost:8000/external/jedi-council"/>
+    <sw:student rdf:resource="http://localhost:8000/external/tan-yuster"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-legends"/>
+    <sw:from-narrative-universe rdf:resource="http://localhost:8000/external/star-wars-universe"/>
+    <sw:present-in-work rdf:resource="http://localhost:8000/external/star-wars-episode-ii-attack-of-the-clones"/>
+    <sw:google-knowledge-graph-id>/g/11bc6jhmpj</sw:google-knowledge-graph-id>
+    <sw:trading-card-database-person-id>162400</sw:trading-card-database-person-id>
+    <sw:media-franchise rdf:resource="http://localhost:8000/external/star-wars"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/mace">
+    <rdfs:label xml:lang="en">Mace</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q95282567"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/xanatos">
+    <rdfs:label xml:lang="en">Xanatos</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51759"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/soulcalibur-iv">
+    <rdfs:label xml:lang="en">Soulcalibur IV</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1300262"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/mentor">
+    <rdfs:label xml:lang="en">Mentor</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q56605613"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/tatooine">
+    <rdfs:label xml:lang="en">Tatooine</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q723764"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/darth-malak">
+    <rdfs:label xml:lang="en">Darth Malak</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2704488"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#based-on">
+    <rdfs:label xml:lang="en">based on</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/qui-gon-jinn">
+    <rdfs:label xml:lang="en">Qui-Gon Jinn</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51736"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/mercenary">
+    <rdfs:label xml:lang="en">mercenary</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q178197"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/rino-romano">
+    <rdfs:label xml:lang="en">Rino Romano</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2707980"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/tol-skorr">
+    <rdfs:label xml:lang="en">Tol Skorr</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3992380"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/character-from-star-wars">
+    <rdfs:label xml:lang="en">character from Star Wars</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q33125444"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/luke-skywalker">
+    <rdfs:label xml:lang="en">Luke Skywalker</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51746"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/fictional-humanoid-extraterrestrial">
+    <rdfs:label xml:lang="en">fictional humanoid extraterrestrial</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q89050960"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/qui-gon-s-lightsaber">
+    <rdfs:label xml:lang="en">Qui-Gon's lightsaber</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q109322278"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/revan">
+    <rdfs:label xml:lang="en">Revan</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51745"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-young-jedi-adventures">
+    <rdfs:label xml:lang="en">Star Wars: Young Jedi Adventures</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q116763978"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/galactic-empire">
+    <rdfs:label xml:lang="en">Galactic Empire</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q52347"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#viaf-cluster-id">
+    <rdfs:label xml:lang="en">VIAF cluster ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/mechanic">
+    <rdfs:label xml:lang="en">mechanic</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q327029"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/albert-einstein">
+    <rdfs:label xml:lang="en">Albert Einstein</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q937"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/new-republic">
+    <rdfs:label xml:lang="en">New Republic</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2346271"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-universe">
+    <rdfs:label xml:lang="en">Star Wars universe</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q19786052"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/jedi-council">
+    <rdfs:label xml:lang="en">Jedi Council</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2019458"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/mace-windu">
+    <rdfs:label xml:lang="en">Mace Windu</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51725"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/darth">
+    <rdfs:label xml:lang="en">Darth</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51758"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#name-in-native-language">
+    <rdfs:label xml:lang="en">name in native language</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-episode-iv-a-new-hope">
+    <rdfs:label xml:lang="en">Star Wars: Episode IV – A New Hope</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q17738"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/dathomirian">
+    <rdfs:label xml:lang="en">Dathomirian</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q106474072"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/arren-kae">
+    <rdfs:label xml:lang="en">Arren Kae</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q5705382"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/master-apprentice">
+    <rdfs:label xml:lang="en">Master &amp; Apprentice</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q66707670"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#languages-spoken-written-or-signed">
+    <rdfs:label xml:lang="en">languages spoken, written or signed</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/count">
+    <rdfs:label xml:lang="en">count</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3519259"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#commons-category">
+    <rdfs:label xml:lang="en">Commons category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/obi-wan-s-lightsaber">
+    <rdfs:label xml:lang="en">Obi-Wan's lightsaber</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q109322284"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-jedi-knight-dark-forces-ii">
+    <rdfs:label xml:lang="en">Star Wars Jedi Knight: Dark Forces II</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q55291"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-the-old-republic-revan">
+    <rdfs:label xml:lang="en">Star Wars: The Old Republic: Revan</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q500038"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-episode-ix-the-rise-of-skywalker">
+    <rdfs:label xml:lang="en">Star Wars: Episode IX – The Rise of Skywalker</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q20977110"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/naboo">
+    <rdfs:label xml:lang="en">Naboo</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q257155"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#narrative-role">
+    <rdfs:label xml:lang="en">narrative role</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/fictional-human">
+    <rdfs:label xml:lang="en">fictional human</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q15632617"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/military-officer">
+    <rdfs:label xml:lang="en">military officer</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q189290"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#behind-the-voice-actors-character-id">
+    <rdfs:label xml:lang="en">Behind The Voice Actors character ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#giant-bomb-id">
+    <rdfs:label xml:lang="en">Giant Bomb ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-jedi-knight-jedi-academy">
+    <rdfs:label xml:lang="en">Star Wars Jedi Knight: Jedi Academy</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q55295"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/dagobah">
+    <rdfs:label xml:lang="en">Dagobah</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q848609"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/grogu">
+    <rdfs:label xml:lang="en">Grogu</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q77001957"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/dark-disciple">
+    <rdfs:label xml:lang="en">Dark Disciple</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q23763227"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-original-trilogy">
+    <rdfs:label xml:lang="en">Star Wars original trilogy</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q25540859"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/cin-drallig">
+    <rdfs:label xml:lang="en">Cin Drallig</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2248111"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#instance-of">
+    <rdfs:label xml:lang="en">instance of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/rahm-kota">
+    <rdfs:label xml:lang="en">Rahm Kota</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1245387"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/dark-jedi">
+    <rdfs:label xml:lang="en">Dark Jedi</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2326326"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/ferus-olin">
+    <rdfs:label xml:lang="en">Ferus Olin</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1080988"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#student-of">
+    <rdfs:label xml:lang="en">student of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/george-lucas">
+    <rdfs:label xml:lang="en">George Lucas</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q38222"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#comic-vine-id">
+    <rdfs:label xml:lang="en">Comic Vine ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/lego-star-wars-the-video-game">
+    <rdfs:label xml:lang="en">Lego Star Wars: The Video Game</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q55216"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/henchperson">
+    <rdfs:label xml:lang="en">henchperson</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q247297"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/mace-windu-s-lightsaber">
+    <rdfs:label xml:lang="en">Mace Windu's lightsaber</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q109322287"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/darth-traya">
+    <rdfs:label xml:lang="en">Darth Traya</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2250762"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/starship-pilot">
+    <rdfs:label xml:lang="en">starship pilot</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q60319535"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#trading-card-database-person-id">
+    <rdfs:label xml:lang="en">Trading Card Database person ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#the-top-tens-id">
+    <rdfs:label xml:lang="en">The Top Tens ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/windu">
+    <rdfs:label xml:lang="en">Windu</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q116259599"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-the-old-republic">
+    <rdfs:label xml:lang="en">Star Wars: The Old Republic</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q737308"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#inception">
+    <rdfs:label xml:lang="en">inception</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/echuu-shen-jon">
+    <rdfs:label xml:lang="en">Echuu Shen-Jon</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1060406"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/shatterpoint">
+    <rdfs:label xml:lang="en">Shatterpoint</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q5226246"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/television-character">
+    <rdfs:label xml:lang="en">television character</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q15773317"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/count-dooku-s-lightsaber">
+    <rdfs:label xml:lang="en">Count Dooku's lightsaber</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q109322282"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/jedi">
+    <rdfs:label xml:lang="en">Jedi</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51724"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/yoda-s-lightsaber">
+    <rdfs:label xml:lang="en">Yoda's lightsaber</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q109322279"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-battlefront-ii">
+    <rdfs:label xml:lang="en">Star Wars Battlefront II</rdfs:label>
+    <rdfs:label xml:lang="en">Star Wars: Battlefront II</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q29154231"/>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q54865"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/video-game-character">
+    <rdfs:label xml:lang="en">video game character</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1569167"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/cyborg-in-a-work-of-fiction">
+    <rdfs:label xml:lang="en">cyborg in a work of fiction</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q22074477"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/darth-vader">
+    <rdfs:label xml:lang="en">Darth Vader</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q12206942"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#fandom-article-id">
+    <rdfs:label xml:lang="en">Fandom article ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/author">
+    <rdfs:label xml:lang="en">author</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q482980"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/anakin-skywalker">
+    <rdfs:label xml:lang="en">Anakin Skywalker</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51752"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/jango-fett">
+    <rdfs:label xml:lang="en">Jango Fett</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51795"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-knights-of-the-old-republic-ii-the-sith-lords">
+    <rdfs:label xml:lang="en">Star Wars Knights of the Old Republic II: The Sith Lords</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q74669"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/corey-burton">
+    <rdfs:label xml:lang="en">Corey Burton</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q965261"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/ahsoka-tano">
+    <rdfs:label xml:lang="en">Ahsoka Tano</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51755"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#vikidia-article-id">
+    <rdfs:label xml:lang="en">Vikidia article ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-clone-wars">
+    <rdfs:label xml:lang="en">Star Wars: Clone Wars</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q616313"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/mara-jade">
+    <rdfs:label xml:lang="en">Mara Jade</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51748"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/savage-opress">
+    <rdfs:label xml:lang="en">Savage Opress</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3474440"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/count-dooku">
+    <rdfs:label xml:lang="en">Count Dooku</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51727"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/ben-kenobi">
+    <rdfs:label xml:lang="en">Ben Kenobi</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q125307110"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/film-character">
+    <rdfs:label xml:lang="en">film character</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q15773347"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/farmer">
+    <rdfs:label xml:lang="en">farmer</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q131512"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/qu-rahn">
+    <rdfs:label xml:lang="en">Qu Rahn</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q9298092"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/literary-character">
+    <rdfs:label xml:lang="en">literary character</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3658341"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#media-franchise">
+    <rdfs:label xml:lang="en">media franchise</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/quinlan-vos">
+    <rdfs:label xml:lang="en">Quinlan Vos</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1188045"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/grey-hair">
+    <rdfs:label xml:lang="en">grey hair</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q10509939"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/dathomir">
+    <rdfs:label xml:lang="en">Dathomir</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q5799688"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#manner-of-death">
+    <rdfs:label xml:lang="en">manner of death</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#affiliation">
+    <rdfs:label xml:lang="en">affiliation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/liam-neeson">
+    <rdfs:label xml:lang="en">Liam Neeson</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q58444"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#derivative-work">
+    <rdfs:label xml:lang="en">derivative work</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/male-organism">
+    <rdfs:label xml:lang="en">male organism</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q44148"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/depa-billaba">
+    <rdfs:label xml:lang="en">Depa Billaba</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2738825"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#snac-ark-id">
+    <rdfs:label xml:lang="en">SNAC ARK ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#family-name">
+    <rdfs:label xml:lang="en">family name</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#enemy">
+    <rdfs:label xml:lang="en">enemy</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-episode-ii-attack-of-the-clones">
+    <rdfs:label xml:lang="en">Star Wars: Episode II – Attack of the Clones</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q181069"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/t-ra-saa">
+    <rdfs:label xml:lang="en">T'ra Saa</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3511870"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#participated-in-conflict">
+    <rdfs:label xml:lang="en">participated in conflict</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/asajj-ventress">
+    <rdfs:label xml:lang="en">Asajj Ventress</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q14417"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#occupation">
+    <rdfs:label xml:lang="en">occupation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#given-name">
+    <rdfs:label xml:lang="en">given name</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/rebel-alliance">
+    <rdfs:label xml:lang="en">Rebel Alliance</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q52316"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/the-force">
+    <rdfs:label xml:lang="en">The Force</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1093766"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-episode-i-the-phantom-menace">
+    <rdfs:label xml:lang="en">Star Wars: Episode I – The Phantom Menace</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q165713"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/meetra-surik">
+    <rdfs:label xml:lang="en">Meetra Surik</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2704496"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#freebase-id">
+    <rdfs:label xml:lang="en">Freebase ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/halagad-ventor">
+    <rdfs:label xml:lang="en">Halagad Ventor</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3782512"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-jedi-knight-ii-jedi-outcast">
+    <rdfs:label xml:lang="en">Star Wars Jedi Knight II: Jedi Outcast</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q55298"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/new-jedi-order">
+    <rdfs:label xml:lang="en">New Jedi Order</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q106463990"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/genndy-tartakovsky">
+    <rdfs:label xml:lang="en">Genndy Tartakovsky</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q347111"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/jason-court">
+    <rdfs:label xml:lang="en">Jason Court</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3807395"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/obi-wan-kenobi">
+    <rdfs:label xml:lang="en">Obi-Wan Kenobi</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q104154217"/>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51740"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-galaxies-trials-of-obi-wan">
+    <rdfs:label xml:lang="en">Star Wars Galaxies: Trials of Obi-Wan</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q21190230"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#present-in-work">
+    <rdfs:label xml:lang="en">present in work</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-prequel-trilogy">
+    <rdfs:label xml:lang="en">Star Wars prequel trilogy</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q25540924"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/tenebrae">
+    <rdfs:label xml:lang="en">Tenebrae</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3518053"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/nightsisters">
+    <rdfs:label xml:lang="en">Nightsisters</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q18667444"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/alec-guinness">
+    <rdfs:label xml:lang="en">Alec Guinness</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q103894"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/bastila-shan">
+    <rdfs:label xml:lang="en">Bastila Shan</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51721"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#place-of-birth">
+    <rdfs:label xml:lang="en">place of birth</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/yoda">
+    <rdfs:label xml:lang="en">Yoda</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51730"/>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q131787398"/>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q131456974"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/n-kata-del-gormo">
+    <rdfs:label xml:lang="en">N'Kata Del Gormo</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3869298"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-legends">
+    <rdfs:label xml:lang="en">Star Wars Legends</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3551295"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#award-received">
+    <rdfs:label xml:lang="en">award received</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/mtv-movie-award-for-best-fight">
+    <rdfs:label xml:lang="en">MTV Movie Award for Best Fight</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q734036"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/rosh-penin">
+    <rdfs:label xml:lang="en">Rosh Penin</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q907262"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/invisible-hand">
+    <rdfs:label xml:lang="en">Invisible Hand</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1065477"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/lego-star-wars-iii-the-clone-wars">
+    <rdfs:label xml:lang="en">Lego Star Wars III: The Clone Wars</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q55228"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/zabrak">
+    <rdfs:label xml:lang="en">Zabrak</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1073343"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/coruscant">
+    <rdfs:label xml:lang="en">Coruscant</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q719329"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/jeff-bennett">
+    <rdfs:label xml:lang="en">Jeff Bennett</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q311103"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#inspired-by">
+    <rdfs:label xml:lang="en">inspired by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/galactic-republic">
+    <rdfs:label xml:lang="en">Galactic Republic</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q733195"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/yavin-iv">
+    <rdfs:label xml:lang="en">Yavin IV</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q837921"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#first-appearance">
+    <rdfs:label xml:lang="en">first appearance</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars">
+    <rdfs:label xml:lang="en">Star Wars</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q462"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/darth-maul">
+    <rdfs:label xml:lang="en">Darth Maul</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51766"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#residence">
+    <rdfs:label xml:lang="en">residence</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/christopher-lee">
+    <rdfs:label xml:lang="en">Christopher Lee</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q180338"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#goodreads-character-id">
+    <rdfs:label xml:lang="en">Goodreads character ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-knights-of-the-old-republic">
+    <rdfs:label xml:lang="en">Star Wars: Knights of the Old Republic</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q725902"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#spouse">
+    <rdfs:label xml:lang="en">spouse</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/tan-yuster">
+    <rdfs:label xml:lang="en">Tan Yuster</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2250258"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#performer">
+    <rdfs:label xml:lang="en">performer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/male">
+    <rdfs:label xml:lang="en">male</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q6581097"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/drew-karpyshyn">
+    <rdfs:label xml:lang="en">Drew Karpyshyn</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1258747"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#sibling">
+    <rdfs:label xml:lang="en">sibling</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/yoda-dark-rendezvous">
+    <rdfs:label xml:lang="en">Yoda: Dark Rendezvous</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q8054262"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/haruun-kal">
+    <rdfs:label xml:lang="en">Haruun Kal</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1062542"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/jaden-korr">
+    <rdfs:label xml:lang="en">Jaden Korr</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3160424"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#quora-topic-id">
+    <rdfs:label xml:lang="en">Quora topic ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-dark-forces">
+    <rdfs:label xml:lang="en">Star Wars: Dark Forces</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q55287"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#different-from">
+    <rdfs:label xml:lang="en">different from</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#owner-of">
+    <rdfs:label xml:lang="en">owner of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/obi-wan-kenobi-s-brother">
+    <rdfs:label xml:lang="en">Obi-Wan Kenobi's brother</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q112607488"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#height">
+    <rdfs:label xml:lang="en">height</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/lightsaber">
+    <rdfs:label xml:lang="en">lightsaber</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q19873"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/galactic-federation-of-free-alliances">
+    <rdfs:label xml:lang="en">Galactic Federation of Free Alliances</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q964252"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-episode-viii-the-last-jedi">
+    <rdfs:label xml:lang="en">Star Wars: Episode VIII – The Last Jedi</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q18486021"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/sora-bulq">
+    <rdfs:label xml:lang="en">Sora Bulq</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1059976"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/bounty-hunter">
+    <rdfs:label xml:lang="en">bounty hunter</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q3834368"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/dooku-jedi-lost">
+    <rdfs:label xml:lang="en">Dooku: Jedi Lost</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q104187661"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-yoda-stories">
+    <rdfs:label xml:lang="en">Star Wars: Yoda Stories</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q55265"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#noble-title">
+    <rdfs:label xml:lang="en">noble title</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/languages-in-star-wars">
+    <rdfs:label xml:lang="en">languages in Star Wars</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q2524477"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/jennifer-hale">
+    <rdfs:label xml:lang="en">Jennifer Hale</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q195041"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/sith">
+    <rdfs:label xml:lang="en">Sith</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51771"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#member-of">
+    <rdfs:label xml:lang="en">member of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#name-in-kana">
+    <rdfs:label xml:lang="en">name in kana</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/kit-fisto">
+    <rdfs:label xml:lang="en">Kit Fisto</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q932724"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/moldy-crow">
+    <rdfs:label xml:lang="en">Moldy Crow</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q20872003"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#library-of-congress-authority-id">
+    <rdfs:label xml:lang="en">Library of Congress authority ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#europeana-entity">
+    <rdfs:label xml:lang="en">Europeana entity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#uses">
+    <rdfs:label xml:lang="en">uses</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/lego-star-wars-the-force-awakens">
+    <rdfs:label xml:lang="en">Lego Star Wars: The Force Awakens</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q22570384"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/ki-adi-mundi">
+    <rdfs:label xml:lang="en">Ki-Adi-Mundi</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q54271"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#killed-by">
+    <rdfs:label xml:lang="en">killed by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-sequel-trilogy">
+    <rdfs:label xml:lang="en">Star Wars sequel trilogy</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q6586871"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/samuel-l-jackson">
+    <rdfs:label xml:lang="en">Samuel L. Jackson</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q172678"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#student">
+    <rdfs:label xml:lang="en">student</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#religion-or-worldview">
+    <rdfs:label xml:lang="en">religion or worldview</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/brown">
+    <rdfs:label xml:lang="en">brown</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q17122705"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/kyle">
+    <rdfs:label xml:lang="en">Kyle</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1326816"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#wolfram-language-entity-code">
+    <rdfs:label xml:lang="en">Wolfram Language entity code</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/fred-tatasciore">
+    <rdfs:label xml:lang="en">Fred Tatasciore</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q847133"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#eye-color">
+    <rdfs:label xml:lang="en">eye color</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/white-hair">
+    <rdfs:label xml:lang="en">white hair</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q6933946"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/animated-character">
+    <rdfs:label xml:lang="en">animated character</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q15711870"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#personality-database-profile-id">
+    <rdfs:label xml:lang="en">Personality Database profile ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#j9u-id">
+    <rdfs:label xml:lang="en">J9U ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/confederacy-of-independent-systems">
+    <rdfs:label xml:lang="en">Confederacy of Independent Systems</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q1006293"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/death-star">
+    <rdfs:label xml:lang="en">Death Star</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q19907"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/star-wars-rebels">
+    <rdfs:label xml:lang="en">Star Wars Rebels</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q28787"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#country-of-citizenship">
+    <rdfs:label xml:lang="en">country of citizenship</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#google-knowledge-graph-id">
+    <rdfs:label xml:lang="en">Google Knowledge Graph ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/external/spy">
+    <rdfs:label xml:lang="en">spy</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q9352089"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#star-wars-databank-id">
+    <rdfs:label xml:lang="en">Star Wars Databank ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#from-narrative-universe">
+    <rdfs:label xml:lang="en">from narrative universe</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#creator">
+    <rdfs:label xml:lang="en">creator</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#place-of-death">
+    <rdfs:label xml:lang="en">place of death</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#last-words">
+    <rdfs:label xml:lang="en">last words</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#reddit-topic-id">
+    <rdfs:label xml:lang="en">Reddit topic ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#sex-or-gender">
+    <rdfs:label xml:lang="en">sex or gender</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#home-world">
+    <rdfs:label xml:lang="en">home world</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/ontology#armament">
+    <rdfs:label xml:lang="en">armament</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

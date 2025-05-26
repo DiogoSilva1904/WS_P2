@@ -14,7 +14,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Character List</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
 
@@ -42,20 +42,33 @@
                         <i class="fas fa-plus"></i>
                     </button>
                 </div>
-                <ul class="list-group">
-                    {% for url,label in characters %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <a class="me-auto" href="{{ url }}">{{ label }}</a>
-                            <button class="btn btn-danger"
-                                    onclick="fetch('{{ url }}/delete', {method: 'POST'}).then(() => {location.reload()})">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </li>
-                    {% empty %}
-                        <li class="list-group-item">No characters found</li>
-                    {% endfor %}
-                </ul>
+                <table class="table table-striped" id="character-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="character-body">
+                        {% for url, label in characters %}
+                            <tr>
+                                <td><a href="{{ url }}">{{ label }}</a></td>
+                                <td class="text-end">
+                                    <button class="btn btn-danger"
+                                            onclick="fetch('{{ url }}/delete', {method: 'POST'}).then(() => { location.reload() })">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr><td colspan="2">No characters found</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
+            <nav>
+                <ul class="pagination justify-content-center" id="pagination"></ul>
+            </nav>
         </div>
     </div>
 
@@ -102,4 +115,65 @@
             }
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const itemsPerPage = 10;
+            const tableBody = document.querySelector("#character-table tbody");
+            const rows = Array.from(tableBody.querySelectorAll("tr"));
+            const pagination = document.getElementById("pagination");
+
+            let currentPage = 1;
+            const totalPages = Math.ceil(rows.length / itemsPerPage);
+
+            function showPage(page) {
+                currentPage = page;
+                const start = (page - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+
+                rows.forEach((row, index) => {
+                    row.style.display = (index >= start && index < end) ? "" : "none";
+                });
+
+                renderPagination();
+            }
+
+            function renderPagination() {
+                pagination.innerHTML = "";
+
+                const createPageItem = (label, disabled, onClick) => {
+                    const li = document.createElement("li");
+                    li.className = `page-item ${disabled ? "disabled" : ""}`;
+                    const a = document.createElement("a");
+                    a.className = "page-link";
+                    a.href = "#";
+                    a.textContent = label;
+                    a.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        if (!disabled) onClick();
+                    });
+                    li.appendChild(a);
+                    return li;
+                };
+
+                pagination.appendChild(
+                    createPageItem("Previous", currentPage === 1, () => showPage(currentPage - 1))
+                );
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const li = createPageItem(i, false, () => showPage(i));
+                    if (i === currentPage) li.classList.add("active");
+                    pagination.appendChild(li);
+                }
+
+                pagination.appendChild(
+                    createPageItem("Next", currentPage === totalPages, () => showPage(currentPage + 1))
+                );
+            }
+
+            showPage(1); // Initialize pagination
+        });
+    </script>
+
+
 {% endblock %}

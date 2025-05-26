@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://localhost:8000/characters/mace-windu">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Mace Windu</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51725"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/obi-wan-kenobi">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Obi-Wan Kenobi</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51740"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/qui-gon-jinn">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Qui-Gon Jinn</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51736"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/asajj-ventress">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Asajj Ventress</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q14417"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/yoda">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Yoda</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51730"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/count-dooku">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Count Dooku</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51727"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/agen-kolar">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Agen Kolar</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51742"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/revan">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Revan</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51745"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/bastila-shan">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Bastila Shan</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51721"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8000/characters/kyle-katarn">
+    <rdf:type rdf:resource="http://localhost:8000/ontology#Character"/>
+    <rdfs:label xml:lang="en">Kyle Katarn</rdfs:label>
+    <owl:sameAs rdf:resource="http://www.wikidata.org/entity/Q51735"/>
+  </rdf:Description>
+</rdf:RDF>

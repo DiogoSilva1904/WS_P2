@@ -71,6 +71,8 @@ def search(request):
 
 def character_details(request,_id):
     details=get_details(request.build_absolute_uri(),graph)
+    details = {key.replace("-", "_"): value for key, value in details.items()}
+    print("ahhh",details)
     return render(request,'character_details.html',{'character':details})
 
 def city_details(request, _id):
@@ -119,7 +121,7 @@ def weapon_details(request,_id):
 
 
 def characters(request):
-    uri="http://localhost:8000/Character"
+    uri="http://localhost:8000/ontology#Character"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'characters.html',{"characters":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
@@ -131,13 +133,13 @@ def cities(request):
     return render(request,'cities.html',{"cities":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def droids(request):
-    uri="http://localhost:8000/Droid"
+    uri="http://localhost:8000/ontology#Droid"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'droids.html',{"droids":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def films(request):
-    uri="http://localhost:8000/Film"
+    uri="http://localhost:8000/ontology#Film"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'films.html',{"films":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
@@ -149,7 +151,7 @@ def music(request):
     return render(request,'music.html',{"music":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def organizations(request):
-    uri="http://localhost:8000/Organization"
+    uri="http://localhost:8000/ontology#Organization"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'organizations.html',{"organizations":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
@@ -185,10 +187,13 @@ def vehicles(request):
     return render(request,'vehicles.html',{"vehicles":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def weapons(request):
-    uri="http://localhost:8000/Weapon"
+    uri="http://localhost:8000/ontology#Weapon"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'weapons.html',{"weapons":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
+
+def inferences(request):
+    return render(request,'inferences.html')
 
 
 def edit_character(request,_id=None):

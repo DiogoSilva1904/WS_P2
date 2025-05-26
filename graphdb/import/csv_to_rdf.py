@@ -5,7 +5,8 @@ from slugify import slugify
 
 SERVER_PREFIX="http://localhost:8000"
 
-sw=Namespace(f"{SERVER_PREFIX}/")
+sw = Namespace(f"{SERVER_PREFIX}/ontology#")
+
 character_ns=Namespace(f"{SERVER_PREFIX}/characters/")
 city_ns=Namespace(f"{SERVER_PREFIX}/cities/")
 droid_ns=Namespace(f"{SERVER_PREFIX}/droids/")

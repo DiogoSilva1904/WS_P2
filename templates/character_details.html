@@ -3,25 +3,85 @@
 {% block styles %}
 <style>
     body {
-        background-color: #f4f4f9;
-        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', sans-serif;
     }
+
     .character-container {
-        max-width: 600px;
-        margin: auto;
+        max-width: 1100px;
+        margin: 40px auto;
     }
-    .character-card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-    }
+
     .character-title {
         text-align: center;
-        color: #333;
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 30px;
     }
-    .icon {
-        margin-right: 8px;
+
+    .character-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .character-image-container {
+        flex: 1 1 35%;
+        max-width: 350px;
+    }
+
+    .character-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .character-card {
+        flex: 1 1 60%;
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 25px 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .attribute {
+        font-size: 1rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .attribute i {
+        color: #2c3e50;
+        margin-right: 4px;
+    }
+
+    .badge {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .edit-btn {
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    @media (max-width: 768px) {
+        .character-row {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .character-card {
+            width: 100%;
+        }
     }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -33,28 +93,193 @@
 <div class="container mt-5">
     <div class="character-container">
         <h2 class="character-title"><i class="fas fa-user"></i> {{ character.label.0 }}</h2>
-        <div class="card character-card">
-            <div class="card-body">
-                <p><i class="fas fa-dna icon"></i><strong>Species: </strong><a href="{{ character.specie.0.0 }}">{{ character.specie.0.1 }}</a></p>
-                <p><i class="fas fa-globe icon"></i><strong>Homeworld: </strong><a href="{{ character.homeworld.0.0 }}">{{ character.homeworld.0.1 }}</a></p>
-                <p><i class="fas fa-venus-mars icon"></i><strong>Gender: </strong> {{ character.gender|join:", " }}</p>
-                <p><i class="fas fa-cut icon"></i><strong>Hair Color: </strong> {{ character.hair_color|join:", " }}</p>
-                <p><i class="fas fa-eye icon"></i><strong>Eye Color: </strong> {{ character.eye_color.value|join:", " }}</p>
-                <p><i class="fas fa-paint-brush icon"></i><strong>Skin Color: </strong> {{ character.skin_color|join:", " }}</p>
-                <p><i class="fas fa-align-left icon"></i><strong>Description: </strong> {{ character.description|join:", " }}</p>
-                <p><i class="fas fa-ruler-vertical icon"></i><strong>Height: </strong> {{ character.height|join:", " }} cm</p>
-                <p><i class="fas fa-weight icon"></i><strong>Weight: </strong> {{ character.weight|join:", " }} kg</p>
-                <p><i class="fas fa-baby icon"></i><strong>Year Born: </strong> {{ character.year_born|join:", " }}</p>
-                <p><i class="fas fa-skull icon"></i><strong>Year Died: </strong> {{ character.year_died|join:", " }}</p>
+        <div class="row g-4 align-items-stretch equal-heights">
+            <div class="col-md-4">
+                <div class="image-container">
+                    <img src="{{ character.image.0|default:'https://via.placeholder.com/300x400?text=No+Image' }}" 
+                        alt="{{ character.label.0 }}" 
+                        class="character-image">
+                </div>
             </div>
-        </div>
-        <div class="text-center mt-3">
-            <button class="btn btn-primary edit-btn"
-                data-toggle="modal" 
-                data-target="#editModal"
-                data-uri="{{ character.uri|urlencode }}">
-                Edit Attributes
-            </button>
+
+            <!-- Attributes Column -->
+            <div class="col-md-8">
+                <div class="card-container">
+                    <div class="card character-card h-100">
+                        <div class="card-body">
+                            <p><i class="fas fa-dna icon"></i><strong>Species: </strong><a href="{{ character.specie.0.0 }}">{{ character.specie.0.1 }}</a></p>
+                            <p><i class="fas fa-globe icon"></i><strong>Homeworld: </strong><a href="{{ character.homeworld.0.0 }}">{{ character.homeworld.0.1 }}</a></p>
+                            <p><i class="fas fa-venus-mars icon"></i><strong>Gender: </strong> {{ character.gender|join:", " }}</p>
+                            <p><i class="fas fa-cut icon"></i><strong>Hair Color: </strong> {{ character.hair_color|join:", " }}</p>
+                            <p><i class="fas fa-eye icon"></i><strong>Eye Color: </strong> {{ character.eye_color.value|join:", " }}</p>
+                            <p><i class="fas fa-paint-brush icon"></i><strong>Skin Color: </strong> {{ character.skin_color|join:", " }}</p>
+                            <p><i class="fas fa-align-left icon"></i><strong>Description: </strong> {{ character.description|join:", " }}</p>
+                            <p><i class="fas fa-ruler-vertical icon"></i><strong>Height: </strong> {{ character.height|join:", " }} cm</p>
+                            <p><i class="fas fa-weight icon"></i><strong>Weight: </strong> {{ character.weight|join:", " }} kg</p>
+                            <p><i class="fas fa-baby icon"></i><strong>Year Born: </strong> {{ character.year_born|join:", " }}</p>
+                            <p><i class="fas fa-skull icon"></i><strong>Year Died: </strong> {{ character.year_died|join:", " }}</p>
+
+                            {% if character.student %}
+                            <p><i class="fas fa-graduation-cap icon"></i><strong>Students:</strong>
+                                {% for student in character.student %}
+                                    <a href="{{ student.0 }}" class="badge bg-info text-dark me-1">{{ student.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+
+                            {% if character.relative %}
+                            <p><i class="fas fa-users icon"></i><strong>Relatives:</strong>
+                                {% for relative in character.relative %}
+                                    <a href="{{ relative.0 }}" class="badge bg-secondary me-1">{{ relative.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+
+                            {% if character.student_of %}
+                            <p><i class="fas fa-chalkboard-teacher icon"></i><strong>Student Of:</strong>
+                                {% for teacher in character.student_of %}
+                                    <a href="{{ teacher.0 }}" class="badge bg-warning text-dark me-1">{{ teacher.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+
+                            {% if character.present_in_work %}
+                            <p><i class="fas fa-film icon"></i><strong>Present In Works:</strong>
+                                {% for work in character.present_in_work %}
+                                    <a href="{{ work.0 }}" class="badge bg-success me-1">{{ work.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+
+                            {% if character.uses %}
+                            <p><i class="fas fa-lightbulb icon"></i><strong>Uses:</strong>
+                                {% for use in character.uses %}
+                                    <a href="{{ use.0 }}" class="badge bg-primary me-1">{{ use.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+
+                            {% if character.enemy %}
+                            <p><i class="fas fa-skull-crossbones icon"></i><strong>Enemies:</strong>
+                                {% for enemy in character.enemy %}
+                                    <a href="{{ enemy.0 }}" class="badge bg-danger me-1">{{ enemy.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+
+                            <!-- {% if character.instance_of %}
+                            <p><i class="fas fa-cube icon"></i><strong>Instance Of:</strong>
+                                {% for instance in character.instance_of %}
+                                    <a href="{{ instance.0 }}" class="badge bg-primary text-light me-1">{{ instance.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %} -->
+
+                            {% if character.occupation %}
+                            <p><i class="fas fa-briefcase icon"></i><strong>Occupations:</strong>
+                                {% for job in character.occupation %}
+                                    <a href="{{ job.0 }}" class="badge bg-dark text-light me-1">{{ job.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+
+                            {% if character.member_of %}
+                            <p><i class="fas fa-users-gear icon"></i><strong>Member Of:</strong>
+                                {% for group in character.member_of %}
+                                    <a href="{{ group.0 }}" class="badge bg-success text-light me-1">{{ group.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+
+                            {% if character.creator %}
+                            <p><i class="fas fa-user-pen icon"></i><strong>Creator:</strong>
+                                <a href="{{ character.creator.0.0 }}" class="badge bg-secondary">{{ character.creator.0.1 }}</a>
+                            </p>
+                            {% endif %}
+
+                            {% if character.performer %}
+                            <p><i class="fas fa-microphone icon"></i><strong>Performer:</strong>
+                                <a href="{{ character.performer.0.0 }}" class="badge bg-secondary">{{ character.performer.0.1 }}</a>
+                            </p>
+                            {% endif %}
+
+                            {% if character.armament %}
+                            <p><i class="fas fa-gavel icon"></i><strong>Armament:</strong>
+                                <a href="{{ character.armament.0.0 }}" class="badge bg-secondary">{{ character.armament.0.1 }}</a>
+                            </p>
+                            {% endif %}
+
+                            {% if character.media_franchise %}
+                            <p><i class="fas fa-film icon"></i><strong>Franchise:</strong>
+                                <a href="{{ character.media_franchise.0.0 }}" class="badge bg-secondary">{{ character.media_franchise.0.1 }}</a>
+                            </p>
+                            {% endif %}
+
+                            {% if character.from_narrative_universe %}
+                            <p><i class="fas fa-globe icon"></i><strong>Narrative Universe:</strong>
+                                <a href="{{ character.from_narrative_universe.0.0 }}" class="badge bg-secondary">{{ character.from_narrative_universe.0.1 }}</a>
+                            </p>
+                            {% endif %}
+
+                            {% if character.country_of_citizenship %}
+                            <p><i class="fas fa-flag icon"></i><strong>Citizenship:</strong>
+                                {% for citizenship in character.country_of_citizenship %}
+                                    <a href="{{ citizenship.0 }}" class="badge bg-info text-dark me-1">{{ citizenship.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+
+                            {% if character.owner_of %}
+                            <p><i class="fas fa-rocket icon"></i><strong>Owner Of:</strong>
+                                <a href="{{ character.owner_of.0.0 }}" class="badge bg-secondary">{{ character.owner_of.0.1 }}</a>
+                            </p>
+                            {% endif %}
+
+                            {% if character.species %}
+                            <p><i class="fas fa-dna icon"></i><strong>Species:</strong>
+                                <a href="{{ character.species.0.0 }}" class="badge bg-secondary">{{ character.species.0 }}</a>
+                            </p>
+                            {% endif %}
+
+                            {% if character.gender %}
+                            <p><i class="fas fa-venus-mars icon"></i><strong>Gender:</strong>
+                                <a href="{{ character.gender.0.0 }}" class="badge bg-secondary">{{ character.gender.0 }}</a>
+                            </p>
+                            {% endif %}
+
+                            {% if character.place_of_birth %}
+                            <p><i class="fas fa-map-marker-alt icon"></i><strong>Place of Birth:</strong>
+                                <a href="{{ character.place_of_birth.0.0 }}" class="badge bg-secondary">{{ character.place_of_birth.0.1}}</a>
+                            </p>
+                            {% endif %}
+
+                            {% if character.date_of_birth %}
+                            <p><i class="fas fa-calendar-plus icon"></i><strong>Date of Birth:</strong> {{ character.date_of_birth }}</p>
+                            {% endif %}
+
+                            {% if character.date_of_death %}
+                            <p><i class="fas fa-calendar-minus icon"></i><strong>Date of Death:</strong> {{ character.date_of_death }}</p>
+                            {% endif %}
+
+                            {% if character.appears_in %}
+                            <p><i class="fas fa-book icon"></i><strong>Appears In:</strong>
+                                {% for work in character.appears_in %}
+                                    <a href="{{ work.0 }}" class="badge bg-warning text-dark me-1">{{ work.1 }}</a>
+                                {% endfor %}
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-primary edit-btn"
+                        data-toggle="modal" 
+                        data-target="#editModal"
+                        data-uri="{{ character.uri|urlencode }}">
+                        Edit Attributes
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

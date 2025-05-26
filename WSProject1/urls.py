@@ -64,5 +64,7 @@ urlpatterns = [
     path('vehicles/<str:_id>',views.vehicle_details,name='vehicle_details'),
 
     path('weapons',views.weapons,name='weapons'),
-    path('weapons/<str:_id>',views.weapon_details,name='weapon_details')
+    path('weapons/<str:_id>',views.weapon_details,name='weapon_details'),
+
+    path('inferences',views.inferences,name='inferences')
 ]
