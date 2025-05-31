@@ -2,15 +2,22 @@ import csv
 from rdflib import Graph, Namespace, Literal, URIRef
 from rdflib.namespace import RDF, RDFS, XSD
 from slugify import slugify
+import pandas as pd
+from reconciler import reconcile
+
 
 SERVER_PREFIX="http://localhost:8000"
 
 pre=Namespace(f"{SERVER_PREFIX}/predicate/")
 res=Namespace(f"{SERVER_PREFIX}/resource/")
+wd=Namespace(f"http://www.wikidata.org/entity/")
 
 g=Graph()
 g.bind("pre", pre)
 g.bind("res", res)
+g.bind("wd", wd)
+
+characters=dict()
 
 #Note: Since the author uses names/titles as "private keys", I will be using them for the URIs (except for quotes, since it only has ids).
 #It should also be noted that some files are missing (events, battles and timeline) because they were either incomplete or had type ambiguity (for example, the victors of battles could be either organizations or a planet('s inhabitants))
@@ -21,6 +28,9 @@ with open("characters.csv","r") as csvfile:
     for row in reader:
         character_uri = URIRef(res[slugify(row["name"])])
         g.add((character_uri,RDFS.label,Literal(row["name"])))
+
+        if character_uri not in characters:
+            characters[character_uri]=row["name"]
 
         #species relation
         specie_uri=URIRef(res[slugify(row["species"])])
@@ -73,6 +83,9 @@ with open("droids.csv","r") as csvfile:
     for row in reader:
         droid_uri=URIRef(res[slugify(row["name"])])
         g.add((droid_uri,RDFS.label,Literal(row["name"])))
+
+        if droid_uri not in characters:
+            characters[droid_uri]=row["name"]
 
         #films relation
         for film in row["films"].split(', '):
@@ -139,10 +152,16 @@ with open("organizations.csv","r") as csvfile:
             g.add((organization_uri, pre.leader, leader_uri))
             g.add((leader_uri, RDFS.label,Literal(leader)))
 
+            if leader_uri not in characters:
+                characters[leader_uri] = leader
+
         for member in row["members"].split(", "):
             member_uri=URIRef(res[slugify(member)])
             g.add((organization_uri, pre.member, member_uri))
             g.add((member_uri, RDFS.label,Literal(member)))
+
+            if member_uri not in characters:
+                characters[member_uri] = member
 
         if row["affiliation"] is not None and row["affiliation"]!="None":
             g.add((organization_uri, pre.affiliation, Literal(row["affiliation"])))
@@ -178,6 +197,9 @@ with open("planets.csv","r") as csvfile:
             g.add((planet_uri, pre.resident, character_uri))
             g.add((character_uri,RDFS.label,Literal(resident)))
 
+            if character_uri not in characters:
+                characters[character_uri] = resident
+
         if row["films"]:
             for film in row["films"].split(", "):
                 film_uri=URIRef(res[slugify(film)])
@@ -198,6 +220,9 @@ with open("quotes.csv", "r") as csvfile:
         character_uri = URIRef(res[slugify(row["character_name"])])
         g.add((quote_uri, pre.said_by, character_uri))
         g.add((character_uri, RDFS.label, Literal(row["character_name"])))
+
+        if character_uri not in characters:
+            characters[character_uri] = row["character_name"]
 
         source_uri = URIRef(res[slugify(row["source"])])
         g.add((quote_uri, pre.appears_in, source_uri))
@@ -256,6 +281,9 @@ with open("starships.csv","r") as csvfile:
                 g.add((starship_uri, pre.pilot, pilot_uri))
                 g.add((pilot_uri,RDFS.label,Literal(pilot)))
 
+                if pilot_uri not in characters:
+                    characters[pilot_uri] = pilot
+
         for film in row["films"].split(", "):
             film_uri=URIRef(res[slugify(film)])
             g.add((starship_uri, pre.appears_in, film_uri))
@@ -288,6 +316,9 @@ with open("vehicles.csv","r") as csvfile:
                 g.add((vehicle_uri, pre.pilot, pilot_uri))
                 g.add((pilot_uri,RDFS.label,Literal(pilot)))
 
+                if pilot_uri not in characters:
+                    characters[pilot_uri] = pilot
+
         for film in row["films"].split(", "):
             film_uri=URIRef(res[slugify(film)])
             g.add((vehicle_uri, pre.appears_in, film_uri))
@@ -315,8 +346,20 @@ with open("weapons.csv","r") as csvfile:
             g.add((weapon_uri, pre.appears_in, film_uri))
             g.add((film_uri,RDFS.label,Literal(film)))
 
+df = pd.DataFrame([
+    {"uri": uri, "label": label}
+    for uri, label in characters.items()
+])
 
+reconciled=reconcile(df["label"],type_id="Q33125444")
 
+df["qid"] = reconciled["id"].values
+
+print(df[["label", "uri", "qid"]])
+
+for idx,row in df.iterrows():
+    if pd.notnull(row["qid"]):
+        g.add((row["uri"],RDFS.seeAlso,wd[row["qid"]]))
 
 rdf_xml=g.serialize(format="xml")
 
@@ -324,16 +367,5 @@ with open("starwars_rdf.xml","w") as f:
     f.write(rdf_xml)
 
 
-import pandas as pd
 
-df = pd.DataFrame({
-    "Character": [
-        "Luke Skywalker"
-    ]
-})
-
-from reconciler import reconcile
-
-# Reconcile as humans (Q5)
-reconciled = reconcile(df["Character"]
 
