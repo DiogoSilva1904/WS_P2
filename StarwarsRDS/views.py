@@ -34,6 +34,10 @@ accessor = GraphDBApi(client)
 store = SPARQLUpdateStore("http://localhost:7200/repositories/starwars","http://localhost:7200/repositories/starwars/statements", context_aware=False)
 graph = Graph(store)
 
+ont=Namespace("http://localhost:8000/ontology#")
+res=Namespace(f"http://localhost:8000/resource/")
+wd=Namespace(f"http://www.wikidata.org/entity/")
+
 
 def home(request):
     return render(request, 'home.html', {'graph_html': rdflib_graph_to_html(graph)})
@@ -87,32 +91,31 @@ def resource_redirect(request,_id):
     else:
         t=types[-1]["t"] #-1 because some of our types are subtypes
         
-        ONT=Namespace("http://localhost:8000/ontology#")
         
         match t:
-            case ONT.Character:
+            case ont.Character:
                 return redirect("http://localhost:8000/characters/"+_id)
-            case ONT.City:
+            case ont.City:
                 return redirect("http://localhost:8000/cities/"+_id)
-            case ONT.Droid:
+            case ont.Droid:
                 return redirect("http://localhost:8000/droids/"+_id)
-            case ONT.Film:
+            case ont.Film:
                 return redirect("http://localhost:8000/films/"+_id)
-            case ONT.Music:
-                return redirect("http://localhost:8000/musics/"+_id)
-            case ONT.Organization:
+            case ont.Music:
+                return redirect("http://localhost:8000/music/"+_id)
+            case ont.Organization:
                 return redirect("http://localhost:8000/organizations/"+_id)
-            case ONT.Planet:
+            case ont.Planet:
                 return redirect("http://localhost:8000/planets/"+_id)
-            case ONT.Quote:
+            case ont.Quote:
                 return redirect("http://localhost:8000/quotes/"+_id)
-            case ONT.Species:
+            case ont.Specie:
                 return redirect("http://localhost:8000/species/"+_id)
-            case ONT.Vehicle:
+            case ont.Vehicle:
                 return redirect("http://localhost:8000/vehicles/"+_id)
-            case ONT.Starship:
+            case ont.Starship:
                 return redirect("http://localhost:8000/starships/"+_id)
-            case ONT.Weapon:
+            case ont.Weapon:
                 return redirect("http://localhost:8000/weapons/"+_id)
             case _:
                 return HttpResponseNotFound()
@@ -120,122 +123,122 @@ def resource_redirect(request,_id):
     
 
 def character_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request,'character_details.html',{'character':details})
 
 def city_details(request, _id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request, 'city_details.html', {'city': details})
 
 def droid_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request, 'droid_details.html', {'droid': details})
 
 def film_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request, 'film_details.html', {'film': details})
 
 def music_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request, 'music_details.html', {'music': details})
 
 def organization_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request, 'organization_details.html', {'organization': details})
 
 def planet_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request, 'planet_details.html', {'planet': details})
 
 def quote_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request, 'quote_details.html', {'quote': details})
 
 def specie_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request,"species_details.html",{'specie': details})
 
 def starship_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request,"starship_details.html",{'starship': details})
 
 def vehicle_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request,"vehicle_details.html",{'vehicle': details})
 
 def weapon_details(request,_id):
-    details=get_details(request.build_absolute_uri(),graph)
+    details=get_details(res[_id],graph)
     return render(request,"weapon_details.html",{'weapon':details})
 
 
 def characters(request):
-    uri="http://localhost:8000/Character"
+    uri="http://localhost:8000/ontology#Character"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'characters.html',{"characters":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def cities(request):
-    uri="http://localhost:8000/City"
+    uri="http://localhost:8000/ontology#City"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'cities.html',{"cities":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def droids(request):
-    uri="http://localhost:8000/Droid"
+    uri="http://localhost:8000/ontology#Droid"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'droids.html',{"droids":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def films(request):
-    uri="http://localhost:8000/Film"
+    uri="http://localhost:8000/ontology#Film"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'films.html',{"films":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def music(request):
-    uri="http://localhost:8000/Music"
+    uri="http://localhost:8000/ontology#Music"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'music.html',{"music":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def organizations(request):
-    uri="http://localhost:8000/Organization"
+    uri="http://localhost:8000/ontology#Organization"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'organizations.html',{"organizations":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def planets(request):
-    uri="http://localhost:8000/Planet"
+    uri="http://localhost:8000/ontology#Planet"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'planets.html',{"planets":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def quotes(request):
-    uri="http://localhost:8000/Quote"
+    uri="http://localhost:8000/ontology#Quote"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'quotes.html',{"quotes":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def species(request):
-    uri="http://localhost:8000/Specie"
+    uri="http://localhost:8000/ontology#Specie"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'species.html',{"species":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def starships(request):
-    uri="http://localhost:8000/Starship"
+    uri="http://localhost:8000/ontology#Starship"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'starships.html',{"starships":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def vehicles(request):
-    uri="http://localhost:8000/Vehicle"
+    uri="http://localhost:8000/ontology#Vehicle"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'vehicles.html',{"vehicles":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
 
 def weapons(request):
-    uri="http://localhost:8000/Weapon"
+    uri="http://localhost:8000/ontology#Weapon"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request,'weapons.html',{"weapons":get_list(uri,graph),"graph_html": rdflib_graph_to_html(local_graph)})
