@@ -4,7 +4,7 @@ graphdb/data/*
 *.log
 *.pot
 *.pyc
-__pycache__/
+StarwarsRDS/__pycache__/*
 local_settings.py
 db.sqlite3
 
