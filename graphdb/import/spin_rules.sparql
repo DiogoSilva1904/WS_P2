@@ -1,0 +1,23 @@
+# "import" missing data
+#Note: the binding is needed if testing on the workbench (or else it'll timeout) 
+PREFIX ont: <http://localhost:8000/ontology#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+INSERT{
+    ?S ?PLocal ?V
+}
+WHERE {
+  #BIND(<http://localhost:8000/resource/general-grievous> AS ?S)
+  ?S rdfs:seeAlso ?QID .
+  ?PLocal ont:remoteEquivalent ?PRemote .
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?QID ?PRemote ?VRemote .
+    FILTER(LANG(?VRemote) = "en" || !isLiteral(?VRemote))
+  }
+  OPTIONAL {
+    ?VLocal rdfs:seeAlso ?VRemote .
+    FILTER(isURI(?VRemote))
+  }
+  BIND(COALESCE(?VLocal, ?VRemote) AS ?V)
+}
