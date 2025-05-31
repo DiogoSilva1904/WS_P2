@@ -28,6 +28,7 @@ with open("characters.csv","r") as csvfile:
     for row in reader:
         character_uri = URIRef(res[slugify(row["name"])])
         g.add((character_uri,RDFS.label,Literal(row["name"])))
+        g.add((character_uri, ont.name, Literal(row["name"])))
 
         if character_uri not in characters:
             characters[character_uri]=row["name"]
@@ -36,6 +37,7 @@ with open("characters.csv","r") as csvfile:
         specie_uri=URIRef(res[slugify(row["species"])])
         g.add((character_uri, ont.specie, specie_uri))
         g.add((specie_uri,RDFS.label,Literal(row["species"])))
+        g.add((specie_uri, ont.name, Literal(row["species"])))
 
         #homeworld relation
         if row["homeworld"]!="Unknown":
@@ -43,6 +45,7 @@ with open("characters.csv","r") as csvfile:
             g.add((character_uri, ont.homeworld, homeworld_uri))
             #I added this in case they were missing from planets.csv (much like with a set, a rdf graph only adds each triple once, so we can do this without worrying)
             g.add((homeworld_uri, RDFS.label, Literal(row["homeworld"])))
+            g.add((homeworld_uri, ont.name, Literal(row["homeworld"])))
 
         #attributes
         for string_attribute in ["gender","hair_color","eye_color","skin_color","description"]:
@@ -65,11 +68,13 @@ with open("cities.csv","r") as csvfile:
     for row in reader:
         city_uri=URIRef(res[slugify(row["name"])])
         g.add((city_uri,RDFS.label,Literal(row["name"])))
+        g.add((city_uri, ont.name, Literal(row["name"])))
 
         #planet relation
         planet_uri=URIRef(res[slugify(row["planet"])])
         g.add((city_uri, ont.planet, planet_uri))
         g.add((planet_uri,RDFS.label,Literal(row["planet"])))
+        g.add((planet_uri, ont.name, Literal(row["planet"])))
 
         #attributes
         g.add((city_uri, ont.population, Literal(row["population"], datatype=XSD.integer)))
@@ -83,6 +88,7 @@ with open("droids.csv","r") as csvfile:
     for row in reader:
         droid_uri=URIRef(res[slugify(row["name"])])
         g.add((droid_uri,RDFS.label,Literal(row["name"])))
+        g.add((droid_uri, ont.name, Literal(row["name"])))
 
         if droid_uri not in characters:
             characters[droid_uri]=row["name"]
@@ -92,6 +98,7 @@ with open("droids.csv","r") as csvfile:
             film_uri=URIRef(res[slugify(film)])
             g.add((droid_uri, ont.appears_in, film_uri))
             g.add((film_uri,RDFS.label,Literal(film)))
+            g.add((film_uri, ont.name, Literal(film)))
 
         #attributes
         for string_attribute in ["model","manufacturer","sensor_color","primary_function"]:
@@ -113,6 +120,7 @@ with open("films.csv","r") as csvfile:
     for row in reader:
         film_uri=URIRef(res[slugify(row["title"])])
         g.add((film_uri,RDFS.label,Literal(row["title"])))
+        g.add((film_uri, ont.name, Literal(row["title"])))
         g.add((film_uri, ont.release_date, Literal(row["release_date"], datatype=XSD.date)))
         g.add((film_uri, ont.director, Literal(row["director"])))
         g.add((film_uri, ont.opening_crawl, Literal(row["opening_crawl"])))
@@ -128,6 +136,7 @@ with open("music.csv","r") as csvfile:
     for row in reader:
         music_uri=URIRef(res[slugify(row["title"])])
         g.add((music_uri,RDFS.label,Literal(row["title"])))
+        g.add((music_uri, ont.name, Literal(row["title"])))
         g.add((music_uri, ont.composer, Literal(row["composer"])))
         g.add((music_uri, ont.type, Literal(row["type"])))
 
