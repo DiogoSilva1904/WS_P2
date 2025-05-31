@@ -3,7 +3,7 @@ from collections import defaultdict
 from unittest import case
 from os import getenv
 
-from django.http import HttpResponse, JsonResponse, HttpResponseNotAllowed, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound, JsonResponse, HttpResponseNotAllowed, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from os import getenv
 from rdflib.plugins.sparql import prepareQuery, prepareUpdate
@@ -16,7 +16,7 @@ from s4api.graphdb_api import GraphDBApi
 from s4api.swagger import ApiClient
 from urllib.parse import unquote
 
-from rdflib import Graph, URIRef, Literal, RDFS, RDF
+from rdflib import Graph, Namespace, URIRef, Literal, RDFS, RDF
 from rdflib.plugins.stores.sparqlstore import SPARQLStore, SPARQLUpdateStore
 import os
 
@@ -31,7 +31,7 @@ client = ApiClient(endpoint=endpoint)
 
 accessor = GraphDBApi(client)
 
-store = SPARQLUpdateStore(getenv("GRAPHDB_URL"), getenv("GRAPHDB_UPDATE_URL"), context_aware=False)
+store = SPARQLUpdateStore(endpoint, endpoint+"/statements", context_aware=False)
 graph = Graph(store)
 
 
@@ -68,6 +68,54 @@ def search(request):
             })
         return render(request, 'search.html', {'results': results_list, 'query_string': re.split(r'[/#]', q)[-1]})
 
+
+def resource_redirect(request,_id):
+    query="""
+        SELECT DISTINCT ?t
+        WHERE{
+            ?uri rdf:type ?t .
+            VALUES ?t { ont:Character ont:City ont:Droid ont:Film ont:Music ont:Organization ont:Planet ont:Quote ont:Species ont:Vehicle ont:Starship ont:Weapon }
+        }
+    """
+    
+    types=list(graph.query(query, initBindings={'uri': URIRef(request.build_absolute_uri())}))
+    
+    if len(types)==0:
+        return HttpResponseNotFound()
+    else:
+        t=types[-1]["t"] #-1 because some of our types are subtypes
+        
+        ONT=Namespace("http://localhost:8000/ontology#")
+        
+        match t:
+            case ONT.Character:
+                return redirect("http://localhost:8000/character/"+_id)
+            case ONT.City:
+                return redirect("http://localhost:8000/city/"+_id)
+            case ONT.Droid:
+                return redirect("http://localhost:8000/droid/"+_id)
+            case ONT.Film:
+                return redirect("http://localhost:8000/film/"+_id)
+            case ONT.Music:
+                return redirect("http://localhost:8000/music/"+_id)
+            case ONT.Organization:
+                return redirect("http://localhost:8000/organization/"+_id)
+            case ONT.Planet:
+                return redirect("http://localhost:8000/planet/"+_id)
+            case ONT.Quote:
+                return redirect("http://localhost:8000/quote/"+_id)
+            case ONT.Species:
+                return redirect("http://localhost:8000/species/"+_id)
+            case ONT.Vehicle:
+                return redirect("http://localhost:8000/vehicle/"+_id)
+            case ONT.Starship:
+                return redirect("http://localhost:8000/starship/"+_id)
+            case ONT.Weapon:
+                return redirect("http://localhost:8000/weapon/"+_id)
+            case _:
+                return HttpResponseNotFound()
+    
+    
 
 def character_details(request,_id):
     details=get_details(request.build_absolute_uri(),graph)

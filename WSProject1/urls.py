@@ -24,6 +24,8 @@ urlpatterns = [
     #    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('search', views.search, name='search'),
+    
+    path('search', views.resource_redirect, name='search'),
 
 
 
