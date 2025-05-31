@@ -31,7 +31,7 @@ client = ApiClient(endpoint=endpoint)
 
 accessor = GraphDBApi(client)
 
-store = SPARQLUpdateStore(endpoint, endpoint+"/statements", context_aware=False)
+store = SPARQLUpdateStore("http://localhost:7200/repositories/starwars","http://localhost:7200/repositories/starwars/statements", context_aware=False)
 graph = Graph(store)
 
 
@@ -70,15 +70,17 @@ def search(request):
 
 
 def resource_redirect(request,_id):
+    uri=request.build_absolute_uri()
     query="""
+        PREFIX ont: <http://localhost:8000/ontology#>
         SELECT DISTINCT ?t
         WHERE{
             ?uri rdf:type ?t .
-            VALUES ?t { ont:Character ont:City ont:Droid ont:Film ont:Music ont:Organization ont:Planet ont:Quote ont:Species ont:Vehicle ont:Starship ont:Weapon }
+            VALUES ?t { ont:Character ont:City ont:Droid ont:Film ont:Music ont:Organization ont:Planet ont:Quote ont:Species ont:Vehicle ont:Starship ont:Weapon } .
         }
     """
     
-    types=list(graph.query(query, initBindings={'uri': URIRef(request.build_absolute_uri())}))
+    types=list(graph.query(query, initBindings={'uri': URIRef(uri)}))
     
     if len(types)==0:
         return HttpResponseNotFound()
@@ -89,29 +91,29 @@ def resource_redirect(request,_id):
         
         match t:
             case ONT.Character:
-                return redirect("http://localhost:8000/character/"+_id)
+                return redirect("http://localhost:8000/characters/"+_id)
             case ONT.City:
-                return redirect("http://localhost:8000/city/"+_id)
+                return redirect("http://localhost:8000/cities/"+_id)
             case ONT.Droid:
-                return redirect("http://localhost:8000/droid/"+_id)
+                return redirect("http://localhost:8000/droids/"+_id)
             case ONT.Film:
-                return redirect("http://localhost:8000/film/"+_id)
+                return redirect("http://localhost:8000/films/"+_id)
             case ONT.Music:
-                return redirect("http://localhost:8000/music/"+_id)
+                return redirect("http://localhost:8000/musics/"+_id)
             case ONT.Organization:
-                return redirect("http://localhost:8000/organization/"+_id)
+                return redirect("http://localhost:8000/organizations/"+_id)
             case ONT.Planet:
-                return redirect("http://localhost:8000/planet/"+_id)
+                return redirect("http://localhost:8000/planets/"+_id)
             case ONT.Quote:
-                return redirect("http://localhost:8000/quote/"+_id)
+                return redirect("http://localhost:8000/quotes/"+_id)
             case ONT.Species:
                 return redirect("http://localhost:8000/species/"+_id)
             case ONT.Vehicle:
-                return redirect("http://localhost:8000/vehicle/"+_id)
+                return redirect("http://localhost:8000/vehicles/"+_id)
             case ONT.Starship:
-                return redirect("http://localhost:8000/starship/"+_id)
+                return redirect("http://localhost:8000/starships/"+_id)
             case ONT.Weapon:
-                return redirect("http://localhost:8000/weapon/"+_id)
+                return redirect("http://localhost:8000/weapons/"+_id)
             case _:
                 return HttpResponseNotFound()
     

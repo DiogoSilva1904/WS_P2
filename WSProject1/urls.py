@@ -25,7 +25,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('search', views.search, name='search'),
     
-    path('search', views.resource_redirect, name='search'),
+    path('resource/<str:_id>', views.resource_redirect, name='search'),
 
 
 
