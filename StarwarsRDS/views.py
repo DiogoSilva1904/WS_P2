@@ -24,7 +24,7 @@ from .forms import CharacterForm
 from .utils import rdflib_graph_to_html, is_valid_uri, to_human_readable, get_details, get_list, update_character, \
     remove_entity
 
-endpoint = "http://graphdb:7200/"
+endpoint = "http://localhost:7200/"
 repo_name = "starwars"
 
 client = ApiClient(endpoint=endpoint)

@@ -81,7 +81,7 @@ def remove_entity(graph,uri):
         delete_query=queries.DELETE_ALL_DATA.replace("?uri",f"<{uri}>")
 
     response = requests.post(
-        "http://graphdb:7200/repositories/starwars/statements",
+        "http://localhost:7200/repositories/starwars/statements",
         headers={"Content-Type": "application/sparql-update"},
         data=delete_query,
     )
@@ -99,7 +99,7 @@ def update_character(form, character_uri=None):
         # if already exists, remove all old triples first
         delete_query=queries.DELETE_ALL_DATA.replace("?uri",f"<{character_uri}>")
         response=requests.post(
-            "http://graphdb:7200/repositories/starwars/statements",
+            "http://localhost:7200/repositories/starwars/statements",
             headers={"Content-Type": "application/sparql-update"},
             data=delete_query,
         )
@@ -112,7 +112,7 @@ def update_character(form, character_uri=None):
     if label:
         insert_query=queries.INSERT_CHARACTER_LABEL_AND_TYPE.replace("?uri",f"<{character_uri}>").replace("?label",f'"{label}"')
         response=requests.post(
-            "http://graphdb:7200/repositories/starwars/statements",
+            "http://localhost:7200/repositories/starwars/statements",
             headers={"Content-Type": "application/sparql-update"},
             data=insert_query,
         )
@@ -126,7 +126,7 @@ def update_character(form, character_uri=None):
         if value:
             insert_query = queries.INSERT_CHARACTER_ATTRIBUTES.replace("?uri",f"<{character_uri}>").replace("?attribute",f"sw:{attribute}").replace("?value",f'"{value}"')
             response = requests.post(
-                "http://graphdb:7200/repositories/starwars/statements",
+                "http://localhost:7200/repositories/starwars/statements",
                 headers={"Content-Type": "application/sparql-update"},
                 data=insert_query,
             )
@@ -138,7 +138,7 @@ def update_character(form, character_uri=None):
         specie_uri=URIRef(specie_ns[slugify(specie)])
         insert_query=queries.INSERT_CHARACTER_SPECIE.replace("?character_uri",f"<{character_uri}>").replace("?specie_uri",f"<{specie_uri}>").replace("?specie",f'"{specie}"')
         response = requests.post(
-            "http://graphdb:7200/repositories/starwars/statements",
+            "http://localhost:7200/repositories/starwars/statements",
             headers={"Content-Type": "application/sparql-update"},
             data=insert_query,
         )
@@ -150,7 +150,7 @@ def update_character(form, character_uri=None):
 
         insert_query = queries.INSERT_CHARACTER_HOMEWORLD.replace("?character_uri",f"<{character_uri}>").replace("?homeworld_uri",f"<{homeworld_uri}>").replace("?homeworld",f'"{homeworld}"')
         response = requests.post(
-            "http://graphdb:7200/repositories/starwars/statements",
+            "http://localhost:7200/repositories/starwars/statements",
             headers={"Content-Type": "application/sparql-update"},
             data=insert_query,
         )
