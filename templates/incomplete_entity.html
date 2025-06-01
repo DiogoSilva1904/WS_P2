@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .character-container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .character-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .character-title {
+            text-align: center;
+            color: #333;
+        }
+
+        .icon {
+            margin-right: 8px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block title %}{{ character.label|first }}{% endblock %}
+
+{% block content %}
+    <h2>This entry is incomplete</h2>
+    <h4>This entry is too incomplete to be classified, please click here to import from external sources: </h4>
+    <form method="POST" action="{% url 'import_entity' %}">
+        {% csrf_token %}
+        <input type="hidden" name="uri" value="{{ request.build_absolute_uri }}">
+        <button class="btn btn-primary" type="submit">Import data from external sources</button>
+    </form>
+
+    <div class="card my-3">
+  <div class="card-header">
+    Debug info (details)
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      {% for predicate, values in details.items %}
+        <li class="list-group-item">
+          <strong>{{ predicate }}:</strong>
+          {% for value in values %}
+            {% if value|slice:":4" == "http" %}
+              <a href="{{ value }}">{{ value }}</a>
+            {% else %}
+              {{ value }}
+            {% endif %}
+            {% if not forloop.last %}, {% endif %}
+          {% endfor %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+
+
+{% endblock %}

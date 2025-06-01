@@ -27,6 +27,8 @@ urlpatterns = [
     
     path('resource/<str:_id>', views.resource_redirect, name='search'),
 
+    path('import',views.import_entity,name='import_entity'),
+
 
 
     path('characters',views.characters, name='characters'),
