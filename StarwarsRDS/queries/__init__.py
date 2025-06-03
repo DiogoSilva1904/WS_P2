@@ -38,6 +38,7 @@ WHERE{
         ?uri rdfs:seeAlso ?wikidataURI .
         SERVICE <https://query.wikidata.org/sparql> {
             ?wikidataURI ?p ?VRemote .
+            FILTER(!STRSTARTS(STR(?VRemote), "http://www.wikidata.org/entity/statement/")) . #exclude statements
             FILTER(
                 isIRI(?VRemote) ||
                 LANG(?VRemote) = "en" ||
