@@ -29,8 +29,31 @@ CONSTRUCT {
 DETAILS = """
 SELECT ?p ?o ?oName
 WHERE{
-    ?uri ?p ?o .
-    OPTIONAL { ?o rdfs:label ?oName . }
+    {
+        ?uri ?p ?o .
+        OPTIONAL { ?o rdfs:label ?oName . }
+    }
+    UNION
+    {
+        ?uri rdfs:seeAlso ?wikidataURI .
+        SERVICE <https://query.wikidata.org/sparql> {
+            ?wikidataURI ?p ?VRemote .
+            FILTER(
+                isIRI(?VRemote) ||
+                LANG(?VRemote) = "en" ||
+                LANG(?VRemote) = ""
+            )
+            OPTIONAL { 
+                ?VRemote rdfs:label ?oName .
+                FILTER(LANG(?oName) = "en" || LANG(?oName) = "")
+                }
+        }
+        OPTIONAL {
+            ?VLocal rdfs:seeAlso ?VRemote .
+            FILTER(isIRI(?VRemote))
+        }
+        BIND(COALESCE(?VLocal, ?VRemote) AS ?o)
+    }
 }
 """
 
