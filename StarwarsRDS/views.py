@@ -67,7 +67,7 @@ def import_entity(request):
             ?PLocal ont:remoteEquivalent ?PRemote .
             SERVICE <https://query.wikidata.org/sparql> {
                 ?QID ?PRemote ?VRemote .
-                FILTER(LANG(?VRemote) = "en" ||  !isLiteral(?VRemote))
+                FILTER(LANG(?VRemote) = "en" ||  !isLiteral(?VRemote)) || LANG(?VRemote) = ""
             }
             OPTIONAL
             {
