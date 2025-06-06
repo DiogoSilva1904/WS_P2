@@ -129,7 +129,7 @@ def resource_redirect(request, _id):
         SELECT DISTINCT ?t
         WHERE{
             ?uri rdf:type ?t .
-            VALUES ?t { ont:Character ont:City ont:Droid ont:Film ont:Music ont:Organization ont:Planet ont:Quote ont:Species ont:Vehicle ont:Starship ont:Weapon } .
+            VALUES ?t { ont:Character ont:City ont:Droid ont:Film ont:Music ont:Organization ont:Planet ont:Quote ont:Specie ont:Vehicle ont:Starship ont:Weapon } .
         }
     """
 
