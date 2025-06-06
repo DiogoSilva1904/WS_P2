@@ -75,12 +75,21 @@
                     Born: </strong> {{ character.year_born|join:", " }}</p>
                 <p><i class="fas fa-skull icon"></i><strong>Year
                     Died: </strong> {{ character.year_died|join:", " }}</p>
+
+
                 {% if character.P20 %}
                     <p><i class="fas fa-skull icon"></i><strong>Place of Death: </strong><a href="{{ character.P20.0.0 }}">{{ character.P20.0.1 }}</a></p>
                 {% endif %}
                 {% if character.P157 %}
                     <p><i class="fas fa-skull icon"></i><strong>Killed by: </strong><a href="{{ character.P157.0.0 }}">{{ character.P157.0.1 }}</a></p>
                 {% endif %}
+                {% if character.P3909 %}
+                <p>
+                    <i class="fas fa-comment icon"></i><strong>Last words: </strong> {{ character.P3909|join:", " }}
+                </p>
+                {% endif %}
+
+
                 {% if character.P7047 %}
                 <p>
                     <i class="fas fa-skull-crossbones icon"></i><strong>Enemies: </strong>
@@ -88,7 +97,17 @@
                         <a href="{{ enemy.0 }}">{{ enemy.1 }}</a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
-            {% endif %}
+                {% endif %}
+
+                
+                {% if character.P106 %}
+                <p>
+                    <i class="fas fa-wrench icon"></i><strong>Ocupations: </strong>
+                    {% for occupation in character.P106 %}
+                        <a href="{{ occupation.0 }}">{{ occupation.1 }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                {% endif %}
             </div>
         </div>
         </div>
