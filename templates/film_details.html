@@ -31,18 +31,20 @@
 
     {% block content %}
     <div class="container mt-5">
-        <div class="character-container">
-            <h2 class="character-title"><i class="fas fa-film"></i> {{ film.label|first }}</h2> <!-- Display the first value of label -->
+        <div class="character-container" vocab="http://localhost:8000/ontology#"
+        prefix="wd: https://www.wikidata.org/wiki/Property: rdf: rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        typeof="Film" about="http://localhost:8000/resource/episode-i-the-phantom-menace">
+            <h2 class="character-title"><i class="fas fa-film me-2"></i><span property="rdf:label">{{ film.label|first }}</span></h2> <!-- Display the first value of label -->
             <div class="card character-card">
                 <div class="card-body">
-                    <p><i class="fas fa-calendar-alt icon"></i><strong>Release Date:</strong> {{ film.release_date|first }}</p>
-                    <p><i class="fas fa-user-tie icon"></i><strong>Director:</strong> {{ film.director|first }}</p>
+                    <p><i class="fas fa-calendar-alt icon"></i><strong>Release Date: </strong><span property="release_date">{{ film.release_date|first }}</span></p>
+                    <p><i class="fas fa-user-tie icon"></i><strong>Director:</strong><span property="director">{{ film.director|first }}</span></p>
                     <p><i class="fas fa-users icon"></i><strong>Producers:</strong> 
                         {% for producer in film.producer %}
-                            {{ producer }}{% if not forloop.last %}, {% endif %}
+                            <span property="producer">{{ producer }}</span>{% if not forloop.last %}, {% endif %}
                         {% endfor %}
                     </p>
-                    <p><i class="fas fa-paragraph icon"></i><strong>Opening Crawl:</strong> {{ film.opening_crawl|first }}</p>
+                    <p><i class="fas fa-paragraph icon"></i><strong>Opening Crawl:</strong><span property="opening_crawl">{{ film.opening_crawl|first }}</span></p>
                 </div>
             </div>
         </div>
