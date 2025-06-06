@@ -647,13 +647,23 @@
     <!-- http://localhost:8000/ontology#population -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#population">
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#City"/>
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Planet"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="http://localhost:8000/ontology#City"/>
+                    <owl:Class rdf:about="http://localhost:8000/ontology#Planet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:DataUnionOf rdf:parseType="Collection">
+                    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+                    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:DataUnionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
-    
-
 
     <!-- http://localhost:8000/ontology#primary_function -->
 
