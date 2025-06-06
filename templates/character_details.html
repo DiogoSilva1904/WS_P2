@@ -27,6 +27,235 @@
         .icon {
             margin-right: 8px;
         }
+        .family-tree-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px 0;
+            overflow-x: auto;
+            overflow-y: visible; /* Ensure vertical content isn't clipped */
+        }
+
+        .family-tree-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .tree {
+            display: flex;
+            justify-content: flex-start; /* Change from 'center' to 'flex-start' */
+            min-width: 1200px; /* Increase width to accommodate all family members */
+            padding-left: 50px; /* Add some padding to prevent left cutoff */
+        }
+
+        .tree ul {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tree li {
+            position: relative;
+            padding: 0 20px 40px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tree li::before {
+            content: '';
+            position: absolute;
+            top: 90px;
+            right: 50%;
+            border-top: 2px solid #4a90e2;
+            width: 50%;
+            height: 0;
+        }
+
+        .tree li::after {
+            content: '';
+            position: absolute;
+            top: 90px;
+            right: 50%;
+            border-right: 2px solid #4a90e2;
+            height: 20px;
+            width: 0;
+        }
+
+        .tree li:only-child::after,
+        .tree li:only-child::before {
+            display: none;
+        }
+
+        .tree li:first-child::before {
+            border: 0 none;
+        }
+
+        .tree li:last-child::before {
+            border-right: 2px solid #4a90e2;
+            border-radius: 0 5px 0 0;
+        }
+
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+        }
+
+        .tree li:last-child::after {
+            border-radius: 0 0 0 5px;
+        }
+
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            border-left: 2px solid #4a90e2;
+            width: 0;
+            height: 20px;
+        }
+
+        .person-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 180px;
+            max-width: 220px;
+            color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .person-card.current {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border: 3px solid #fff;
+            transform: scale(1.05);
+        }
+
+        .person-card.deceased {
+            background: linear-gradient(135deg, #757f9a 0%, #d7dde8 100%);
+            color: #333;
+        }
+
+        .person-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            overflow: hidden;
+        }
+
+        .person-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .person-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .person-details {
+            font-size: 12px;
+            opacity: 0.9;
+            line-height: 1.3;
+        }
+
+        .generation {
+            margin-bottom: 60px;
+        }
+
+        .generation-label {
+            text-align: center;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .spouse-connection::before {
+            content: '💕';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            z-index: 2;
+        }
+
+        .sibling-group {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .relationship-label {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            color: #666;
+            border: 1px solid #e9ecef;
+            white-space: nowrap;
+            z-index: 3;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .legend-current { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .legend-alive { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .legend-deceased { background: linear-gradient(135deg, #757f9a 0%, #d7dde8 100%); }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}
@@ -35,6 +264,12 @@
 
 {% block content %}
     <div class="container mt-5">
+    <div class="text-end mb-3">
+        <button id="run-inferences" class="btn btn-success">
+            <i class="fas fa-project-diagram"></i> Run Inferences
+        </button>
+    </div>
+
     <div class="character-container">
     <h2 class="character-title"><i class="fas fa-user"></i> {{ character.label.0 }}</h2>
     <div class="row g-0 align-items-center">
@@ -46,7 +281,12 @@
             </div>
             <div class="col-md-8">
         {% else %}
-            <div class="col-md-12">
+            <div class="col-md-4 text-center">
+                <img src="{{'https://i.pinimg.com/736x/a6/81/02/a681026157bce809effda67b1a544dd5.jpg' }}" alt="{{ character.label.0 }} image"
+                     class="img-fluid rounded character-image"
+                     style="max-height: 500px; object-fit: contain;">
+            </div>
+            <div class="col-md-8">
         {% endif %}
         <div class="card character-card">
             <div class="card-body">
@@ -122,6 +362,285 @@
         </div>
     </div>
 
+    <div class="family-tree-container">
+        <h3 class="family-tree-title">
+            <i class="fas fa-sitemap"></i> {{ character.label.0 }} Family Tree
+        </h3>
+        
+        <div class="tree">
+            <ul>
+                <!-- Grandparents Generation -->
+                {% if character.hasGrandmother %}
+                <li>
+                    <div class="generation">
+                        <div class="generation-label">Grandparents</div>
+                        {% for grandmother in character.hasGrandmother %}
+                            {% if grandmother.1 %}
+                                <div class="person-card deceased" onclick="navigateToCharacter('{{ grandmother.0 }}')">
+                                    <div class="person-photo">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="person-name">{{ grandmother.1 }}</div>
+                                    <div class="person-details">
+                                        Grandmother<br>
+                                        <i class="fas fa-skull"></i> Deceased
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <ul>
+                {% endif %}
+
+                <!-- Uncles & Aunts Generation -->
+                {% if character.hasUncle or character.hasAunt %}
+                    <li>
+                        <div class="generation">
+                            <div class="generation-label">Uncles & Aunts</div>
+                            <div class="sibling-group">
+                                <!-- Uncles -->
+                                {% if character.hasUncle %}
+                                    {% for uncle in character.hasUncle %}
+                                        {% if uncle.1 %}
+                                            <div class="person-card" onclick="navigateToCharacter('{{ uncle.0 }}')">
+                                                <div class="person-photo">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="person-name">{{ uncle.1 }}</div>
+                                                <div class="person-details">
+                                                    Uncle<br>
+                                                    <i class="fas fa-hat-wizard"></i> Veteran
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+
+                                <!-- Aunts -->
+                                {% if character.hasAunt %}
+                                    {% for aunt in character.hasAunt %}
+                                        {% if aunt.1 %}
+                                            <div class="person-card" onclick="navigateToCharacter('{{ aunt.0 }}')">
+                                                <div class="person-photo">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="person-name">{{ aunt.1 }}</div>
+                                                <div class="person-details">
+                                                    Aunt<br>
+                                                    <i class="fas fa-heart"></i> Noblewoman
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+
+                
+                <!-- Parents Generation -->
+                {% if character.P22 or character.P25 %}
+                <li>
+                    <div class="generation">
+                        <div class="generation-label">Parents</div>
+                        <div class="sibling-group">
+                            {% if character.P22 %}
+                                {% for father in character.P22 %}
+                                    <div class="person-card deceased" onclick="navigateToCharacter('{{ father.0 }}')">
+                                        <div class="person-photo">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="person-name">{{ father.1 }}</div>
+                                        <div class="person-details">
+                                            Father<br>
+                                            <i class="fas fa-skull"></i> Deceased
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            
+                            {% if character.P25 %}
+                                {% for mother in character.P25 %}
+                                    <div class="person-card deceased spouse-connection" onclick="navigateToCharacter('{{ mother.0 }}')">
+                                        <div class="person-photo">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="person-name">{{ mother.1 }}</div>
+                                        <div class="person-details">
+                                            Mother<br>
+                                            <i class="fas fa-crown"></i> Former Queen
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <ul>
+                {% endif %}
+                
+                <!-- Current Character & Siblings -->
+                <li>
+                    <div class="generation">
+                        <div class="generation-label">{{ character.label.0 }}'s Generation</div>
+                        <div class="sibling-group">
+                            <!-- Current Character -->
+                            <div class="person-card current">
+                                {% if character.hasSibling %}
+                                    <div class="relationship-label">Siblings</div>
+                                {% endif %}
+                                <div class="person-photo">
+                                    {% if character.P18 and character.P18.0 %}
+                                        <img src="{{ character.P18.0 }}" alt="{{ character.label.0 }}">
+                                    {% else %}
+                                        <i class="fas fa-user"></i>
+                                    {% endif %}
+                                </div>
+                                <div class="person-name">{{ character.label.0 }}</div>
+                                <div class="person-details">
+                                    {% if character.P106 %}
+                                        {% for occupation in character.P106|slice:":1" %}
+                                            <i class="fas fa-star"></i> {{ occupation.1 }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                    {% if character.year_born %}
+                                        Born: {{ character.year_born.0 }} BBY<br>
+                                    {% endif %}
+                                    {% if character.height %}
+                                        Height: {{ character.height.0 }}m
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Siblings -->
+                            {% if character.hasSibling %}
+                                {% for sibling in character.hasSibling %}
+                                    <div class="person-card" onclick="navigateToCharacter('{{ sibling.0 }}')">
+                                        <div class="person-photo">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="person-name">{{ sibling.1 }}</div>
+                                        <div class="person-details">
+                                            Sibling<br>
+                                            <i class="fas fa-crown"></i> Princess<br>
+                                            <i class="fas fa-rebel"></i> Rebel Leader
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Next Generation -->
+                    {% if character.P40 or character.hasNephew or character.hasNiece %}
+                    <ul>
+                        <li>
+                            <div class="generation">
+                                <div class="generation-label">Children & Nephews/Nieces</div>
+                                <div class="sibling-group">
+                                    <!-- Children -->
+                                    {% if character.P40 %}
+                                        {% for child in character.P40 %}
+                                            <div class="person-card" onclick="navigateToCharacter('{{ child.0 }}')">
+                                                <div class="person-photo">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="person-name">{{ child.1 }}</div>
+                                                <div class="person-details">
+                                                    Child<br>
+                                                    <i class="fas fa-jedi"></i> Jedi
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    
+                                    <!-- Nephews -->
+                                    {% if character.hasNephew %}
+                                        {% for nephew in character.hasNephew %}
+                                            {% if nephew.1 %}
+                                                <div class="person-card" onclick="navigateToCharacter('{{ nephew.0 }}')">
+                                                    <div class="person-photo">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div class="person-name">{{ nephew.1 }}</div>
+                                                    <div class="person-details">
+                                                        Nephew<br>
+                                                        <i class="fas fa-jedi"></i> Jedi Knight
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                    
+                                    <!-- Nieces -->
+                                    {% if character.hasNiece %}
+                                        {% for niece in character.hasNiece %}
+                                            {% if niece.1 %}
+                                                <div class="person-card" onclick="navigateToCharacter('{{ niece.0 }}')">
+                                                    <div class="person-photo">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div class="person-name">{{ niece.1 }}</div>
+                                                    <div class="person-details">
+                                                        Niece<br>
+                                                        <i class="fas fa-crown"></i> Princess
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <!-- Grandchildren Generation -->
+                            {% if character.hasGrandchild %}
+                            <ul>
+                                <li>
+                                    <div class="generation">
+                                        <div class="generation-label">Grandchildren</div>
+                                        <div class="sibling-group">
+                                            {% for grandchild in character.hasGrandchild %}
+                                                {% if grandchild.1 %}
+                                                    <div class="person-card" onclick="navigateToCharacter('{{ grandchild.0 }}')">
+                                                        <div class="person-photo">
+                                                            <i class="fas fa-user"></i>
+                                                        </div>
+                                                        <div class="person-name">{{ grandchild.1 }}</div>
+                                                        <div class="person-details">
+                                                            Grandchild<br>
+                                                            <i class="fas fa-baby"></i> Next Generation
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            {% endif %}
+                        </li>
+                    </ul>
+                    {% endif %}
+                </li>
+                
+                <!-- Close Parents Generation -->
+                {% if character.P22 or character.P25 %}
+                    </ul>
+                </li>
+                {% endif %}
+                
+                <!-- Close Grandparents Generation -->
+                {% if character.hasGrandmother %}
+                    </ul>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+        
+    
+        
+
     <!-- Modal for editing character attributes and relations -->
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -157,6 +676,35 @@
                 $('#editModalContent').load(`${window.location.href}/edit`, function () {
                     editModal.show(); // Show the modal after content is loaded
                 });
+            });
+        });
+    </script>
+
+    <script>
+        $('#run-inferences').click(function () {
+            let fullUri = "{{ character.seeAlso.0 }}"; // ex: "http://www.wikidata.org/entity/Q51746/"
+            
+            // Extrair só o último pedaço entre as barras, ignorando a última barra se houver
+            let trimmedUri = fullUri.replace(/\/$/, "");  // remove a barra no final, se existir
+            let id = trimmedUri.substring(trimmedUri.lastIndexOf('/') + 1);  // pega só o que vem após a última /
+
+            const uriEncoded = encodeURIComponent(id);  // codifica só o id final
+
+            fetch(`/run-inferences/${uriEncoded}/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert('Inferences triggered successfully!');
+                    location.reload();
+                } else {
+                    alert('Failed to trigger inferences.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('Error triggering inferences.');
             });
         });
     </script>

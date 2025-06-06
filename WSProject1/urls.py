@@ -29,7 +29,7 @@ urlpatterns = [
 
     path('import',views.import_entity,name='import_entity'),
 
-
+    path('run-inferences/<str:character_uri>/', views.run_inferences, name='run_inferences'),
 
     path('characters',views.characters, name='characters'),
     path('characters/<str:_id>',views.character_details,name='character_details'),
