@@ -8,7 +8,7 @@ INSERT{
     ?S ?PLocal ?V
 }
 WHERE {
-  #BIND(<http://localhost:8000/resource/general-grievous> AS ?S)
+  BIND(<http://localhost:8000/resource/general-grievous> AS ?S) #only exists because I had to do case-by-case (else it reached timeout)
   ?S rdfs:seeAlso ?QID .
   ?PLocal ont:remoteEquivalent ?PRemote .
   SERVICE <https://query.wikidata.org/sparql> {
