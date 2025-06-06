@@ -31,13 +31,13 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="character-container">
+    <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ city.uri }}">
         <h2 class="character-title"><i class="fas fa-city"></i> {{ city.label|first }}</h2>
         <div class="card character-card">
             <div class="card-body">
-                <p><i class="fas fa-align-left icon"></i><strong>Description: </strong> {{ city.description|first }}</p>
-                <p><i class="fas fa-users icon"></i><strong>Population: </strong> {{ city.population|first }}</p>
-                <p><i class="fas fa-globe icon"></i><strong>Planet: </strong><a href="{{ city.planet.0.0 }}">{{ city.planet.0.1 }}</a></p>
+                <p><i class="fas fa-align-left icon"></i><strong>Description: </strong><span property="description">{{ city.description|first }}</span></p>
+                <p><i class="fas fa-users icon"></i><strong>Population: </strong><span property="population">{{ city.population|first }}</span></p>
+                <p><i class="fas fa-globe icon"></i><strong>Planet: </strong><a rel="planet" href="{{ city.planet.0.0 }}"><span property="rdf:label">{{ city.planet.0.1 }}</span></a></p>
             </div>
         </div>
     </div>
