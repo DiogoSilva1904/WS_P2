@@ -31,13 +31,13 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="character-container">
+    <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ quote.uri }}">
         <h2 class="character-title"><i class="fa-solid fa-comment icon"></i></i></h2> <!-- Display the first value of label -->
         <div class="card character-card">
             <div class="card-body">
-                <p><i class="fa-solid fa-comment icon"></i><strong>Quote: </strong> {{ quote.label.0 }}</p>
-                <p><i class="fa-solid fa-user icon"></i><strong>Said By: </strong><a href="{{ quote.said_by.0.0 }}">{{ quote.said_by.0.1 }}</a></p>
-                <p><i class="fa-solid fa-film icon"></i><strong>From Movie: </strong><a href="{{ quote.appears_in.0.0 }}">{{ quote.appears_in.0.1 }}</a></p>
+                <p><i class="fa-solid fa-comment icon"></i><strong>Quote: </strong><span property="rdf:label">{{ quote.label.0 }}</span></p>
+                <p><i class="fa-solid fa-user icon"></i><strong>Said By: </strong><a rel="said_by" href="{{ quote.said_by.0.0 }}"><span property="rdf:label">{{ quote.said_by.0.1 }}</span></a></p>
+                <p><i class="fa-solid fa-film icon"></i><strong>From Movie: </strong><a rel="appears_in" href="{{ quote.appears_in.0.0 }}"><span property="rdf:label">{{ quote.appears_in.0.1 }}</span></a></p>
             </div>
         </div>
     </div>

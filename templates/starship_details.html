@@ -31,33 +31,33 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="character-container">
-        <h2 class="character-title"><i class="fa-solid fa-space-shuttle icon"></i> {{ starship.label|first }}</h2> <!-- Starship Name -->
+    <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ starship.uri }}">
+        <h2 class="character-title"><i class="fa-solid fa-space-shuttle icon me-2"></i><span property="rdf:label">{{ starship.label|first }}</span></h2> <!-- Starship Name -->
         <div class="card character-card">
             <div class="card-body">
-                <p><i class="fa-solid fa-cogs icon"></i><strong>Model:</strong> {{ starship.model|first }}</p>
-                <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer:</strong> {{ starship.manufacturer|first }}</p>
-                <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length:</strong> {{ starship.length|first }}m</p>
-                <p><i class="fa-solid fa-gauge-high icon"></i><strong>Max Speed:</strong> {{ starship.max_atmosphering_speed|first }} km/h</p>
-                <p><i class="fa-solid fa-boxes-stacked icon"></i><strong>Cargo Capacity:</strong> {{ starship.cargo_capacity|first }} kg</p>
-                <p><i class="fa-solid fa-star icon"></i><strong>Hyperdrive Rating:</strong> {{ starship.hyperdrive_rating|first }}</p>
-                <p><i class="fa-solid fa-users icon"></i><strong>Crew:</strong> {{ starship.crew|first }}</p>
-                <p><i class="fa-solid fa-user-group icon"></i><strong>Passengers:</strong> {{ starship.passengers|first }}</p>
-                <p><i class="fa-solid fa-clock icon"></i><strong>Consumables:</strong> {{ starship.consumables|first }}</p>
-                <p><i class="fa-solid fa-coins icon"></i><strong>Cost:</strong> {{ starship.cost_in_credits|first }} credits</p>
-                <p><i class="fa-solid fa-rocket icon"></i><strong>Class:</strong> {{ starship.starship_class|first }}</p>
+                <p><i class="fa-solid fa-cogs icon"></i><strong>Model: </strong><span property="model">{{ starship.model|first }}</span></p>
+                <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer: </strong><span property="manufacturer">{{ starship.manufacturer|first }}</span></p>
+                <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length: </strong><span property="length">{{ starship.length|first }}m</span></p>
+                <p><i class="fa-solid fa-gauge-high icon"></i><strong>Max Speed: </strong><span property="max_atmosphering_speed">{{ starship.max_atmosphering_speed|first }} km/h</span></p>
+                <p><i class="fa-solid fa-boxes-stacked icon"></i><strong>Cargo Capacity: </strong> {{ starship.cargo_capacity|first }} kg</p>
+                <p><i class="fa-solid fa-star icon"></i><strong>Hyperdrive Rating: </strong><span property="hyperdrive_rating">{{ starship.hyperdrive_rating|first }}</span></p>
+                <p><i class="fa-solid fa-users icon"></i><strong>Crew: </strong><span property="crew">{{ starship.crew|first }}</span></p>
+                <p><i class="fa-solid fa-user-group icon"></i><strong>Passengers: </strong><span property="passengers">{{ starship.passengers|first }}</span></p>
+                <p><i class="fa-solid fa-clock icon"></i><strong>Consumables: </strong><span property="consumables">{{ starship.consumables|first }}</span></p>
+                <p><i class="fa-solid fa-coins icon"></i><strong>Cost: </strong><span property="cost_in_credits">{{ starship.cost_in_credits|first }} credits</span></p>
+                <p><i class="fa-solid fa-rocket icon"></i><strong>Class: </strong><span property="starship_class">{{ starship.starship_class|first }}</span></p>
 
                 <!-- Pilots -->
                 <p><i class="fa-solid fa-user-astronaut icon"></i><strong>Pilots:</strong> 
                     {% for url,label in starship.pilot %}
-                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                        <a rel="pilot" href="{{ url }}"><span property="rdf:label">{{ label }}</span></a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
 
                 <!-- Films Appeared In -->
                 <p><i class="fa-solid fa-film icon"></i><strong>Appears In:</strong> 
                     {% for url,label in starship.appears_in %}
-                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                        <a rel="appears_in" href="{{ url }}"><span property="rdf:label">{{ label }}</span></a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
             </div>

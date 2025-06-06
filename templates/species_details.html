@@ -31,19 +31,19 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="character-container">
-        <h2 class="character-title"><i class="fa-solid fa-dna icon"></i> {{ specie.label|first }}</h2> <!-- Species Name -->
+    <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ specie.uri }}">
+        <h2 class="character-title"><i class="fa-solid fa-dna icon me-2"></i><span property="rdf:label">{{ specie.label|first }}</span></h2> <!-- Species Name -->
         <div class="card character-card">
             <div class="card-body">
-                <a><i class="fa-solid fa-globe icon"></i><strong>Homeworld: </strong><a href="{{ specie.homeworld.0.0 }}">{{ specie.homeworld.0.1 }}</a></p>
-                <p><i class="fa-solid fa-palette icon"></i><strong>Skin Colors: </strong> {{ specie.skin_color|join:", " }}</p>
-                <p><i class="fa-solid fa-paw icon"></i><strong>Classification: </strong> {{ specie.classification|first }}</p>
-                <p><i class="fa-solid fa-brain icon"></i><strong>Designation: </strong> {{ specie.designation|first }}</p>
-                <p><i class="fa-solid fa-eye icon"></i><strong>Eye Colors: </strong> {{ specie.eye_colors|join:", " }}</p>
-                <p><i class="fa-solid fa-language icon"></i><strong>Language: </strong> {{ specie.language|first }}</p>
-                <p><i class="fa-solid fa-ruler-vertical icon"></i><strong>Average Height: </strong> {{ specie.average_height|first }}m</p>
-                <p><i class="fa-solid fa-hourglass-half icon"></i><strong>Average Lifespan: </strong> {{ specie.average_lifespan|first }} years</p>
-                <p><i class="fa-solid fa-scissors icon"></i><strong>Hair Colors: </strong> {{ specie.hair_colors|join:", " }}</p>
+                <a><i class="fa-solid fa-globe icon"></i><strong>Homeworld: </strong><a rel="homeworld" href="{{ specie.homeworld.0.0 }}"><span property="rdf:label">{{ specie.homeworld.0.1 }}</span></a></p>
+                <p><i class="fa-solid fa-palette icon"></i><strong>Skin Colors: </strong><span property="skin_color">{{ specie.skin_color|join:", " }}</span></p>
+                <p><i class="fa-solid fa-paw icon"></i><strong>Classification: </strong><span property="classification">{{ specie.classification|first }}</span></p>
+                <p><i class="fa-solid fa-brain icon"></i><strong>Designation: </strong><span property="designation">{{ specie.designation|first }}</span></p>
+                <p><i class="fa-solid fa-eye icon"></i><strong>Eye Colors: </strong><span property="eye_color">{{ specie.eye_colors|join:", " }}</span></p>
+                <p><i class="fa-solid fa-language icon"></i><strong>Language: </strong><span property="language">{{ specie.language|first }}</span></p>
+                <p><i class="fa-solid fa-ruler-vertical icon"></i><strong>Average Height: </strong><span property="average_height">{{ specie.average_height|first }}m</span></p>
+                <span><i class="fa-solid fa-hourglass-half icon"></i><strong>Average Lifespan: </strong><span property="average_lifespan">{{ specie.average_lifespan|first }} years</span></p>
+                <p><i class="fa-solid fa-scissors icon"></i><strong>Hair Colors: </strong><span property="hair_color">{{ specie.hair_colors|join:", " }}</span></p>
             </div>
         </div>
     </div>

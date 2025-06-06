@@ -31,16 +31,16 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="character-container">
-        <h2 class="character-title"><i class="fa-solid fa-gun"></i> {{ weapon.label|first }}</h2> <!-- Weapon Name -->
+    <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ weapon.uri }}">
+        <h2 class="character-title"><i class="fa-solid fa-gun me-2"></i><span property="rdf:label">{{ weapon.label|first }}</span></h2> <!-- Weapon Name -->
         <div class="card character-card">
             <div class="card-body">
-                <p><i class="fa-solid fa-file-lines icon"></i><strong>Description:</strong> {{ weapon.description|first }}</p>
-                <p><i class="fa-solid fa-atom icon"></i><strong>Weapon Type:</strong> {{ weapon.type|slice:"1:2"|first|default:"Unknown" }}</p>
-                <p><i class="fa-solid fa-cogs icon"></i><strong>Model:</strong> {{ weapon.model|join:", " }}</p>
-                <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer:</strong> {{ weapon.manufacturer|first }}</p>
-                <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length:</strong> {{ weapon.length|first }}m</p>
-                <p><i class="fa-solid fa-coins icon"></i><strong>Cost:</strong> {{ weapon.cost_in_credits|first }} credits</p>
+                <p><i class="fa-solid fa-file-lines icon"></i><strong>Description: </strong><span property="description">{{ weapon.description|first }}</span></p>
+                <p><i class="fa-solid fa-atom icon"></i><strong>Weapon Type: </strong><span property="type">{{ weapon.type|slice:"1:2"|first|default:"Unknown" }}</span></p>
+                <p><i class="fa-solid fa-cogs icon"></i><strong>Model: </strong><span property="model">{{ weapon.model|join:", " }}</span></p>
+                <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer: </strong><span property="manufacturer">{{ weapon.manufacturer|first }}</span></p>
+                <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length: </strong><span property="length">{{ weapon.length|first }}m</span></p>
+                <p><i class="fa-solid fa-coins icon"></i><strong>Cost: </strong><span property="cost_in_credits">{{ weapon.cost_in_credits|first }} credits</span></p>
 
                 <!-- Films Appeared In -->
                 <p><i class="fa-solid fa-film icon"></i><strong>Appears In:</strong> 
