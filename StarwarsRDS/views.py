@@ -48,6 +48,371 @@ def home(request):
 def handle_404_error(request, exception):
     return render(request, 'error404.html')
 
+@csrf_exempt
+def run_inferences(request, character_uri):
+    if request.method == 'POST':
+        wikidata_id = character_uri
+        if not wikidata_id:
+            return JsonResponse({'error': 'character_uri parameter is required'}, status=400)
+
+        graphdb_url = "http://localhost:7200/repositories/starwars/statements"
+        headers = {
+            'Content-Type': 'application/sparql-update'
+        }
+
+        sparql_queries = [
+            # Siblings
+            f"""
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+            PREFIX : <http://localhost:8000/ontology#>
+
+            INSERT {{
+                ?localX :hasSibling ?target .
+                ?target rdfs:label ?siblingLabel .
+            }} WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    {{
+                        wd:{wikidata_id} wdt:P22 ?parent .
+                        ?sibling wdt:P22 ?parent .
+                        FILTER(?sibling != wd:{wikidata_id})
+                    }} UNION {{
+                        wd:{wikidata_id} wdt:P25 ?parent .
+                        ?sibling wdt:P25 ?parent .
+                        FILTER(?sibling != wd:{wikidata_id})
+                    }}
+                    OPTIONAL {{ ?sibling rdfs:label ?siblingLabel FILTER (lang(?siblingLabel) = "en") }}
+                }}
+
+                BIND(COALESCE(?localY, ?sibling) AS ?target)
+
+                OPTIONAL {{ ?localY rdfs:seeAlso ?sibling }}
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?siblingLabel }}
+            }}
+            """,
+
+            # Example shown above — repeat same logic for other relationships below
+            # Each one checks if the local match exists; if not, uses the Wikidata URI and inserts label
+
+            # Uncle
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasUncle ?target .
+                ?target rdfs:label ?uncleLabel .
+            }} WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
+                    ?uncle wdt:P22|wdt:P25 ?grandparent .
+                    ?parent wdt:P22|wdt:P25 ?grandparent .
+                    FILTER(?uncle != ?parent)
+                    ?uncle wdt:P21 wd:Q6581097 .
+                    OPTIONAL {{ ?uncle rdfs:label ?uncleLabel FILTER (lang(?uncleLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localUncle rdfs:seeAlso ?uncle }}
+                BIND(COALESCE(?localUncle, ?uncle) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?uncleLabel }}
+            }}
+            """,
+
+            # Aunt
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasAunt ?target .
+                ?target rdfs:label ?auntLabel .
+            }} WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
+                    ?aunt wdt:P22|wdt:P25 ?grandparent .
+                    ?parent wdt:P22|wdt:P25 ?grandparent .
+                    FILTER(?aunt != ?parent)
+                    ?aunt wdt:P21 wd:Q6581072 .
+                    OPTIONAL {{ ?aunt rdfs:label ?auntLabel FILTER (lang(?auntLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localAunt rdfs:seeAlso ?aunt }}
+                BIND(COALESCE(?localAunt, ?aunt) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?auntLabel }}
+            }}
+            """,
+
+            # Nephew
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasNephew ?target .
+                ?target rdfs:label ?nephewLabel .
+            }} WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
+                    ?sibling wdt:P22|wdt:P25 ?parent .
+                    FILTER(?sibling != wd:{wikidata_id})
+                    ?sibling wdt:P40 ?nephew .
+                    ?nephew wdt:P21 wd:Q6581097 .
+                    OPTIONAL {{ ?nephew rdfs:label ?nephewLabel FILTER (lang(?nephewLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localNephew rdfs:seeAlso ?nephew }}
+                BIND(COALESCE(?localNephew, ?nephew) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?nephewLabel }}
+            }}
+            """,
+
+            # Niece
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasNiece ?target .
+                ?target rdfs:label ?nieceLabel .
+            }} WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
+                    ?sibling wdt:P22|wdt:P25 ?parent .
+                    FILTER(?sibling != wd:{wikidata_id})
+                    ?sibling wdt:P40 ?niece .
+                    ?niece wdt:P21 wd:Q6581072 .
+                    OPTIONAL {{ ?niece rdfs:label ?nieceLabel FILTER (lang(?nieceLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localNiece rdfs:seeAlso ?niece }}
+                BIND(COALESCE(?localNiece, ?niece) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?nieceLabel }}
+            }}
+            """,
+
+            # Grandfather
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasGrandfather ?target .
+                ?target rdfs:label ?grandfatherLabel .
+            }} WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
+                    ?parent wdt:P22 ?grandfather .
+                    OPTIONAL {{ ?grandfather rdfs:label ?grandfatherLabel FILTER (lang(?grandfatherLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localGrandfather rdfs:seeAlso ?grandfather }}
+                BIND(COALESCE(?localGrandfather, ?grandfather) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?grandfatherLabel }}
+            }}
+            """,
+
+            # Grandmother
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasGrandmother ?target .
+                ?target rdfs:label ?grandmotherLabel .
+            }} WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
+                    ?parent wdt:P25 ?grandmother .
+                    OPTIONAL {{ ?grandmother rdfs:label ?grandmotherLabel FILTER (lang(?grandmotherLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localGrandmother rdfs:seeAlso ?grandmother }}
+                BIND(COALESCE(?localGrandmother, ?grandmother) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?grandmotherLabel }}
+            }}
+            """,
+
+            # Father in Law
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasFatherInLaw ?target .
+                ?target rdfs:label ?fatherInLawLabel .
+            }} WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P26 ?spouse .
+                    ?spouse wdt:P22 ?fatherInLaw .
+                    OPTIONAL {{ ?fatherInLaw rdfs:label ?fatherInLawLabel FILTER (lang(?fatherInLawLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localFatherInLaw rdfs:seeAlso ?fatherInLaw }}
+                BIND(COALESCE(?localFatherInLaw, ?fatherInLaw) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?fatherInLawLabel }}
+            }}
+            """,
+
+            #Mother in Law
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasMotherInLaw ?target .
+                ?target rdfs:label ?motherInLawLabel .
+            }} WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P26 ?spouse .
+                    ?spouse wdt:P25 ?motherInLaw .
+                    OPTIONAL {{ ?motherInLaw rdfs:label ?motherInLawLabel FILTER (lang(?motherInLawLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localMotherInLaw rdfs:seeAlso ?motherInLaw }}
+                BIND(COALESCE(?localMotherInLaw, ?motherInLaw) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?motherInLawLabel }}
+            }}
+            """
+        ]
+
+        try:
+            import requests
+            for query in sparql_queries:
+                response = requests.post(graphdb_url, data=query, headers=headers)
+                if response.status_code not in (200, 204):
+                    return JsonResponse({'error': 'GraphDB error in one of the queries', 'details': response.text}, status=500)
+
+            return JsonResponse({'message': 'All inferences triggered successfully'})
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse({'error': 'Invalid request'}, status=400)
+
+def inferences_page(request):
+    return render(request, 'inferences.html')
+
+@csrf_exempt
+def runall_inferences(request):
+    if request.method == 'POST':
+        graphdb_url = "http://localhost:7200/repositories/starwars/statements"
+        headers = {
+            'Content-Type': 'application/sparql-update'
+        }
+
+        sparql_queries = [
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+            INSERT {{
+            ?city :UrbanCenter true .
+            }}
+            WHERE {{
+            ?city a :City ;
+                    :population ?pop .
+            FILTER(xsd:integer(?pop) > 10000000)
+            }}
+            """,
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+            INSERT {{
+            ?city :UrbanCenter false .
+            }}
+            WHERE {{
+            ?city a :City ;
+                    :population ?pop .
+            FILTER(xsd:integer(?pop) <= 10000000)
+            }}
+
+            """,
+            f"""
+            PREFIX :     <http://localhost:8000/ontology#>
+            PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+            INSERT {{
+                ?planet :Habitable false .
+            }}
+            WHERE {{
+                ?planet a :Planet .
+                FILTER NOT EXISTS {{
+                    ?planet :population ?pop .
+                    FILTER(str(?pop) != "")
+                }}
+            }}
+            """,
+            f"""
+            PREFIX :     <http://localhost:8000/ontology#>
+            PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+            INSERT {{
+                ?planet :Habitable true .
+            }}
+            WHERE {{
+                ?planet a :Planet ;
+                        :population ?pop .
+                FILTER(xsd:integer(?pop) > 0)
+            }}
+            """,
+        ]
+
+        try:
+            import requests
+            for query in sparql_queries:
+                response = requests.post(graphdb_url, data=query, headers=headers)
+                if response.status_code not in (200, 204):
+                    return JsonResponse({'error': 'GraphDB error in one of the queries', 'details': response.text}, status=500)
+
+            return JsonResponse({'message': 'All inferences triggered successfully'})
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse({'error': 'Invalid request'}, status=400)
 
 def import_entity(request):
     if request.method == "POST":
@@ -173,6 +538,7 @@ def resource_redirect(request, _id):
 
 def character_details(request, _id):
     details = get_details(res[_id], graph)
+    print("details",details)
     return render(request, 'character_details.html', {'character': details})
 
 

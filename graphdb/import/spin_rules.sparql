@@ -21,3 +21,30 @@ WHERE {
   }
   BIND(COALESCE(?VLocal, ?VRemote) AS ?V)
 }
+
+
+##Insert siblings
+## Mudar wd:Q51746 para aceitar o url do character na pagina de detalhes
+
+CONSTRUCT {
+  ?localX :Sibling ?localY .
+} WHERE {
+  ?localX rdfs:seeAlso wd:Q51746 .
+  ?localY rdfs:seeAlso ?y .
+
+  SERVICE <https://query.wikidata.org/sparql> {
+    {
+      wd:Q51746 wdt:P22 ?parent .
+      ?y wdt:P22 ?parent .
+      FILTER(?y != wd:Q51746)
+    }
+    UNION
+    {
+      wd:Q51746 wdt:P25 ?parent .
+      ?y wdt:P25 ?parent .
+      FILTER(?y != wd:Q51746)
+    }
+  }
+}
+
+

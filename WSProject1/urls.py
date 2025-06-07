@@ -27,9 +27,13 @@ urlpatterns = [
     
     path('resource/<str:_id>', views.resource_redirect, name='search'),
 
+    path('inferences',views.inferences_page,name='inferences'),
+
+    path('runallinferences',views.runall_inferences,name='allinferences'),
+
     path('import',views.import_entity,name='import_entity'),
 
-
+    path('run-inferences/<str:character_uri>/', views.run_inferences, name='run_inferences'),
 
     path('characters',views.characters, name='characters'),
     path('characters/<str:_id>',views.character_details,name='character_details'),
