@@ -264,12 +264,6 @@
 
 {% block content %}
     <div class="container mt-5">
-    <div class="text-end mb-3">
-        <button id="run-inferences" class="btn btn-success">
-            <i class="fas fa-project-diagram"></i> Run Inferences
-        </button>
-    </div>
-
     <div class="character-container">
     <h2 class="character-title"><i class="fas fa-user"></i> {{ character.label.0 }}</h2>
     <div class="row g-0 align-items-center">
@@ -359,14 +353,19 @@
                 Edit Attributes
             </button>
         </div>
+        <div class="text-center mt-3">
+        <button id="run-inferences" class="btn btn-success">
+            <i class="fas fa-project-diagram"></i> Run Inferences
+        </button>
+    </div>
         </div>
     </div>
 
-    <div class="family-tree-container">
-        <h3 class="family-tree-title">
+
+    <h3 class="family-tree-title">
             <i class="fas fa-sitemap"></i> {{ character.label.0 }} Family Tree
         </h3>
-        
+    <div class="family-tree-container">
         <div class="tree">
             <ul>
                 <!-- Grandparents Generation -->
@@ -428,6 +427,45 @@
                                                 <div class="person-details">
                                                     Aunt<br>
                                                     <i class="fas fa-heart"></i> Noblewoman
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+
+                {% if character.hasFatherInLaw or character.hasMotherInLaw %}
+                    <li>
+                        <div class="generation">
+                            <div class="generation-label">Parents-in-Law</div>
+                            <div class="sibling-group">
+                                {% if character.hasFatherInLaw %}
+                                    {% for fil in character.hasFatherInLaw %}
+                                        {% if fil.1 %}
+                                            <div class="person-card" onclick="navigateToCharacter('{{ fil.0 }}')">
+                                                <div class="person-photo"><i class="fas fa-user"></i></div>
+                                                <div class="person-name">{{ fil.1 }}</div>
+                                                <div class="person-details">
+                                                    Father-in-law<br>
+                                                    <i class="fas fa-skull"></i> Deceased
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+
+                                {% if character.hasMotherInLaw %}
+                                    {% for mil in character.hasMotherInLaw %}
+                                        {% if mil.1 %}
+                                            <div class="person-card" onclick="navigateToCharacter('{{ mil.0 }}')">
+                                                <div class="person-photo"><i class="fas fa-user"></i></div>
+                                                <div class="person-name">{{ mil.1 }}</div>
+                                                <div class="person-details">
+                                                    Mother-in-law<br>
+                                                    <i class="fas fa-skull"></i> Deceased
                                                 </div>
                                             </div>
                                         {% endif %}
@@ -528,6 +566,25 @@
                                     </div>
                                 {% endfor %}
                             {% endif %}
+
+                            <!-- Spouse -->
+                            {% if character.P26 %}
+                                {% for spouse in character.P26 %}
+                                    {% if spouse.1 %}
+                                        <div class="person-card spouse-connection" onclick="navigateToCharacter('{{ spouse.0 }}')">
+                                            <div class="person-photo">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div class="person-name">{{ spouse.1 }}</div>
+                                            <div class="person-details">
+                                                Spouse<br>
+                                                <i class="fas fa-ring"></i> Partner
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+
                         </div>
                     </div>
                     

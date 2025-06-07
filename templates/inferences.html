@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: url('https://t4.ftcdn.net/jpg/02/22/57/71/360_F_222577179_MTxLtAKP3nwY5LEyKva28oCt0xO4qxJ2.jpg');
+        color: yellow;
+        font-family: 'Star Jedi', Arial, sans-serif;
+    }
+
+    .container1 {   
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        max-width: 500px;
+        width: 90%;
+        
+        /* Add these for centering */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+        opacity: 0.8;
+    }
+
+    .spin-button {
+        background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        color: white;
+        border: none;
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(238, 90, 36, 0.3);
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        min-width: 200px;
+    }
+
+    .spin-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    .spin-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 25px rgba(238, 90, 36, 0.4);
+        background: linear-gradient(45deg, #ff5252, #e53e3e);
+    }
+
+    .spin-button:hover::before {
+        left: 100%;
+    }
+
+    .spin-button:active {
+        transform: translateY(0);
+        box-shadow: 0 6px 15px rgba(238, 90, 36, 0.3);
+    }
+
+    .spin-button:focus {
+        outline: none;
+        box-shadow: 0 8px 20px rgba(238, 90, 36, 0.3), 0 0 0 3px rgba(238, 90, 36, 0.2);
+    }
+
+    .loading {
+        background: linear-gradient(45deg, #74b9ff, #0984e3) !important;
+        pointer-events: none;
+    }
+
+    .loading::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top: 2px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .success {
+        background: linear-gradient(45deg, #55a3ff, #003d82) !important;
+        animation: pulse 0.6s ease-in-out;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 2rem 1.5rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .spin-button {
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            min-width: 180px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="container1">
+        <h1>🔄 SPIN Rules</h1>
+        <p class="subtitle">Execute semantic rules and constraints</p>
+        
+        <button class="spin-button" id="runButton" onclick="runSpinRules()">
+            <span id="buttonText">Run SPIN Rules</span>
+        </button>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+
+    <script>
+        function runSpinRules() {
+            fetch(`/runallinferences`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert('Inferences triggered successfully!');
+                    location.reload();
+                } else {
+                    alert('Failed to trigger inferences.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('Error triggering inferences.');
+            });
+        }
+    </script>
+
+
+{% endblock %}
