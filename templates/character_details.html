@@ -286,31 +286,31 @@
             {% endif %}
         <div class="card character-card">
             <div class="card-body">
-                <p><i class="fas fa-dna icon"></i><strong>Species: </strong><a
-                        href="{{ character.specie.0.0 }}">{{ character.specie.0.1 }}</a></p>
+                <p><i class="fas fa-dna icon"></i><strong>Species: </strong><a rel="species"
+                        href="{{ character.specie.0.0 }}"><span property="rdf:label">{{ character.specie.0.1 }}</span></a></p>
                 <p><i class="fas fa-globe icon"></i><strong>Homeworld: </strong><a
-                        href="{{ character.homeworld.0.0 }}">{{ character.homeworld.0.1 }}</a></p>
+                        href="{{ character.homeworld.0.0 }}" rel="homeworld"><span property="rdf:label">{{ character.homeworld.0.1 }}</span></a></p>
                 <p>
-                    <i class="fas fa-venus-mars icon"></i><strong>Gender: </strong> {{ character.gender|join:", " }}
+                    <i class="fas fa-venus-mars icon"></i><strong>Gender: </strong><span property="gender">{{ character.gender|join:", " }}</span>
                 </p>
                 <p><i class="fas fa-cut icon"></i><strong>Hair
-                    Color: </strong> {{ character.hair_color|join:", " }}</p>
+                    Color: </strong><span property="hair_color">{{ character.hair_color|join:", " }}</span></p>
                 <p><i class="fas fa-eye icon"></i><strong>Eye
-                    Color: </strong> {{ character.eye_color.value|join:", " }}</p>
+                    Color: </strong><span property="eye_color">{{ character.eye_color.value|join:", " }}</span></p>
                 <p><i class="fas fa-paint-brush icon"></i><strong>Skin
-                    Color: </strong> {{ character.skin_color|join:", " }}</p>
+                    Color: </strong><span property="skin_color">{{ character.skin_color|join:", " }}</span></p>
                 <p>
-                    <i class="fas fa-align-left icon"></i><strong>Description: </strong> {{ character.description|join:", " }}
+                    <i class="fas fa-align-left icon"></i><strong>Description: </strong><span property="description">{{ character.description|join:", " }}</span>
                 </p>
                 <p>
-                    <i class="fas fa-ruler-vertical icon"></i><strong>Height: </strong> {{ character.height|join:", " }}
+                    <i class="fas fa-ruler-vertical icon"></i><strong>Height: </strong><span property="height">{{ character.height|join:", " }}</span>
                     cm</p>
-                <p><i class="fas fa-weight icon"></i><strong>Weight: </strong> {{ character.weight|join:", " }}
+                <p><i class="fas fa-weight icon"></i><strong>Weight: </strong><span property="weight">{{ character.weight|join:", " }}</span>
                     kg</p>
                 <p><i class="fas fa-baby icon"></i><strong>Year
-                    Born: </strong> {{ character.year_born|join:", " }}</p>
+                    Born: </strong><span property="year_born">{{ character.year_born|join:", " }}</span></p>
                 <p><i class="fas fa-skull icon"></i><strong>Year
-                    Died: </strong> {{ character.year_died|join:", " }}</p>
+                    Died: </strong><span property="year_died">{{ character.year_died|join:", " }}</span></p>
                 <div class="col-md-12">
 
                 {% if character.P20 %}
@@ -377,11 +377,11 @@
             <div class="generation-label">Grandparents</div>
             {% for grandmother in character.hasGrandmother %}
                 {% if grandmother.1 %}
-                    <div class="person-card deceased" onclick="navigateToCharacter('{{ grandmother.0 }}')">
+                    <div class="person-card deceased" onclick="navigateToCharacter('{{ grandmother.0 }}')" rel="hasGrandmother" href="{{ grandmother.0 }}">
                         <div class="person-photo">
                             <i class="fas fa-user"></i>
                         </div>
-                        <div class="person-name">{{ grandmother.1 }}</div>
+                        <div class="person-name" property="rdf:label">{{ grandmother.1 }}</div>
                         <div class="person-details">
                             Grandmother<br>
                             <i class="fas fa-skull"></i> Deceased
@@ -403,11 +403,11 @@
                     {% if character.hasUncle %}
                         {% for uncle in character.hasUncle %}
                             {% if uncle.1 %}
-                                <div class="person-card" onclick="navigateToCharacter('{{ uncle.0 }}')">
+                                <div class="person-card" onclick="navigateToCharacter('{{ uncle.0 }}')" rel="hasUncle" href="{{ uncle.0 }}">
                                     <div class="person-photo">
                                         <i class="fas fa-user"></i>
                                     </div>
-                                    <div class="person-name">{{ uncle.1 }}</div>
+                                    <div class="person-name" property="rdf:label">{{ uncle.1 }}</div>
                                     <div class="person-details">
                                         Uncle<br>
                                         <i class="fas fa-hat-wizard"></i> Veteran
@@ -421,11 +421,11 @@
                     {% if character.hasAunt %}
                         {% for aunt in character.hasAunt %}
                             {% if aunt.1 %}
-                                <div class="person-card" onclick="navigateToCharacter('{{ aunt.0 }}')">
+                                <div class="person-card" onclick="navigateToCharacter('{{ aunt.0 }}')" rel="hasAunt" href="{{ aunt.0 }}">
                                     <div class="person-photo">
                                         <i class="fas fa-user"></i>
                                     </div>
-                                    <div class="person-name">{{ aunt.1 }}</div>
+                                    <div class="person-name" property="rdf:label">{{ aunt.1 }}</div>
                                     <div class="person-details">
                                         Aunt<br>
                                         <i class="fas fa-heart"></i> Noblewoman
@@ -447,9 +447,9 @@
                     {% if character.hasFatherInLaw %}
                         {% for fil in character.hasFatherInLaw %}
                             {% if fil.1 %}
-                                <div class="person-card" onclick="navigateToCharacter('{{ fil.0 }}')">
+                                <div class="person-card" onclick="navigateToCharacter('{{ fil.0 }}')" rel="hasFatherInLaw" href="{{ fil.0 }}">
                                     <div class="person-photo"><i class="fas fa-user"></i></div>
-                                    <div class="person-name">{{ fil.1 }}</div>
+                                    <div class="person-name" property="rdf:label">{{ fil.1 }}</div>
                                     <div class="person-details">
                                         Father-in-law<br>
                                         <i class="fas fa-skull"></i> Deceased
@@ -462,9 +462,9 @@
                     {% if character.hasMotherInLaw %}
                         {% for mil in character.hasMotherInLaw %}
                             {% if mil.1 %}
-                                <div class="person-card" onclick="navigateToCharacter('{{ mil.0 }}')">
+                                <div class="person-card" onclick="navigateToCharacter('{{ mil.0 }}')" rel="hasMotherInLaw" href="{{ mil.0 }}">
                                     <div class="person-photo"><i class="fas fa-user"></i></div>
-                                    <div class="person-name">{{ mil.1 }}</div>
+                                    <div class="person-name" property="rdf:label">{{ mil.1 }}</div>
                                     <div class="person-details">
                                         Mother-in-law<br>
                                         <i class="fas fa-skull"></i> Deceased
@@ -487,11 +487,11 @@
             <div class="sibling-group">
                 {% if character.P22 %}
                     {% for father in character.P22 %}
-                        <div class="person-card deceased" onclick="navigateToCharacter('{{ father.0 }}')">
+                        <div class="person-card deceased" onclick="navigateToCharacter('{{ father.0 }}')" rel="P22" href="{{ father.0 }}">
                             <div class="person-photo">
                                 <i class="fas fa-user"></i>
                             </div>
-                            <div class="person-name">{{ father.1 }}</div>
+                            <div class="person-name" property="rdf:label">{{ father.1 }}</div>
                             <div class="person-details">
                                 Father<br>
                                 <i class="fas fa-skull"></i> Deceased
@@ -502,11 +502,11 @@
                 
                 {% if character.P25 %}
                     {% for mother in character.P25 %}
-                        <div class="person-card deceased spouse-connection" onclick="navigateToCharacter('{{ mother.0 }}')">
+                        <div class="person-card deceased spouse-connection" onclick="navigateToCharacter('{{ mother.0 }}')" rel="P25" href="{{ mother.0 }}">
                             <div class="person-photo">
                                 <i class="fas fa-user"></i>
                             </div>
-                            <div class="person-name">{{ mother.1 }}</div>
+                            <div class="person-name" property="rdf:label">{{ mother.1 }}</div>
                             <div class="person-details">
                                 Mother<br>
                                 <i class="fas fa-crown"></i> Former Queen
@@ -555,11 +555,11 @@
                 <!-- Siblings -->
                 {% if character.hasSibling %}
                     {% for sibling in character.hasSibling %}
-                        <div class="person-card" onclick="navigateToCharacter('{{ sibling.0 }}')">
+                        <div class="person-card" onclick="navigateToCharacter('{{ sibling.0 }}')" property="hasSibling" href="{{ sibling.0 }}">
                             <div class="person-photo">
                                 <i class="fas fa-user"></i>
                             </div>
-                            <div class="person-name">{{ sibling.1 }}</div>
+                            <div class="person-name" property="rdf:label">{{ sibling.1 }}</div>
                             <div class="person-details">
                                 Sibling<br>
                                 <i class="fas fa-crown"></i> Princess<br>
@@ -573,11 +573,11 @@
                 {% if character.P26 %}
                     {% for spouse in character.P26 %}
                         {% if spouse.1 %}
-                            <div class="person-card spouse-connection" onclick="navigateToCharacter('{{ spouse.0 }}')">
+                            <div class="person-card spouse-connection" onclick="navigateToCharacter('{{ spouse.0 }}')" rel="P26" href="{{ spouse.0 }}">
                                 <div class="person-photo">
                                     <i class="fas fa-user"></i>
                                 </div>
-                                <div class="person-name">{{ spouse.1 }}</div>
+                                <div class="person-name" property="rdf:label">{{ spouse.1 }}</div>
                                 <div class="person-details">
                                     Spouse<br>
                                     <i class="fas fa-ring"></i> Partner
@@ -600,7 +600,7 @@
                         <!-- Children -->
                         {% if character.P40 %}
                             {% for child in character.P40 %}
-                                <div class="person-card" onclick="navigateToCharacter('{{ child.0 }}')">
+                                <div class="person-card" onclick="navigateToCharacter('{{ child.0 }}')" property="P40" href="{{ child.0 }}">
                                     <div class="person-photo">
                                         <i class="fas fa-user"></i>
                                     </div>
@@ -617,11 +617,11 @@
                         {% if character.hasNephew %}
                             {% for nephew in character.hasNephew %}
                                 {% if nephew.1 %}
-                                    <div class="person-card" onclick="navigateToCharacter('{{ nephew.0 }}')">
+                                    <div class="person-card" onclick="navigateToCharacter('{{ nephew.0 }}')" rel="hasNephew" href="{{ nephew.0 }}">
                                         <div class="person-photo">
                                             <i class="fas fa-user"></i>
                                         </div>
-                                        <div class="person-name">{{ nephew.1 }}</div>
+                                        <div class="person-name" property="rdf:label">{{ nephew.1 }}</div>
                                         <div class="person-details">
                                             Nephew<br>
                                             <i class="fas fa-jedi"></i> Jedi Knight
@@ -635,11 +635,11 @@
                         {% if character.hasNiece %}
                             {% for niece in character.hasNiece %}
                                 {% if niece.1 %}
-                                    <div class="person-card" onclick="navigateToCharacter('{{ niece.0 }}')">
+                                    <div class="person-card" onclick="navigateToCharacter('{{ niece.0 }}')" rel="hasNiece" href="{{ niece.0 }}">
                                         <div class="person-photo">
                                             <i class="fas fa-user"></i>
                                         </div>
-                                        <div class="person-name">{{ niece.1 }}</div>
+                                        <div class="person-name" property="rdf:label">{{ niece.1 }}</div>
                                         <div class="person-details">
                                             Niece<br>
                                             <i class="fas fa-crown"></i> Princess
@@ -660,11 +660,11 @@
                             <div class="sibling-group">
                                 {% for grandchild in character.hasGrandchild %}
                                     {% if grandchild.1 %}
-                                        <div class="person-card" onclick="navigateToCharacter('{{ grandchild.0 }}')">
+                                        <div class="person-card" onclick="navigateToCharacter('{{ grandchild.0 }}')" rel="hasGrandchild" href="{{ grandchild.0 }}">
                                             <div class="person-photo">
                                                 <i class="fas fa-user"></i>
                                             </div>
-                                            <div class="person-name">{{ grandchild.1 }}</div>
+                                            <div class="person-name" property="rdf:label">{{ grandchild.1 }}</div>
                                             <div class="person-details">
                                                 Grandchild<br>
                                                 <i class="fas fa-baby"></i> Next Generation
