@@ -66,6 +66,7 @@ def get_details(uri, graph, for_form=False):
     if for_form:
         return {key: ", ".join(lst) for key, lst in details.items()}
     else:
+        details["uri"] = uri
         return details
 
 

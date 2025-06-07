@@ -31,32 +31,32 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="character-container">
-        <h2 class="character-title"><i class="fa-solid fa-globe"></i> {{ planet.label.0 }}</h2> <!-- Planet Name -->
+    <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ planet.uri }}">
+        <h2 class="character-title"><i class="fa-solid fa-globe me-2"></i><span property="rdf:label">{{ planet.label.0 }}</span></h2> <!-- Planet Name -->
         <div class="card character-card">
             <div class="card-body">
-                <p><i class="fas fa-weight-hanging icon"></i><strong>Gravity: </strong> {{ planet.gravity|first }}</p>
-                <p><i class="fas fa-cloud icon"></i><strong>Climate: </strong> {{ planet.climate|first }}</p>
-                <p><i class="fas fa-users icon"></i><strong>Population: </strong> {{ planet.population|first }}</p>
-                <p><i class="fas fa-ruler-combined icon"></i><strong>Diameter: </strong> {{ planet.diameter|first }} km</p>
-                <p><i class="fas fa-redo icon"></i><strong>Rotation Period: </strong> {{ planet.rotation_period|first }} hours</p>
-                <p><i class="fas fa-sun icon"></i><strong>Orbital Period: </strong> {{ planet.orbital_period|first }} days</p>
-                <p><i class="fas fa-tint icon"></i><strong>Surface Water: </strong> {{ planet.surface_water|first }}%</p>
+                <p><i class="fas fa-weight-hanging icon"></i><strong>Gravity: </strong><span property="gravity">{{ planet.gravity|first }}</span></p>
+                <p><i class="fas fa-cloud icon"></i><strong>Climate: </strong><span property="climate">{{ planet.climate|first }}</span></p>
+                <p><i class="fas fa-users icon"></i><strong>Population: </strong><span property="population">{{ planet.population|first }}</span></p>
+                <p><i class="fas fa-ruler-combined icon"></i><strong>Diameter: </strong><span property="diameter">{{ planet.diameter|first }} km</span></p>
+                <p><i class="fas fa-redo icon"></i><strong>Rotation Period: </strong><span property="rotation_period">{{ planet.rotation_period|first }} hours</span></p>
+                <p><i class="fas fa-sun icon"></i><strong>Orbital Period: </strong><span property="orbital_period">{{ planet.orbital_period|first }} days</span></p>
+                <p><i class="fas fa-tint icon"></i><strong>Surface Water: </strong><span property="surface_water">{{ planet.surface_water|first }}%</span></p>
                 <p><i class="fas fa-mountain icon"></i><strong>Terrain: </strong>
                     {% for terrain in planet.terrain %}
-                        {{ terrain }}{% if not forloop.last %}, {% endif %}
+                        <span property="terrain">{{ terrain }}</span>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
 
                 <p><i class="fas fa-user icon"></i><strong>Residents: </strong>
                     {% for url,label in planet.resident %}
-                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                        <a rel="resident" href="{{ url }}"><span property="rdf:label">{{ label }}</span></a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
 
                 <p><i class="fas fa-film icon"></i><strong>Appears In:</strong> 
                     {% for url,label in planet.appears_in %}
-                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                        <a rel="appears_in" href="{{ url }}"><span property="rdf:label">{{ label }}</span></a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
             </div>

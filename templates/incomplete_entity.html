@@ -46,16 +46,16 @@
   <div class="card-header">
     Debug info (details)
   </div>
-  <div class="card-body">
+  <div class="card-body" ontology="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# wd: https://www.wikidata.org/wiki/Property:" about="{{ character.uri }}">
     <ul class="list-group list-group-flush">
       {% for predicate, values in details.items %}
         <li class="list-group-item">
           <strong>{{ predicate }}:</strong>
           {% for value in values %}
             {% if value|slice:":4" == "http" %}
-              <a href="{{ value }}">{{ value }}</a>
+              <a rel="{{ predicate }}" href="{{ value }}">{{ value }}</a>
             {% else %}
-              {{ value }}
+              <span property="{{ predicate }}">{{ value }}</span>
             {% endif %}
             {% if not forloop.last %}, {% endif %}
           {% endfor %}

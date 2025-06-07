@@ -43,16 +43,16 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <div class="container mt-5">
-        <div class="character-container">
-            <h2 class="character-title"><i class="fas fa-film"></i> {{ music.label|first }}</h2>
+        <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ music.uri }}">
+            <h2 class="character-title"><i class="fas fa-film me-2"></i><span property="rdf:label">{{ music.label|first }}</span></h2>
             <!-- Display the first value of label -->
             <div class="card character-card">
                 <div class="card-body">
-                    <p><i class="fas fa-paint-brush icon"></i><strong>Composer:</strong> {{ music.composer|first }}</p>
+                    <p><i class="fas fa-paint-brush icon"></i><strong>Composer: </strong><span property="composer">{{ music.composer|first }}</span></p>
                     <!-- Directly display composer -->
                     <p><i class="fas fa-link icon"></i><strong>Associated With:</strong>
                         {% for url,label in music.associated_with %}
-                            <a href="{{ url }}">{{ label }}{% if not forloop.last %}, {% endif %}</a>
+                            <a rel="associated_with" href="{{ url }}"><span property="rdf:label">{{ label }}</span>{% if not forloop.last %}, {% endif %}</a>
                         {% endfor %}
                 </div>
             </div>

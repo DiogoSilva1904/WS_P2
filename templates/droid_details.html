@@ -31,18 +31,18 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="character-container">
-        <h2 class="character-title"><i class="fas fa-robot"></i> {{ droid.label|first }}</h2> <!-- Display the first value of label -->
+    <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ droid.uri }}">
+        <h2 class="character-title"><i class="fas fa-robot me-2"></i><span property="rdf:label">{{ droid.label|first }}</span></h2> <!-- Display the first value of label -->
         <div class="card character-card">
             <div class="card-body">
-                <p><i class="fas fa-users icon"></i><strong>Height:</strong> {{ droid.height|first }}</p>
-                <p><i class="fas fa-cogs icon"></i><strong>Model:</strong> {{ droid.model|first }}</p>
-                <p><i class="fas fa-building icon"></i><strong>Manufacturer:</strong> {{ droid.manufacturer|first }}</p>
+                <p><i class="fas fa-users icon"></i><strong>Height: </strong><span property="height">{{ droid.height|first }}</span></p>
+                <p><i class="fas fa-cogs icon"></i><strong>Model: </strong><span property="model">{{ droid.model|first }}</span></p>
+                <p><i class="fas fa-building icon"></i><strong>Manufacturer: </strong><span property="manufacturer">{{ droid.manufacturer|first }}</span></p>
 
                 <!-- Loop through the 'appears_in' list and display each film -->
                 <p><i class="fas fa-film icon"></i><strong>Appears In:</strong> 
                     {% for url,label in droid.appears_in %}
-                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                        <a rel="appears_in" href="{{ url }}"><span property="rdf:label">{{ label }}</span></a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
 
@@ -50,12 +50,12 @@
                     <i class="fas fa-paint-brush icon"></i>
                     <strong>Plating Color:</strong>
                     {% for color in droid.plating_color %}
-                        {{ color }}{% if not forloop.last %}, {% endif %}
+                        <span property="plating_color">{{ color }}</span>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
-                <p><i class="fas fa-tachometer-alt icon"></i><strong>Mass:</strong> {{ droid.mass|first }}</p>
-                <p><i class="fas fa-palette icon"></i><strong>Sensor Color:</strong> {{ droid.sensor_color|first }}</p>
-                <p><i class="fas fa-cogs icon"></i><strong>Primary Function:</strong> {{ droid.primary_function|first }}</p>
+                <p><i class="fas fa-tachometer-alt icon"></i><strong>Mass:</strong><span property="mass">{{ droid.mass|first }}</span></p>
+                <p><i class="fas fa-palette icon"></i><strong>Sensor Color:</strong><span property="sensor_color">{{ droid.sensor_color|first }}</span></p>
+                <p><i class="fas fa-cogs icon"></i><strong>Primary Function:</strong><span property="primary_function">{{ droid.primary_function|first }}</span></p>
             </div>
         </div>
     </div>

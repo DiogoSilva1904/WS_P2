@@ -39,18 +39,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <div class="container mt-5">
-    <div class="character-container">
-        <h2 class="character-title"><i class="fa-solid fa-network-wired"></i></i> {{ organization.label|first }}</h2> <!-- Display the first value of label -->
+    <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ organization.uri }}">
+        <h2 class="character-title"><i class="fa-solid fa-network-wired me-2"></i></i><span property="rdf:label">{{ organization.label|first }}</span></h2> <!-- Display the first value of label -->
         <div class="card character-card">
             <div class="card-body">
-                <p><i class="fas fa-align-left icon"></i><strong>Description:</strong> {{ organization.description|first }}</p>
-                <p><i class="fas fa-calendar-alt icon"></i><strong>Founded:</strong> {{ organization.founded|first }}</p>
-                <p><i class="fas fa-calendar-times icon"></i><strong>Dissolved:</strong> {{ organization.dissolved|first }}</p>
-                <p><i class="fas fa-users-cog icon"></i><strong>Affiliation:</strong> {{ organization.affiliation|first }}</p>
+                <p><i class="fas fa-align-left icon"></i><strong>Description: </strong><span property="description">{{ organization.description|first }}</span></p>
+                <p><i class="fas fa-calendar-alt icon"></i><strong>Founded: </strong><span property="founded">{{ organization.founded|first }}</span></p>
+                <p><i class="fas fa-calendar-times icon"></i><strong>Dissolved: </strong><span property="dissolved">{{ organization.dissolved|first }}</span></p>
+                <p><i class="fas fa-users-cog icon"></i><strong>Affiliation: </strong><span property="affiliation">{{ organization.affiliation|first }}</span></p>
                 <p>
                     <i class="fas fa-user-tie icon"></i><strong>Leader:</strong>
                     {% for url,label in organization.leader %}
-                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                        <a rel="leader" href="{{ url }}"><span property="rdf:label">{{ label }}</span></a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
     

@@ -31,32 +31,32 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="character-container">
-        <h2 class="character-title"><i class="fa-brands fa-galactic-senate"></i> {{ vehicle.label|first }}</h2> <!-- Vehicle Name -->
+    <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ vehicle.uri }}">
+        <h2 class="character-title"><i class="fa-brands fa-galactic-senate me-2"></i><span property="rdf:label">{{ vehicle.label|first }}</span></h2> <!-- Vehicle Name -->
         <div class="card character-card">
             <div class="card-body">
-                <p><i class="fa-solid fa-cogs icon"></i><strong>Model:</strong> {{ vehicle.model|join:", " }}</p>
-                <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer:</strong> {{ vehicle.manufacturer|first }}</p>
-                <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length:</strong> {{ vehicle.length|first }}m</p>
-                <p><i class="fa-solid fa-gauge-high icon"></i><strong>Max Speed:</strong> {{ vehicle.max_atmosphering_speed|first }} km/h</p>
-                <p><i class="fa-solid fa-boxes-stacked icon"></i><strong>Cargo Capacity:</strong> {{ vehicle.cargo_capacity|first }} kg</p>
-                <p><i class="fa-solid fa-users icon"></i><strong>Crew:</strong> {{ vehicle.crew|first }}</p>
-                <p><i class="fa-solid fa-user-group icon"></i><strong>Passengers:</strong> {{ vehicle.passengers|first }}</p>
-                <p><i class="fa-solid fa-clock icon"></i><strong>Consumables:</strong> {{ vehicle.consumables|first }}</p>
-                <p><i class="fa-solid fa-coins icon"></i><strong>Cost:</strong> {{ vehicle.cost_in_credits|first }} credits</p>
-                <p><i class="fa-solid fa-car-side icon"></i><strong>Class:</strong> {{ vehicle.vehicle_class|first }}</p>
+                <p><i class="fa-solid fa-cogs icon"></i><strong>Model: </strong><span property="model">{{ vehicle.model|join:", " }}</span></p>
+                <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer: </strong><span property="manufacturer">{{ vehicle.manufacturer|first }}</span></p>
+                <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length: </strong><span property="length">{{ vehicle.length|first }}m</span></p>
+                <p><i class="fa-solid fa-gauge-high icon"></i><strong>Max Speed: </strong><span property="max_atmosphering_speed">{{ vehicle.max_atmosphering_speed|first }} km/h</span></p>
+                <p><i class="fa-solid fa-boxes-stacked icon"></i><strong>Cargo Capacity: </strong><span property="cargo_capacity">{{ vehicle.cargo_capacity|first }} kg</span></p>
+                <p><i class="fa-solid fa-users icon"></i><strong>Crew: </strong><span property="crew">{{ vehicle.crew|first }}</span></p>
+                <p><i class="fa-solid fa-user-group icon"></i><strong>Passengers: </strong><span property="passengers">{{ vehicle.passengers|first }}</span></p>
+                <p><i class="fa-solid fa-clock icon"></i><strong>Consumables: </strong><span property="consumables">{{ vehicle.consumables|first }}</span></p>
+                <p><i class="fa-solid fa-coins icon"></i><strong>Cost: </strong><span property="cost_in_credits">{{ vehicle.cost_in_credits|first }} credits</span></p>
+                <p><i class="fa-solid fa-car-side icon"></i><strong>Class: </strong><span property="vehicle_class">{{ vehicle.vehicle_class|first }}</span></p>
 
                 <!-- Pilots -->
                 <p><i class="fa-solid fa-user-astronaut icon"></i><strong>Pilot:</strong> 
                     {% for url,label in vehicle.pilot %}
-                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                        <a rel="pilot" href="{{ url }}"><span property="rdf:label">{{ label }}</span></a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
 
                 <!-- Films Appeared In -->
                 <p><i class="fa-solid fa-film icon"></i><strong>Appears In:</strong> 
                     {% for url,label in vehicle.appears_in %}
-                        <a href="{{ url }}">{{ label }}</a>{% if not forloop.last %}, {% endif %}
+                        <a rel="appears_in" href="{{ url }}"><span property="rdf:label">{{ label }}</span></a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
             </div>
