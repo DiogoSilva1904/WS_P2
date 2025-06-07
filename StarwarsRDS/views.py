@@ -316,7 +316,63 @@ def run_inferences(request, character_uri):
 
                 FILTER NOT EXISTS {{ ?target rdfs:label ?motherInLawLabel }}
             }}
-            """
+            """,
+            #Neto
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasGrandson ?target .
+                ?target rdfs:label ?grandchildLabel .
+            }}
+            WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P40 ?child .
+                    ?child wdt:P40 ?grandchild .
+                    ?grandchild wdt:P21 wd:Q6581097 .  # male
+                    OPTIONAL {{ ?grandchild rdfs:label ?grandchildLabel FILTER(LANG(?grandchildLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localGrandchild rdfs:seeAlso ?grandchild }}
+                BIND(COALESCE(?localGrandchild, ?grandchild) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?grandchildLabel }}
+            }}
+            """,
+
+            #Neta
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasGranddaughter ?target .
+                ?target rdfs:label ?grandchildLabel .
+            }}
+            WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P40 ?child .
+                    ?child wdt:P40 ?grandchild .
+                    ?grandchild wdt:P21 wd:Q6581072 .  # female
+                    OPTIONAL {{ ?grandchild rdfs:label ?grandchildLabel FILTER(LANG(?grandchildLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localGrandchild rdfs:seeAlso ?grandchild }}
+                BIND(COALESCE(?localGrandchild, ?grandchild) AS ?target)
+
+                FILTER NOT EXISTS {{ ?target rdfs:label ?grandchildLabel }}
+            }}
+            """,
+
         ]
 
         try:
@@ -538,7 +594,7 @@ def resource_redirect(request, _id):
 
 def character_details(request, _id):
     details = get_details(res[_id], graph)
-    print("details",details)
+    #print("details",details)
     return render(request, 'character_details.html', {'character': details})
 
 

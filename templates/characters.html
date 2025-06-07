@@ -2,6 +2,84 @@
 {% extends 'base.html' %}
 
 {% block styles %}
+    <style>
+        body {
+            background: url('https://t4.ftcdn.net/jpg/02/22/57/71/360_F_222577179_MTxLtAKP3nwY5LEyKva28oCt0xO4qxJ2.jpg');
+            font-family: 'Arial', sans-serif;
+            color: #f0f0f0;
+        }
+
+        .navbar{
+            color:#000;
+        }
+
+        .list-group-item {
+            background-color: rgba(30, 30, 40, 0.9) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: #f0f0f0 !important;
+        }
+
+        .list-group-item a {
+            color: #9dd1ff !important;
+            text-decoration: none;
+        }
+
+        .list-group-item a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-primary {
+            background-color: #5c5cff !important;
+            border: none !important;
+        }
+
+        .add-btn{
+            background-color: #5c5cff !important;
+            border: none !important;
+        }
+
+
+        .btn-primary:hover {
+            background-color: #7777ff !important;
+        }
+
+        .btn-danger {
+            background-color: #ff5c5c !important;
+            border: none !important;
+        }
+
+        .btn-danger:hover {
+            background-color: #ff7777 !important;
+        }
+
+        h1 {
+            color: #ffffff !important;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+        }
+
+        .nav-link.active {
+            background-color: #444475 !important;
+        }
+
+        .modal-content {
+            background-color: #1e1e2a !important;
+            color: #f0f0f0 !important;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #555 !important;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+    </style>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
