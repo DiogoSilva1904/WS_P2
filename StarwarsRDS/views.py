@@ -95,9 +95,6 @@ def run_inferences(request, character_uri):
             }}
             """,
 
-            # Example shown above — repeat same logic for other relationships below
-            # Each one checks if the local match exists; if not, uses the Wikidata URI and inserts label
-
             # Uncle
             f"""
             PREFIX : <http://localhost:8000/ontology#>
@@ -443,6 +440,21 @@ def runall_inferences(request):
                 FILTER(xsd:integer(?pop) > 0)
             }}
             """,
+            f"""
+            PREFIX ont: <http://localhost:8000/ontology#>
+            INSERT {{
+                ?x a ont:Weapon .
+            }}
+            WHERE {{
+                ?x ont:type ?type .
+                FILTER(
+                    CONTAINS(LCASE(STR(?type)), "melee") ||
+                    CONTAINS(LCASE(STR(?type)), "blaster") ||
+                    CONTAINS(LCASE(STR(?type)), "explosive") ||
+                    CONTAINS(LCASE(STR(?type)), "projectile")
+                )
+            }}
+            """,
         ]
 
         try:
@@ -538,7 +550,7 @@ def resource_redirect(request, _id):
         SELECT DISTINCT ?t
         WHERE{
             ?uri rdf:type ?t .
-            VALUES ?t { ont:Character ont:City ont:Droid ont:Film ont:Music ont:Organization ont:Planet ont:Quote ont:Specie ont:Vehicle ont:Starship ont:Weapon } .
+            VALUES ?t { ont:Character ont:City ont:Droid ont:Film ont:Music ont:Organizations ont:Planet ont:Quote ont:Specie ont:Vehicle ont:Starship ont:Weapon } .
         }
     """
 
@@ -562,7 +574,7 @@ def resource_redirect(request, _id):
                 return redirect("http://localhost:8000/films/" + _id)
             case ont.Music:
                 return redirect("http://localhost:8000/music/" + _id)
-            case ont.Organization:
+            case ont.Organizations:
                 return redirect("http://localhost:8000/organizations/" + _id)
             case ont.Planet:
                 return redirect("http://localhost:8000/planets/" + _id)
@@ -582,7 +594,7 @@ def resource_redirect(request, _id):
 
 def character_details(request, _id):
     details = get_details(res[_id], graph)
-    print("details",details)
+    #print("details",details)
     return render(request, 'character_details.html', {'character': details})
 
 
@@ -593,13 +605,13 @@ def city_details(request, _id):
 
 def droid_details(request, _id):
     details = get_details(res[_id], graph)
-    print("droid_details",details)
+    #print("droid_details",details)
     return render(request, 'droid_details.html', {'droid': details})
 
 
 def film_details(request, _id):
     details = get_details(res[_id], graph)
-    print("details",details)
+    #print("details",details)
     return render(request, 'film_details.html', {'film': details})
 
 
@@ -610,13 +622,11 @@ def music_details(request, _id):
 
 def organization_details(request, _id):
     details = get_details(res[_id], graph)
-    print("lol",details)
     return render(request, 'organization_details.html', {'organization': details})
 
 
 def planet_details(request, _id):
     details = get_details(res[_id], graph)
-    print("a",details)
     return render(request, 'planet_details.html', {'planet': details})
 
 
@@ -746,7 +756,7 @@ def edit_character(request, _id=None):
     if request.method == "GET":
         if _id:  # the id itself is not important, it's just that I needed it for the path (and now use it to decide whether it's an updade or insert
             character_uri = request.build_absolute_uri().split("/")
-            character_uri = "/".join(character_uri[:-1])
+            character_uri = "http://localhost:8000/resource/" + character_uri[4]
             initial_data = get_details(character_uri, graph, for_form=True)
             form = CharacterForm(initial=initial_data)
         else:
@@ -754,13 +764,16 @@ def edit_character(request, _id=None):
         return render(request, 'edit_character.html', {'form': form})
     elif request.method == "POST":
         form = CharacterForm(request.POST)
-
+        print("hello")
         if form.is_valid():
+            print("x",_id)
             if _id:
                 character_uri = request.build_absolute_uri().split("/")
-                character_uri = "/".join(character_uri[:-1])
+                character_uri = "http://localhost:8000/resource/" + character_uri[4]
+                print("uri",character_uri)
                 update_character(form, character_uri=character_uri)
             else:
+                print("hy")
                 update_character(form)
             return HttpResponse(200)
         else:
@@ -781,7 +794,7 @@ def delete_entity(request, uri):
 
         print("URI", uri)
         delete_query = f"""
-        PREFIX sw: <http://localhost:8000/characters/>
+        PREFIX sw: <http://localhost:8000/resource/>
         DELETE WHERE {{
             sw:{uri} ?p ?o .
         }}

@@ -91,10 +91,10 @@ def remove_entity(graph,uri):
 
 
 def update_character(form, character_uri=None):
-    sw = Namespace("http://localhost:8000/characters/")
-    character_ns = Namespace("http://localhost:8000/characters/")
-    specie_ns = Namespace("http://localhost:8000/species/")
-    planet_ns = Namespace("http://localhost:8000/planets/")
+    sw = Namespace("http://localhost:8000/resource/")
+    character_ns = Namespace("http://localhost:8000/resource/")
+    specie_ns = Namespace("http://localhost:8000/resource/")
+    planet_ns = Namespace("http://localhost:8000/resource/")
 
     if character_uri:
         # if already exists, remove all old triples first
@@ -117,6 +117,18 @@ def update_character(form, character_uri=None):
             headers={"Content-Type": "application/sparql-update"},
             data=insert_query,
         )
+
+        insert_query = f"""
+            INSERT DATA {{
+                <{character_uri}> rdf:type <http://localhost:8000/ontology#Character> .
+            }}
+        """
+        response = requests.post(
+            "http://localhost:7200/repositories/starwars/statements",
+            headers={"Content-Type": "application/sparql-update"},
+            data=insert_query,
+        )
+        response.raise_for_status()
         response.raise_for_status()
 
 
