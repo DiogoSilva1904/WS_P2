@@ -18,6 +18,7 @@ g.bind("res", res)
 g.bind("wd", wd)
 
 characters=dict()
+films=dict()
 
 #Note: Since the author uses names/titles as "private keys", I will be using them for the URIs (except for quotes, since it only has ids).
 #It should also be noted that some files are missing (events, battles and timeline) because they were either incomplete or had type ambiguity (for example, the victors of battles could be either organizations or a planet('s inhabitants))
@@ -124,6 +125,9 @@ with open("films.csv","r") as csvfile:
         g.add((film_uri, ont.release_date, Literal(row["release_date"], datatype=XSD.date)))
         g.add((film_uri, ont.director, Literal(row["director"])))
         g.add((film_uri, ont.opening_crawl, Literal(row["opening_crawl"])))
+
+        if film_uri not in films:
+            films[film_uri] = row["title"]
 
         for producer in row["producer"].split(','):
             g.add((film_uri, ont.producer, Literal(producer)))
@@ -370,11 +374,30 @@ for idx,row in df.iterrows():
     if pd.notnull(row["qid"]):
         g.add((row["uri"],RDFS.seeAlso,wd[row["qid"]]))
 
-rdf_xml=g.serialize(format="xml")
+# Reconcile films with Wikidata
+films_df = pd.DataFrame([
+    {"uri": uri, "label": label}
+    for uri, label in films.items()
+])
 
-with open("starwars_rdf.xml","w") as f:
+try:
+    print("\nAttempting to reconcile films with Wikidata...")
+    films_reconciled = reconcile(films_df["label"], type_id="Q11424")
+    films_df["qid"] = films_reconciled["id"].values
+    
+    print("Films reconciliation successful:")
+    print(films_df[["label", "uri", "qid"]])
+    
+    for idx, row in films_df.iterrows():
+        if pd.notnull(row["qid"]):
+            g.add((row["uri"], RDFS.seeAlso, wd[row["qid"]]))
+    
+except Exception as e:
+    print(f"Films reconciliation failed: {e}")
+    print("Continuing without film reconciliation...")
+    films_df["qid"] = None
+
+rdf_xml = g.serialize(format="xml")
+
+with open("starwars_rdf.xml", "w") as f:
     f.write(rdf_xml)
-
-
-
-

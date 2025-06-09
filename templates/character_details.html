@@ -323,6 +323,10 @@
                     kg</p>
                 <p><i class="fas fa-baby icon"></i><strong>Year
                     Born: </strong><span property="year_born">{{ character.year_born|join:", " }}</span></p>
+                {% if character.P19 %}
+                <p><i class="fas fa-baby icon"></i><strong>Place of Birth: </strong><a rel="wd:P19"
+                        href="{{ character.P19.0.0 }}"><span property="rdf:label">{{ character.P19.0.1 }}</span></a></p>
+                {% endif %}
                 <p><i class="fas fa-skull icon"></i><strong>Year
                     Died: </strong><span property="year_died">{{ character.year_died|join:", " }}</span></p>
                 <div class="col-md-12">
@@ -333,11 +337,34 @@
                 {% endif %}
                 {% if character.P157 %}
                 <p><i class="fas fa-skull icon"></i><strong>Killed by: </strong><a rel="wd:P157"
-                        href="{{ character.P157.0.0 }}"><span property="rdf:label">{{ character.P157.0.1 }}</span></a></p>
+                        HTTP/1.1href="{{ character.P157.0.0 }}"><span property="rdf:label">{{ character.P157.0.1 }}</span></a></p>
+                {% endif %}
+                 {% if character.P1196 %}
+                 <p>
+                    <i class="fas fa-skull icon"></i><strong>Manner od Death:</strong><span property="wd:P1196">{{ character.P1196.0.1 }}</span>
+                </p>
                 {% endif %}
                 {% if character.P3909 %}
                 <p>
                     <i class="fas fa-comment icon"></i><strong>Last words: </strong><span property="wd:P3909">{{character.P3909|join:", " }}</span>
+                </p>
+                {% endif %}
+
+                {% if character.P802 %}
+                <p>
+                    <i class="fa-solid fa-book-journal-whills"></i><strong>Students: </strong>
+                    {% for student in character.P802 %}
+                    <a rel="wd:P802" href="{{ student.0 }}"><span property="rdf:label">{{ student.1 }}</span></a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                {% endif %}
+
+                {% if character.P1066 %}
+                <p>
+                    <i class="fa-solid fa-jedi"></i><strong>Jedi Masters: </strong>
+                    {% for master in character.P1066 %}
+                    <a rel="wd:P802" href="{{ master.0 }}"><span property="rdf:label">{{ master.1 }}</span></a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
                 </p>
                 {% endif %}
 
@@ -773,12 +800,14 @@ $(document).ready(function () {
 
 <script>
 $('#run-inferences').click(function () {
-    let fullUri = "{{ character.seeAlso.0.0 }}";
+    let fullUri = "{{ character.seeAlso.0 }}";
+
+    //console.log("fullUri",fullUri);
     
     // Clean up the string: extract only the Q-ID part
     let id = fullUri.match(/Q\d+/)[0];  // Extract just the Q + numbers
 
-    console.log("lol",id);
+    //console.log("lol",id);
     
     fetch(`/run-inferences/${id}/`, {
         method: 'POST',
@@ -801,6 +830,7 @@ $('#run-inferences').click(function () {
 
 <script>
   function navigateToCharacter(uri) {
+    console.log("lol",uri);
     if (uri) {
        window.location.href=uri
     }

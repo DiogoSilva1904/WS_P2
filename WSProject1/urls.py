@@ -53,8 +53,8 @@ urlpatterns = [
     path('music',views.music,name='music'),
     path('music/<str:_id>',views.music_details,name='music_details'),
 
-    path('organisations',views.organizations,name='organizations'),
-    path('organisations/<str:_id>',views.organization_details,name='organization_details'),
+    path('organizations',views.organizations,name='organizations'),
+    path('organizations/<str:_id>',views.organization_details,name='organization_details'),
 
     path('planets',views.planets,name='planets'),
     path('planets/<str:_id>',views.planet_details,name='planet_details'),

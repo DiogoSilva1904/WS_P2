@@ -180,8 +180,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localNephew rdfs:seeAlso ?nephew }}
                 BIND(COALESCE(?localNephew, ?nephew) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?nephewLabel }}
             }}
             """,
 
@@ -209,8 +207,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localNiece rdfs:seeAlso ?niece }}
                 BIND(COALESCE(?localNiece, ?niece) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?nieceLabel }}
             }}
             """,
 
@@ -235,8 +231,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localGrandfather rdfs:seeAlso ?grandfather }}
                 BIND(COALESCE(?localGrandfather, ?grandfather) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?grandfatherLabel }}
             }}
             """,
 
@@ -261,8 +255,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localGrandmother rdfs:seeAlso ?grandmother }}
                 BIND(COALESCE(?localGrandmother, ?grandmother) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?grandmotherLabel }}
             }}
             """,
 
@@ -287,8 +279,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localFatherInLaw rdfs:seeAlso ?fatherInLaw }}
                 BIND(COALESCE(?localFatherInLaw, ?fatherInLaw) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?fatherInLawLabel }}
             }}
             """,
 
@@ -313,8 +303,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localMotherInLaw rdfs:seeAlso ?motherInLaw }}
                 BIND(COALESCE(?localMotherInLaw, ?motherInLaw) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?motherInLawLabel }}
             }}
             """,
             #Neto
@@ -340,8 +328,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localGrandchild rdfs:seeAlso ?grandchild }}
                 BIND(COALESCE(?localGrandchild, ?grandchild) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?grandchildLabel }}
             }}
             """,
 
@@ -368,8 +354,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localGrandchild rdfs:seeAlso ?grandchild }}
                 BIND(COALESCE(?localGrandchild, ?grandchild) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?grandchildLabel }}
             }}
             """,
 
@@ -400,6 +384,7 @@ def runall_inferences(request):
         }
 
         sparql_queries = [
+            #UrbanCenter true
             f"""
             PREFIX : <http://localhost:8000/ontology#>
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -410,9 +395,10 @@ def runall_inferences(request):
             WHERE {{
             ?city a :City ;
                     :population ?pop .
-            FILTER(xsd:integer(?pop) > 10000000)
+            FILTER(xsd:integer(?pop) > 10000)
             }}
             """,
+            #Urban Center false
             f"""
             PREFIX : <http://localhost:8000/ontology#>
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -423,10 +409,11 @@ def runall_inferences(request):
             WHERE {{
             ?city a :City ;
                     :population ?pop .
-            FILTER(xsd:integer(?pop) <= 10000000)
+            FILTER(xsd:integer(?pop) <= 10000)
             }}
 
             """,
+            #Planeta habitável false
             f"""
             PREFIX :     <http://localhost:8000/ontology#>
             PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
@@ -442,6 +429,7 @@ def runall_inferences(request):
                 }}
             }}
             """,
+            #Planeta Habitável true 
             f"""
             PREFIX :     <http://localhost:8000/ontology#>
             PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
@@ -594,7 +582,7 @@ def resource_redirect(request, _id):
 
 def character_details(request, _id):
     details = get_details(res[_id], graph)
-    #print("details",details)
+    print("details",details)
     return render(request, 'character_details.html', {'character': details})
 
 
@@ -605,11 +593,13 @@ def city_details(request, _id):
 
 def droid_details(request, _id):
     details = get_details(res[_id], graph)
+    print("droid_details",details)
     return render(request, 'droid_details.html', {'droid': details})
 
 
 def film_details(request, _id):
     details = get_details(res[_id], graph)
+    print("details",details)
     return render(request, 'film_details.html', {'film': details})
 
 
@@ -620,11 +610,13 @@ def music_details(request, _id):
 
 def organization_details(request, _id):
     details = get_details(res[_id], graph)
+    print("lol",details)
     return render(request, 'organization_details.html', {'organization': details})
 
 
 def planet_details(request, _id):
     details = get_details(res[_id], graph)
+    print("a",details)
     return render(request, 'planet_details.html', {'planet': details})
 
 
@@ -689,12 +681,13 @@ def music(request):
     uri = "http://localhost:8000/ontology#Music"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
+    print("ahhh",get_list(uri, graph))
     return render(request, 'music.html',
                   {"music": get_list(uri, graph), "graph_html": rdflib_graph_to_html(local_graph)})
 
 
 def organizations(request):
-    uri = "http://localhost:8000/ontology#Organization"
+    uri = "http://localhost:8000/ontology#Organizations"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request, 'organizations.html',
