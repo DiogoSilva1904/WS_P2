@@ -204,15 +204,18 @@
 {% block title %}{{ film.name.0|default:film.label.0 }} - Film Details{% endblock %}
 
 {% block content %}
+<div vocab="http://localhost:8000/ontology#"
+        prefix="wd: https://www.wikidata.org/wiki/Property: rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        typeof="Film" about="{{film.uri}}">
 <div class="hero-section">
     <div class="container">
-        <h1 class="film-title">{{ film.name.0|default:film.label.0 }}</h1>
+        <h1 class="film-title" property="rdf:label">{{ film.name.0|default:film.label.0 }}</h1>
         {% if film.label.1 and film.label.1 != film.label.0 %}
         <p class="film-subtitle">{{ film.label.1 }}</p>
         {% endif %}
         <div class="genre-tags justify-content-center">
             {% for genre_uri, genre_name in film.P136 %}
-            <span class="genre-tag">{{ genre_name }}</span>
+                <span class="genre-tag" rel="wd:P136" resource="{{ genre_uri }}"><span property="rdf:label">{{ genre_name }}</span></span>
             {% endfor %}
         </div>
     </div>
@@ -228,37 +231,37 @@
                     {% if film.release_date %}
                     <div class="spec-item">
                         <span class="spec-label">Release Date</span>
-                        {{ film.release_date.0 }}
+                        <span property="release_data">{{ film.release_date.0 }}</span>
                     </div>
                     {% endif %}
                     {% if film.director %}
                     <div class="spec-item">
                         <span class="spec-label">Director</span>
-                        {{ film.director.0 }}
+                        <span property="director">{{ film.director.0 }}</span>
                     </div>
                     {% endif %}
                     {% if film.producer %}
                     <div class="spec-item">
                         <span class="spec-label">Producer</span>
-                        {{ film.producer.0 }}
+                        <span property="producer">{{ film.producer.0 }}</span>
                     </div>
                     {% endif %}
                     {% if film.P2047 %}
                     <div class="spec-item">
                         <span class="spec-label">Runtime</span>
-                        {{ film.P2047.0 }} minutes
+                        <span property="wd:P2047">{{ film.P2047.0 }} minutes</span>
                     </div>
                     {% endif %}
                     {% for lang_uri, lang_name in film.P364 %}
                     <div class="spec-item">
                         <span class="spec-label">Language</span>
-                        {{ lang_name }}
+                        <span resource="{{  lang_uri }}" rel="wd:P364"><span property="rdf:label">{{ lang_name }}</span></span>
                     </div>
                     {% endfor %}
                     {% for country_uri, country_name in film.P495 %}
                     <div class="spec-item">
                         <span class="spec-label">Country</span>
-                        {{ country_name }}
+                        <span resource="{{ country_uri }}" rel="wd:P495"><span property="rdf:label">{{ country_name }}</span></span>
                     </div>
                     {% endfor %}
                 </div>
@@ -269,6 +272,7 @@
                     {% for rating in film.P444 %}
                         {% if 'tt' in rating or '/' in rating %}
                         <div class="rating-score">{{ rating }}</div>
+                        <span style="display: none;" property="wd:P444">{{ rating }}</span>
                         <div>IMDb Rating</div>
                         {% elif '%' in rating %}
                         <div><strong>{{ rating }}</strong> Rotten Tomatoes</div>
@@ -288,7 +292,7 @@
     <div class="info-card">
         <h2 class="section-title"><i class="fas fa-scroll"></i> Opening Crawl</h2>
         <div class="opening-crawl">
-            "{{ film.opening_crawl.0 }}"
+            <span property="opening_crawl">{{ film.opening_crawl.0 }}"</span>
         </div>
     </div>
     {% endif %}
@@ -301,7 +305,7 @@
             {% for actor in film.P161 %}
             <div class="person-card">
                 <div class="person-name">
-                    <a href="{{ actor.0 }}" class="wikidata-link" target="_blank">{{ actor.1 }}</a>
+                    <a href="{{ actor.0 }}" rel="wd:P161" class="wikidata-link" target="_blank"><span property="rdf:label">{{ actor.1 }}</span></a>
                 </div>
                 <div class="person-role">Actor</div>
             </div>
@@ -318,7 +322,7 @@
             {% for voice_actor_uri, voice_actor_name in film.P725 %}
             <div class="person-card">
                 <div class="person-name">
-                    <a href="{{ voice_actor_uri }}" class="wikidata-link" target="_blank">{{ voice_actor_name }}</a>
+                    <a href="{{ voice_actor_uri }}" rel="wd:P725" class="wikidata-link" target="_blank"><span property="rdf:label">{{ voice_actor_name }}</span></a>
                 </div>
                 <div class="person-role">Voice Actor</div>
             </div>
@@ -335,9 +339,9 @@
             {% for character_uri, character_name in film.P674 %}
             <div class="character-card">
                 {% if 'localhost' in character_uri %}
-                <a href="{{ character_uri }}" class="wikidata-link">{{ character_name }}</a>
+                    <a href="{{ character_uri }}" class="wikidata-link" rel="wd:P674"><span property="rdf:label">{{ character_name }}</span></a>
                 {% else %}
-                <a href="{{ character_uri }}" class="wikidata-link" target="_blank">{{ character_name }}</a>
+                    <a href="{{ character_uri }}" class="wikidata-link" target="_blank" rel="wd:P674"><span property="rdf:label">{{ character_name }}</span></a>
                 {% endif %}
             </div>
             {% endfor %}
@@ -353,7 +357,7 @@
             {% for director_uri, director_name in film.P57 %}
             <div class="person-card">
                 <div class="person-name">
-                    <a href="{{ director_uri }}" class="wikidata-link" target="_blank">{{ director_name }}</a>
+                    <a href="{{ director_uri }}" rel="wd:P57" class="wikidata-link" target="_blank"><span property="rdf:label">{{ director_name }}</span></a>
                 </div>
                 <div class="person-role">Director</div>
             </div>
@@ -364,7 +368,7 @@
             {% for writer_uri, writer_name in film.P58 %}
             <div class="person-card">
                 <div class="person-name">
-                    <a href="{{ writer_uri }}" class="wikidata-link" target="_blank">{{ writer_name }}</a>
+                    <a href="{{ writer_uri }}" class="wikidata-link" target="_blank" rel="wd:P58"><span property="rdf:label">{{ writer_name }}</span></a>
                 </div>
                 <div class="person-role">Writer</div>
             </div>
@@ -375,7 +379,7 @@
             {% for composer_uri, composer_name in film.P86 %}
             <div class="person-card">
                 <div class="person-name">
-                    <a href="{{ composer_uri }}" class="wikidata-link" target="_blank">{{ composer_name }}</a>
+                    <a href="{{ composer_uri }}" class="wikidata-link" target="_blank" rel="wd:P86"><span property="rdf:label">{{ composer_name }}</span></a>
                 </div>
                 <div class="person-role">Music Composer</div>
             </div>
@@ -386,7 +390,7 @@
             {% for cinematographer in film.P344 %}
             <div class="person-card">
                 <div class="person-name">
-                    <a href="{{ cinematographer.0 }}" class="wikidata-link" target="_blank">{{ cinematographer.1 }}</a>
+                    <a href="{{ cinematographer.0 }}" class="wikidata-link" target="_blank" rel="wd:P344"><span property="rdf:label">{{ cinematographer.1 }}</span></a>
                 </div>
                 <div class="person-role">Cinematographer</div>
             </div>
@@ -397,7 +401,7 @@
             {% for editor in film.P1040 %}
             <div class="person-card">
                 <div class="person-name">
-                    <a href="{{ editor.0 }}" class="wikidata-link" target="_blank">{{ editor.1 }}</a>
+                    <a href="{{ editor.0 }}" class="wikidata-link" target="_blank" rel="wd:P1040"><span property="rdf:label">{{ editor.1 }}</span></a>
                 </div>
                 <div class="person-role">Sound Editor</div>
             </div>
@@ -408,7 +412,7 @@
             {% for designer_uri, designer_name in film.P2554 %}
             <div class="person-card">
                 <div class="person-name">
-                    <a href="{{ designer_uri }}" class="wikidata-link" target="_blank">{{ designer_name }}</a>
+                    <a href="{{ designer_uri }}" class="wikidata-link" target="_blank" rel="wd:P2554"><span property="rdf:label">{{ designer_name }}</span></a>
                 </div>
                 <div class="person-role">Production Designer</div>
             </div>
@@ -419,7 +423,7 @@
             {% for costume_uri, costume_name in film.P2515 %}
             <div class="person-card">
                 <div class="person-name">
-                    <a href="{{ costume_uri }}" class="wikidata-link" target="_blank">{{ costume_name }}</a>
+                    <a href="{{ costume_uri }}" class="wikidata-link" target="_blank" rel="wd:P2515"><span property="rdf:label">{{ costume_name }}</span></a>
                 </div>
                 <div class="person-role">Costume Designer</div>
             </div>
@@ -436,28 +440,28 @@
                 {% if film.P272 %}
                 <h5 style="color: #9dd1ff;">Production Company</h5>
                 {% for company_uri, company_name in film.P272 %}
-                <p><a href="{{ company_uri }}" class="wikidata-link" target="_blank">{{ company_name }}</a></p>
+                    <p><a href="{{ company_uri }}" class="wikidata-link" target="_blank" rel="wd:P272"><span property="rdf:label">{{ company_name }}</span></a></p>
                 {% endfor %}
                 {% endif %}
                 
                 {% if film.P750 %}
                 <h5 style="color: #9dd1ff;">Distributor</h5>
                 {% for distributor_uri, distributor_name in film.P750 %}
-                <p><a href="{{ distributor_uri }}" class="wikidata-link" target="_blank">{{ distributor_name }}</a></p>
+                    <p><a href="{{ distributor_uri }}" class="wikidata-link" target="_blank" rel="wd:P750"><span property="rdf:label">{{ distributor_name }}</span></a></p>
                 {% endfor %}
                 {% endif %}
                 
                 {% if film.P2130 %}
                 <h5 style="color: #9dd1ff;">Budget</h5>
-                <p>${{ film.P2130.0|floatformat:0 }}</p>
+                <p property="wd:P2130">${{ film.P2130.0|floatformat:0 }}</p>
                 {% endif %}
             </div>
             <div class="col-md-6">
                 {% if film.P915 %}
-                <h5 style="color: #9dd1ff;">Filming Locations</h5>
+                <h5 style="color: #9dd1ff;" property="wd:P915">Filming Locations</h5>
                 <ul>
                     {% for location_uri, location_name in film.P915 %}
-                    <li><a href="{{ location_uri }}" class="wikidata-link" target="_blank">{{ location_name }}</a></li>
+                        <li><a href="{{ location_uri }}" class="wikidata-link" target="_blank" rel="wd:P915"><span property="rdf:label">{{ location_name }}</span></a></li>
                     {% endfor %}
                 </ul>
                 {% endif %}
@@ -472,7 +476,7 @@
             {% if film.P2061 %}
             <div class="spec-item">
                 <span class="spec-label">Aspect Ratio</span>
-                {{ film.P2061.0.1 }}
+                <span rel="P2061" resource="{{ film.P2061.0.0 }}"><span property="rdf:label">{{ film.P2061.0.1 }}</span></span>
             </div>
             {% endif %}
             {% if film.P462 %}
@@ -484,7 +488,7 @@
             {% if film.P5201 %}
             <div class="spec-item">
                 <span class="spec-label">Rating</span>
-                {{ film.P5201.0.1 }}
+                <span rel="wd:5201" resource="{{ film.P5201.0.0 }}">{{ film.P5201.0.1 }}</span>
             </div>
             {% endif %}
         </div>
@@ -496,7 +500,7 @@
         <h2 class="section-title"><i class="fas fa-trophy"></i> Awards & Nominations</h2>
         <div class="awards-list">
             {% for award_uri, award_name in film.P1411 %}
-            <div class="award-badge">{{ award_name }}</div>
+                <div class="award-badge" resource="{{ award_uri }}" rel="wd:P1411"><span property="rdf:label">{{ award_name }}</span></div>
             {% endfor %}
         </div>
     </div>
@@ -508,7 +512,7 @@
         <h2 class="section-title"><i class="fas fa-lightbulb"></i> Main Themes</h2>
         <div class="genre-tags">
             {% for theme_uri, theme_name in film.P921 %}
-            <span class="genre-tag">{{ theme_name }}</span>
+                <span class="genre-tag" resource="{{ theme_uri }}" rel="wd:P921"><span property="rdf:label">{{ theme_name }}</span></span>
             {% endfor %}
         </div>
     </div>
@@ -521,7 +525,7 @@
         <div class="characters-grid">
             {% for setting_uri, setting_name in film.P840 %}
             <div class="character-card">
-                <a href="{{ setting_uri }}" class="wikidata-link" target="_blank">{{ setting_name }}</a>
+                <a href="{{ setting_uri }}" class="wikidata-link" target="_blank" rel="wd:P840"><span property="rdf:label">{{ setting_name }}</span></a>
             </div>
             {% endfor %}
         </div>
@@ -533,13 +537,14 @@
     <div class="info-card">
         <h2 class="section-title"><i class="fas fa-film"></i> Part of Series</h2>
         {% for series_uri, series_name in film.P179 %}
-        <p><strong><a href="{{ series_uri }}" class="wikidata-link" target="_blank">{{ series_name }}</a></strong></p>
+            <p><strong><a href="{{ series_uri }}" class="wikidata-link" target="_blank" rel="wd:P179"><span property="rdf:label">{{ series_name }}</span></a></strong></p>
         {% endfor %}
         {% if film.description %}
-        <p>{{ film.description.0 }}</p>
+        <p property="description">{{ film.description.0 }}</p>
         {% endif %}
     </div>
     {% endif %}
+</div>
 </div>
 
 {% endblock %}
