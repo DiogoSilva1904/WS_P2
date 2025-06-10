@@ -95,9 +95,6 @@ def run_inferences(request, character_uri):
             }}
             """,
 
-            # Example shown above — repeat same logic for other relationships below
-            # Each one checks if the local match exists; if not, uses the Wikidata URI and inserts label
-
             # Uncle
             f"""
             PREFIX : <http://localhost:8000/ontology#>
@@ -180,8 +177,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localNephew rdfs:seeAlso ?nephew }}
                 BIND(COALESCE(?localNephew, ?nephew) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?nephewLabel }}
             }}
             """,
 
@@ -209,8 +204,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localNiece rdfs:seeAlso ?niece }}
                 BIND(COALESCE(?localNiece, ?niece) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?nieceLabel }}
             }}
             """,
 
@@ -235,8 +228,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localGrandfather rdfs:seeAlso ?grandfather }}
                 BIND(COALESCE(?localGrandfather, ?grandfather) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?grandfatherLabel }}
             }}
             """,
 
@@ -261,8 +252,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localGrandmother rdfs:seeAlso ?grandmother }}
                 BIND(COALESCE(?localGrandmother, ?grandmother) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?grandmotherLabel }}
             }}
             """,
 
@@ -287,8 +276,6 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localFatherInLaw rdfs:seeAlso ?fatherInLaw }}
                 BIND(COALESCE(?localFatherInLaw, ?fatherInLaw) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?fatherInLawLabel }}
             }}
             """,
 
@@ -313,10 +300,60 @@ def run_inferences(request, character_uri):
 
                 OPTIONAL {{ ?localMotherInLaw rdfs:seeAlso ?motherInLaw }}
                 BIND(COALESCE(?localMotherInLaw, ?motherInLaw) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?motherInLawLabel }}
             }}
-            """
+            """,
+            #Neto
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasGrandson ?target .
+                ?target rdfs:label ?grandchildLabel .
+            }}
+            WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P40 ?child .
+                    ?child wdt:P40 ?grandchild .
+                    ?grandchild wdt:P21 wd:Q6581097 .  # male
+                    OPTIONAL {{ ?grandchild rdfs:label ?grandchildLabel FILTER(LANG(?grandchildLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localGrandchild rdfs:seeAlso ?grandchild }}
+                BIND(COALESCE(?localGrandchild, ?grandchild) AS ?target)
+            }}
+            """,
+
+            #Neta
+            f"""
+            PREFIX : <http://localhost:8000/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+            PREFIX wd: <http://www.wikidata.org/entity/>
+
+            INSERT {{
+                ?localX :hasGranddaughter ?target .
+                ?target rdfs:label ?grandchildLabel .
+            }}
+            WHERE {{
+                ?localX rdfs:seeAlso wd:{wikidata_id} .
+
+                SERVICE <https://query.wikidata.org/sparql> {{
+                    wd:{wikidata_id} wdt:P40 ?child .
+                    ?child wdt:P40 ?grandchild .
+                    ?grandchild wdt:P21 wd:Q6581072 .  # female
+                    OPTIONAL {{ ?grandchild rdfs:label ?grandchildLabel FILTER(LANG(?grandchildLabel) = "en") }}
+                }}
+
+                OPTIONAL {{ ?localGrandchild rdfs:seeAlso ?grandchild }}
+                BIND(COALESCE(?localGrandchild, ?grandchild) AS ?target)
+            }}
+            """,
+
         ]
 
         try:
@@ -344,6 +381,7 @@ def runall_inferences(request):
         }
 
         sparql_queries = [
+            #UrbanCenter true
             f"""
             PREFIX : <http://localhost:8000/ontology#>
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -354,9 +392,10 @@ def runall_inferences(request):
             WHERE {{
             ?city a :City ;
                     :population ?pop .
-            FILTER(xsd:integer(?pop) > 10000000)
+            FILTER(xsd:integer(?pop) > 10000)
             }}
             """,
+            #Urban Center false
             f"""
             PREFIX : <http://localhost:8000/ontology#>
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -367,10 +406,11 @@ def runall_inferences(request):
             WHERE {{
             ?city a :City ;
                     :population ?pop .
-            FILTER(xsd:integer(?pop) <= 10000000)
+            FILTER(xsd:integer(?pop) <= 10000)
             }}
 
             """,
+            #Planeta habitável false
             f"""
             PREFIX :     <http://localhost:8000/ontology#>
             PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
@@ -386,6 +426,7 @@ def runall_inferences(request):
                 }}
             }}
             """,
+            #Planeta Habitável true 
             f"""
             PREFIX :     <http://localhost:8000/ontology#>
             PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
@@ -397,6 +438,21 @@ def runall_inferences(request):
                 ?planet a :Planet ;
                         :population ?pop .
                 FILTER(xsd:integer(?pop) > 0)
+            }}
+            """,
+            f"""
+            PREFIX ont: <http://localhost:8000/ontology#>
+            INSERT {{
+                ?x a ont:Weapon .
+            }}
+            WHERE {{
+                ?x ont:type ?type .
+                FILTER(
+                    CONTAINS(LCASE(STR(?type)), "melee") ||
+                    CONTAINS(LCASE(STR(?type)), "blaster") ||
+                    CONTAINS(LCASE(STR(?type)), "explosive") ||
+                    CONTAINS(LCASE(STR(?type)), "projectile")
+                )
             }}
             """,
         ]
@@ -494,7 +550,7 @@ def resource_redirect(request, _id):
         SELECT DISTINCT ?t
         WHERE{
             ?uri rdf:type ?t .
-            VALUES ?t { ont:Character ont:City ont:Droid ont:Film ont:Music ont:Organization ont:Planet ont:Quote ont:Specie ont:Vehicle ont:Starship ont:Weapon } .
+            VALUES ?t { ont:Character ont:City ont:Droid ont:Film ont:Music ont:Organizations ont:Planet ont:Quote ont:Specie ont:Vehicle ont:Starship ont:Weapon } .
         }
     """
 
@@ -518,7 +574,7 @@ def resource_redirect(request, _id):
                 return redirect("http://localhost:8000/films/" + _id)
             case ont.Music:
                 return redirect("http://localhost:8000/music/" + _id)
-            case ont.Organization:
+            case ont.Organizations:
                 return redirect("http://localhost:8000/organizations/" + _id)
             case ont.Planet:
                 return redirect("http://localhost:8000/planets/" + _id)
@@ -538,7 +594,7 @@ def resource_redirect(request, _id):
 
 def character_details(request, _id):
     details = get_details(res[_id], graph)
-    print("details",details)
+    #print("details",details)
     return render(request, 'character_details.html', {'character': details})
 
 
@@ -549,11 +605,13 @@ def city_details(request, _id):
 
 def droid_details(request, _id):
     details = get_details(res[_id], graph)
+    #print("droid_details",details)
     return render(request, 'droid_details.html', {'droid': details})
 
 
 def film_details(request, _id):
     details = get_details(res[_id], graph)
+    #print("details",details)
     return render(request, 'film_details.html', {'film': details})
 
 
@@ -633,12 +691,13 @@ def music(request):
     uri = "http://localhost:8000/ontology#Music"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
+    print("ahhh",get_list(uri, graph))
     return render(request, 'music.html',
                   {"music": get_list(uri, graph), "graph_html": rdflib_graph_to_html(local_graph)})
 
 
 def organizations(request):
-    uri = "http://localhost:8000/ontology#Organization"
+    uri = "http://localhost:8000/ontology#Organizations"
     query = queries.CONSTRUCT_LOCAL_GRAPH
     local_graph = graph.query(query, initBindings={'type': URIRef(uri)}).graph
     return render(request, 'organizations.html',
@@ -697,7 +756,7 @@ def edit_character(request, _id=None):
     if request.method == "GET":
         if _id:  # the id itself is not important, it's just that I needed it for the path (and now use it to decide whether it's an updade or insert
             character_uri = request.build_absolute_uri().split("/")
-            character_uri = "/".join(character_uri[:-1])
+            character_uri = "http://localhost:8000/resource/" + character_uri[4]
             initial_data = get_details(character_uri, graph, for_form=True)
             form = CharacterForm(initial=initial_data)
         else:
@@ -705,13 +764,16 @@ def edit_character(request, _id=None):
         return render(request, 'edit_character.html', {'form': form})
     elif request.method == "POST":
         form = CharacterForm(request.POST)
-
+        print("hello")
         if form.is_valid():
+            print("x",_id)
             if _id:
                 character_uri = request.build_absolute_uri().split("/")
-                character_uri = "/".join(character_uri[:-1])
+                character_uri = "http://localhost:8000/resource/" + character_uri[4]
+                print("uri",character_uri)
                 update_character(form, character_uri=character_uri)
             else:
+                print("hy")
                 update_character(form)
             return HttpResponse(200)
         else:
@@ -732,7 +794,7 @@ def delete_entity(request, uri):
 
         print("URI", uri)
         delete_query = f"""
-        PREFIX sw: <http://localhost:8000/characters/>
+        PREFIX sw: <http://localhost:8000/resource/>
         DELETE WHERE {{
             sw:{uri} ?p ?o .
         }}

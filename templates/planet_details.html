@@ -3,6 +3,7 @@
 {% block styles %}
 <style>
     body {
+        background: url('https://t4.ftcdn.net/jpg/02/22/57/71/360_F_222577179_MTxLtAKP3nwY5LEyKva28oCt0xO4qxJ2.jpg');
         background-color: #f4f4f9;
         font-family: 'Arial', sans-serif;
     }
@@ -23,6 +24,12 @@
     .icon {
         margin-right: 8px;
     }
+    .nav-link {
+        color: #ffffff !important;
+    } 
+    h2{
+        color: #ffffff !important;
+    }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}
@@ -41,6 +48,12 @@
                 <p><i class="fas fa-ruler-combined icon"></i><strong>Diameter: </strong><span property="diameter">{{ planet.diameter|first }} km</span></p>
                 <p><i class="fas fa-redo icon"></i><strong>Rotation Period: </strong><span property="rotation_period">{{ planet.rotation_period|first }} hours</span></p>
                 <p><i class="fas fa-sun icon"></i><strong>Orbital Period: </strong><span property="orbital_period">{{ planet.orbital_period|first }} days</span></p>
+                {% if planet.Habitable|first == 'false' %}
+                    <p><i class="fas fa-users icon"></i><strong>Habitable: <i class="fa fa-close" style="font-size:36px;color:red"></i></p>
+                {% endif %}
+                {% if planet.Habitable|first ==  'true' %}
+                    <p><i class="fas fa-users icon"></i><strong>Habitable: <i class="fa fa-check" style="font-size:36px;color:green"></i></p>
+                {% endif %}
                 <p><i class="fas fa-tint icon"></i><strong>Surface Water: </strong><span property="surface_water">{{ planet.surface_water|first }}%</span></p>
                 <p><i class="fas fa-mountain icon"></i><strong>Terrain: </strong>
                     {% for terrain in planet.terrain %}

@@ -3,6 +3,7 @@
 {% block styles %}
 <style>
     body {
+        background: url('https://t4.ftcdn.net/jpg/02/22/57/71/360_F_222577179_MTxLtAKP3nwY5LEyKva28oCt0xO4qxJ2.jpg');
         background-color: #f4f4f9;
         font-family: 'Arial', sans-serif;
     }
@@ -23,6 +24,12 @@
     .icon {
         margin-right: 8px;
     }
+    h2{
+        color: #ffffff !important;
+    }
+    .nav-link {
+        color: #ffffff !important;
+    } 
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}
@@ -32,6 +39,22 @@
 {% block content %}
 <div class="container mt-5">
     <div class="character-container" vocab="http://localhost:8000/ontology#" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#" about="{{ droid.uri }}">
+        <div class="row g-0 align-items-center">
+            {% if droid.P18 and droid.P18.0 %}
+                <div class="col-md-4 text-center">
+                    <img src="{{ droid.P18.0 }}" alt="{{ droid.label.0 }}"
+                        class="img-fluid rounded character-image u-photo" rel="wd:P18"
+                        style="max-height: 500px; object-fit: contain;">
+                </div>
+                <div class="col-md-8">
+            {% else %}
+                <div class="col-md-4 text-center">
+                    <img src="{{'https://i.pinimg.com/736x/a6/81/02/a681026157bce809effda67b1a544dd5.jpg' }}" alt="{{ character.label.0 }} image"
+                        class="img-fluid rounded character-image"
+                        style="max-height: 500px; object-fit: contain;">
+                </div>
+                <div class="col-md-8">
+            {% endif %}
         <h2 class="character-title"><i class="fas fa-robot me-2"></i><span property="rdf:label">{{ droid.label|first }}</span></h2> <!-- Display the first value of label -->
         <div class="card character-card">
             <div class="card-body">

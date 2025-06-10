@@ -12,9 +12,52 @@
         <rdfs:comment>Ontologia do universo Star Wars</rdfs:comment>
         <rdfs:label>Star Wars Ontology</rdfs:label>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8000/ontology#remoteEquivalent -->
 
     <owl:AnnotationProperty rdf:about="http://localhost:8000/ontology#remoteEquivalent"/>
+    
 
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://org.semanticweb.owlapi/error#Error3 -->
+
+    <rdfs:Datatype rdf:about="http://org.semanticweb.owlapi/error#Error3"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#integer -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#string -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
     
 
 
@@ -36,15 +79,26 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Character"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Organizations"/>
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Planet"/>
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Quote"/>
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Weapon"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://localhost:8000/ontology#Film"/>
         <rdfs:comment>Personagem ou planeta aparece no filme</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8000/ontology#associated_with -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8000/ontology#associated_with">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Music"/>
+        <rdfs:range rdf:resource="http://localhost:8000/ontology#Film"/>
     </owl:ObjectProperty>
     
 
@@ -62,7 +116,6 @@
 
     <!-- http://localhost:8000/ontology#homeworld -->
 
-<owl:AnnotationProperty rdf:about="http://localhost:8000/ontology#remoteEquivalent"/>
     <owl:ObjectProperty rdf:about="http://localhost:8000/ontology#homeworld">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
@@ -74,7 +127,47 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://localhost:8000/ontology#Planet"/>
-        <remoteEquivalent rdf:resource="https://www.wikidata.org/wiki/Property:P1165"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8000/ontology#ispilotof -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8000/ontology#ispilotof">
+        <owl:inverseOf rdf:resource="http://localhost:8000/ontology#pilot"/>
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Character"/>
+        <rdfs:range rdf:resource="http://localhost:8000/ontology#Starship"/>
+        <rdfs:range rdf:resource="http://localhost:8000/ontology#Vehicle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8000/ontology#leader -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8000/ontology#leader">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Organizations"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8000/ontology#Character"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8000/ontology#member -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8000/ontology#member">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Organizations"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://localhost:8000/ontology#Character"/>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -84,6 +177,16 @@
     <owl:ObjectProperty rdf:about="http://localhost:8000/ontology#name">
         <rdfs:domain rdf:resource="owl:Thing"/>
         <rdfs:range rdf:resource="xsd:string"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8000/ontology#pilot -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8000/ontology#pilot">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Starship"/>
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Vehicle"/>
+        <rdfs:range rdf:resource="http://localhost:8000/ontology#Character"/>
     </owl:ObjectProperty>
     
 
@@ -168,6 +271,15 @@
     
 
 
+    <!-- http://localhost:8000/ontology#affiliation -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#affiliation">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Organizations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://localhost:8000/ontology#average_height -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#average_height">
@@ -199,7 +311,14 @@
     <!-- http://localhost:8000/ontology#cargo_capacity -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#cargo_capacity">
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Starship"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
@@ -223,11 +342,44 @@
     
 
 
+    <!-- http://localhost:8000/ontology#composer -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#composer">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Music"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://localhost:8000/ontology#consumables -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#consumables">
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Starship"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8000/ontology#cost_in_credits -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#cost_in_credits">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Weapon"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
 
@@ -235,7 +387,14 @@
     <!-- http://localhost:8000/ontology#crew -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#crew">
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Starship"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -278,6 +437,15 @@
     
 
 
+    <!-- http://localhost:8000/ontology#dissolved -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#dissolved">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Organizations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://localhost:8000/ontology#eye_color -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#eye_color">
@@ -292,6 +460,15 @@
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#eye_colors">
         <rdfs:domain rdf:resource="http://localhost:8000/ontology#Specie"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8000/ontology#founded -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#founded">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Organizations"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
@@ -337,7 +514,6 @@
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#height">
         <rdfs:domain rdf:resource="http://localhost:8000/ontology#Character"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <remoteEquivalent rdf:resource="https://www.wikidata.org/wiki/Property:P2048"/>
     </owl:DatatypeProperty>
     
 
@@ -367,6 +543,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Weapon"/>
                 </owl:unionOf>
             </owl:Class>
@@ -384,6 +561,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Droid"/>
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Weapon"/>
                 </owl:unionOf>
             </owl:Class>
@@ -405,7 +583,14 @@
     <!-- http://localhost:8000/ontology#max_atmosphering_speed -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#max_atmosphering_speed">
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Starship"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
@@ -419,6 +604,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Droid"/>
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
                     <rdf:Description rdf:about="http://localhost:8000/ontology#Weapon"/>
                 </owl:unionOf>
             </owl:Class>
@@ -430,7 +616,10 @@
 
     <!-- http://localhost:8000/ontology#name -->
 
-    <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#name"/>
+    <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#name">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -455,7 +644,14 @@
     <!-- http://localhost:8000/ontology#passengers -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#passengers">
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Starship"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Starship"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Vehicle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -473,10 +669,15 @@
     <!-- http://localhost:8000/ontology#population -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#population">
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#City"/>
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Planet"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#City"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Planet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://org.semanticweb.owlapi/error#Error3"/>
     </owl:DatatypeProperty>
     
 
@@ -572,9 +773,33 @@
     <!-- http://localhost:8000/ontology#type -->
 
     <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#type">
-        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Weapon"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Music"/>
+                    <rdf:Description rdf:about="http://localhost:8000/ontology#Weapon"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8000/ontology#vehicle_class -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8000/ontology#vehicle_class">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Vehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:domain rdf:resource="http://localhost:8000/ontology#Music"/>
+    </rdf:Description>
     
 
 
@@ -628,6 +853,28 @@
     
 
 
+    <!-- http://localhost:8000/ontology#Music -->
+
+    <owl:Class rdf:about="http://localhost:8000/ontology#Music">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8000/ontology#composer"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>Music entity</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8000/ontology#Organizations -->
+
+    <owl:Class rdf:about="http://localhost:8000/ontology#Organizations">
+        <rdfs:comment>Organizations entity</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://localhost:8000/ontology#Planet -->
 
     <owl:Class rdf:about="http://localhost:8000/ontology#Planet">
@@ -655,6 +902,12 @@
     <!-- http://localhost:8000/ontology#Starship -->
 
     <owl:Class rdf:about="http://localhost:8000/ontology#Starship">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://localhost:8000/ontology#starship_class"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://localhost:8000/ontology#Vehicle"/>
     </owl:Class>
     
@@ -662,7 +915,9 @@
 
     <!-- http://localhost:8000/ontology#Vehicle -->
 
-    <owl:Class rdf:about="http://localhost:8000/ontology#Vehicle"/>
+    <owl:Class rdf:about="http://localhost:8000/ontology#Vehicle">
+        <rdfs:comment>Veiculos do universo Star Wars</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -753,7 +1008,11 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://localhost:8000/ontology#height">
+        <remoteEquivalent rdf:resource="https://www.wikidata.org/wiki/Property:P2048"/>
+    </rdf:Description>
     <rdf:Description rdf:about="http://localhost:8000/ontology#homeworld">
+        <remoteEquivalent rdf:resource="https://www.wikidata.org/wiki/Property:P1165"/>
         <rdfs:comment>Planeta natal de um personagem</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://localhost:8000/ontology#name">
@@ -764,3 +1023,4 @@
 
 
 <!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

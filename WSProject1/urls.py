@@ -39,7 +39,7 @@ urlpatterns = [
     path('characters/<str:_id>',views.character_details,name='character_details'),
     path('new/character',views.edit_character,name='new_character'),
     path('characters/<str:_id>/edit',views.edit_character,name='edit_character'),
-    path('characters/<str:uri>/delete',views.delete_entity,name='delete_character'),
+    path('resource/<str:uri>/delete',views.delete_entity,name='delete_character'),
 
     path('cities',views.cities,name='cities'),
     path('cities/<str:_id>',views.city_details,name='city_details'),
@@ -53,8 +53,8 @@ urlpatterns = [
     path('music',views.music,name='music'),
     path('music/<str:_id>',views.music_details,name='music_details'),
 
-    path('organisations',views.organizations,name='organizations'),
-    path('organisations/<str:_id>',views.organization_details,name='organization_details'),
+    path('organizations',views.organizations,name='organizations'),
+    path('organizations/<str:_id>',views.organization_details,name='organization_details'),
 
     path('planets',views.planets,name='planets'),
     path('planets/<str:_id>',views.planet_details,name='planet_details'),
