@@ -22,6 +22,9 @@ from rdflib.plugins.stores.sparqlstore import SPARQLStore, SPARQLUpdateStore
 import os
 
 from .forms import CharacterForm
+from .inferences import INFER_SIBLINGS, INFER_UNCLE, INFER_AUNT, INFER_NEPHEW, INFER_NIECE, INFER_GRANDFATHER, \
+    INFER_GRANDMOTHER, INFER_FATHER_IN_LAW, INFER_MOTHER_IN_LAW, INFER_GRANDSON, INFER_GRANDDAUGHTER, IMPORT_ENTITY, \
+    INFER_URBAN_CENTER_TRUE, INFER_URBAN_CENTER_FALSE, INFER_HABITABLE_FALSE, INFER_HABITABLE_TRUE, INFER_WEAPON
 from .utils import rdflib_graph_to_html, is_valid_uri, to_human_readable, get_details, get_list, update_character, \
     remove_entity
 
@@ -62,297 +65,37 @@ def run_inferences(request, character_uri):
 
         sparql_queries = [
             # Siblings
-            f"""
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-            PREFIX : <http://localhost:8000/ontology#>
-
-            INSERT {{
-                ?localX :hasSibling ?target .
-                ?target rdfs:label ?siblingLabel .
-            }} WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    {{
-                        wd:{wikidata_id} wdt:P22 ?parent .
-                        ?sibling wdt:P22 ?parent .
-                        FILTER(?sibling != wd:{wikidata_id})
-                    }} UNION {{
-                        wd:{wikidata_id} wdt:P25 ?parent .
-                        ?sibling wdt:P25 ?parent .
-                        FILTER(?sibling != wd:{wikidata_id})
-                    }}
-                    OPTIONAL {{ ?sibling rdfs:label ?siblingLabel FILTER (lang(?siblingLabel) = "en") }}
-                }}
-
-                BIND(COALESCE(?localY, ?sibling) AS ?target)
-
-                OPTIONAL {{ ?localY rdfs:seeAlso ?sibling }}
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?siblingLabel }}
-            }}
-            """,
+            INFER_SIBLINGS.format(wikidata_id=wikidata_id),
 
             # Uncle
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-
-            INSERT {{
-                ?localX :hasUncle ?target .
-                ?target rdfs:label ?uncleLabel .
-            }} WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
-                    ?uncle wdt:P22|wdt:P25 ?grandparent .
-                    ?parent wdt:P22|wdt:P25 ?grandparent .
-                    FILTER(?uncle != ?parent)
-                    ?uncle wdt:P21 wd:Q6581097 .
-                    OPTIONAL {{ ?uncle rdfs:label ?uncleLabel FILTER (lang(?uncleLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localUncle rdfs:seeAlso ?uncle }}
-                BIND(COALESCE(?localUncle, ?uncle) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?uncleLabel }}
-            }}
-            """,
+            INFER_UNCLE.format(wikidata_id=wikidata_id),
 
             # Aunt
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-
-            INSERT {{
-                ?localX :hasAunt ?target .
-                ?target rdfs:label ?auntLabel .
-            }} WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
-                    ?aunt wdt:P22|wdt:P25 ?grandparent .
-                    ?parent wdt:P22|wdt:P25 ?grandparent .
-                    FILTER(?aunt != ?parent)
-                    ?aunt wdt:P21 wd:Q6581072 .
-                    OPTIONAL {{ ?aunt rdfs:label ?auntLabel FILTER (lang(?auntLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localAunt rdfs:seeAlso ?aunt }}
-                BIND(COALESCE(?localAunt, ?aunt) AS ?target)
-
-                FILTER NOT EXISTS {{ ?target rdfs:label ?auntLabel }}
-            }}
-            """,
+            INFER_AUNT.format(wikidata_id=wikidata_id),
 
             # Nephew
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-
-            INSERT {{
-                ?localX :hasNephew ?target .
-                ?target rdfs:label ?nephewLabel .
-            }} WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
-                    ?sibling wdt:P22|wdt:P25 ?parent .
-                    FILTER(?sibling != wd:{wikidata_id})
-                    ?sibling wdt:P40 ?nephew .
-                    ?nephew wdt:P21 wd:Q6581097 .
-                    OPTIONAL {{ ?nephew rdfs:label ?nephewLabel FILTER (lang(?nephewLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localNephew rdfs:seeAlso ?nephew }}
-                BIND(COALESCE(?localNephew, ?nephew) AS ?target)
-            }}
-            """,
+            INFER_NEPHEW.format(wikidata_id=wikidata_id),
 
             # Niece
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-
-            INSERT {{
-                ?localX :hasNiece ?target .
-                ?target rdfs:label ?nieceLabel .
-            }} WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
-                    ?sibling wdt:P22|wdt:P25 ?parent .
-                    FILTER(?sibling != wd:{wikidata_id})
-                    ?sibling wdt:P40 ?niece .
-                    ?niece wdt:P21 wd:Q6581072 .
-                    OPTIONAL {{ ?niece rdfs:label ?nieceLabel FILTER (lang(?nieceLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localNiece rdfs:seeAlso ?niece }}
-                BIND(COALESCE(?localNiece, ?niece) AS ?target)
-            }}
-            """,
+            INFER_NIECE.format(wikidata_id=wikidata_id),
 
             # Grandfather
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-
-            INSERT {{
-                ?localX :hasGrandfather ?target .
-                ?target rdfs:label ?grandfatherLabel .
-            }} WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
-                    ?parent wdt:P22 ?grandfather .
-                    OPTIONAL {{ ?grandfather rdfs:label ?grandfatherLabel FILTER (lang(?grandfatherLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localGrandfather rdfs:seeAlso ?grandfather }}
-                BIND(COALESCE(?localGrandfather, ?grandfather) AS ?target)
-            }}
-            """,
+            INFER_GRANDFATHER.format(wikidata_id=wikidata_id),
 
             # Grandmother
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-
-            INSERT {{
-                ?localX :hasGrandmother ?target .
-                ?target rdfs:label ?grandmotherLabel .
-            }} WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P22|wdt:P25 ?parent .
-                    ?parent wdt:P25 ?grandmother .
-                    OPTIONAL {{ ?grandmother rdfs:label ?grandmotherLabel FILTER (lang(?grandmotherLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localGrandmother rdfs:seeAlso ?grandmother }}
-                BIND(COALESCE(?localGrandmother, ?grandmother) AS ?target)
-            }}
-            """,
+            INFER_GRANDMOTHER.format(wikidata_id=wikidata_id),
 
             # Father in Law
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-
-            INSERT {{
-                ?localX :hasFatherInLaw ?target .
-                ?target rdfs:label ?fatherInLawLabel .
-            }} WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P26 ?spouse .
-                    ?spouse wdt:P22 ?fatherInLaw .
-                    OPTIONAL {{ ?fatherInLaw rdfs:label ?fatherInLawLabel FILTER (lang(?fatherInLawLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localFatherInLaw rdfs:seeAlso ?fatherInLaw }}
-                BIND(COALESCE(?localFatherInLaw, ?fatherInLaw) AS ?target)
-            }}
-            """,
+            INFER_FATHER_IN_LAW.format(wikidata_id=wikidata_id),
 
             #Mother in Law
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
+            INFER_MOTHER_IN_LAW.format(wikidata_id=wikidata_id),
 
-            INSERT {{
-                ?localX :hasMotherInLaw ?target .
-                ?target rdfs:label ?motherInLawLabel .
-            }} WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
+            #Grandson
+            INFER_GRANDSON.format(wikidata_id=wikidata_id),
 
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P26 ?spouse .
-                    ?spouse wdt:P25 ?motherInLaw .
-                    OPTIONAL {{ ?motherInLaw rdfs:label ?motherInLawLabel FILTER (lang(?motherInLawLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localMotherInLaw rdfs:seeAlso ?motherInLaw }}
-                BIND(COALESCE(?localMotherInLaw, ?motherInLaw) AS ?target)
-            }}
-            """,
-            #Neto
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-
-            INSERT {{
-                ?localX :hasGrandson ?target .
-                ?target rdfs:label ?grandchildLabel .
-            }}
-            WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P40 ?child .
-                    ?child wdt:P40 ?grandchild .
-                    ?grandchild wdt:P21 wd:Q6581097 .  # male
-                    OPTIONAL {{ ?grandchild rdfs:label ?grandchildLabel FILTER(LANG(?grandchildLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localGrandchild rdfs:seeAlso ?grandchild }}
-                BIND(COALESCE(?localGrandchild, ?grandchild) AS ?target)
-            }}
-            """,
-
-            #Neta
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-            PREFIX wd: <http://www.wikidata.org/entity/>
-
-            INSERT {{
-                ?localX :hasGranddaughter ?target .
-                ?target rdfs:label ?grandchildLabel .
-            }}
-            WHERE {{
-                ?localX rdfs:seeAlso wd:{wikidata_id} .
-
-                SERVICE <https://query.wikidata.org/sparql> {{
-                    wd:{wikidata_id} wdt:P40 ?child .
-                    ?child wdt:P40 ?grandchild .
-                    ?grandchild wdt:P21 wd:Q6581072 .  # female
-                    OPTIONAL {{ ?grandchild rdfs:label ?grandchildLabel FILTER(LANG(?grandchildLabel) = "en") }}
-                }}
-
-                OPTIONAL {{ ?localGrandchild rdfs:seeAlso ?grandchild }}
-                BIND(COALESCE(?localGrandchild, ?grandchild) AS ?target)
-            }}
-            """,
+            #Granddaughter
+            INFER_GRANDDAUGHTER.format(wikidata_id=wikidata_id),
 
         ]
 
@@ -382,79 +125,14 @@ def runall_inferences(request):
 
         sparql_queries = [
             #UrbanCenter true
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-            INSERT {{
-            ?city :UrbanCenter true .
-            }}
-            WHERE {{
-            ?city a :City ;
-                    :population ?pop .
-            FILTER(xsd:integer(?pop) > 10000)
-            }}
-            """,
+            INFER_URBAN_CENTER_TRUE,
             #Urban Center false
-            f"""
-            PREFIX : <http://localhost:8000/ontology#>
-            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
-            INSERT {{
-            ?city :UrbanCenter false .
-            }}
-            WHERE {{
-            ?city a :City ;
-                    :population ?pop .
-            FILTER(xsd:integer(?pop) <= 10000)
-            }}
-
-            """,
+            INFER_URBAN_CENTER_FALSE,
             #Planeta habitável false
-            f"""
-            PREFIX :     <http://localhost:8000/ontology#>
-            PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
-
-            INSERT {{
-                ?planet :Habitable false .
-            }}
-            WHERE {{
-                ?planet a :Planet .
-                FILTER NOT EXISTS {{
-                    ?planet :population ?pop .
-                    FILTER(str(?pop) != "")
-                }}
-            }}
-            """,
+            INFER_HABITABLE_FALSE,
             #Planeta Habitável true 
-            f"""
-            PREFIX :     <http://localhost:8000/ontology#>
-            PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
-
-            INSERT {{
-                ?planet :Habitable true .
-            }}
-            WHERE {{
-                ?planet a :Planet ;
-                        :population ?pop .
-                FILTER(xsd:integer(?pop) > 0)
-            }}
-            """,
-            f"""
-            PREFIX ont: <http://localhost:8000/ontology#>
-            INSERT {{
-                ?x a ont:Weapon .
-            }}
-            WHERE {{
-                ?x ont:type ?type .
-                FILTER(
-                    CONTAINS(LCASE(STR(?type)), "melee") ||
-                    CONTAINS(LCASE(STR(?type)), "blaster") ||
-                    CONTAINS(LCASE(STR(?type)), "explosive") ||
-                    CONTAINS(LCASE(STR(?type)), "projectile")
-                )
-            }}
-            """,
+            INFER_HABITABLE_TRUE,
+            INFER_WEAPON
         ]
 
         try:
@@ -474,35 +152,7 @@ def import_entity(request):
     if request.method == "POST":
         uri = request.POST.get('uri')
 
-        query = """
-        PREFIX ont: <http://localhost:8000/ontology#>
-        PREFIX owl: <http://www.w3.org/2002/07/owl#>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-        INSERT{
-            ?S ?PLocal ?V
-        }
-        WHERE {
-            BIND({{{URI}}} AS ?S)
-            ?S rdfs:seeAlso ?QID .
-            ?PLocal ont:remoteEquivalent ?PRemote .
-            SERVICE <https://query.wikidata.org/sparql> {
-                ?QID ?PRemote ?VRemote .
-                FILTER(
-                LANG(?VRemote) = "en" ||
-                  !isLiteral(?VRemote) ||
-                   LANG(?VRemote) = ""
-                )
-            }
-            OPTIONAL
-            {
-                ?VLocal
-                rdfs:seeAlso ?VRemote.
-                FILTER(isURI(?VRemote))
-            }
-            BIND(COALESCE(?VLocal, ?VRemote) AS ?V)
-        }
-        """.replace("{{{URI}}}",f"<{uri}>")
+        query = IMPORT_ENTITY.replace("{{{URI}}}",f"<{uri}>")
 
         response = requests.post(
             "http://localhost:7200/repositories/starwars/statements",

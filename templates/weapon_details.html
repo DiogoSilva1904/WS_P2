@@ -43,7 +43,7 @@
         <div class="card character-card">
             <div class="card-body">
                 <p><i class="fa-solid fa-file-lines icon"></i><strong>Description: </strong><span property="description">{{ weapon.description|first }}</span></p>
-                <p><i class="fa-solid fa-atom icon"></i><strong>Weapon Type: </strong><span property="type">{{ weapon.type|slice:"1:2"|first|default:"Unknown" }}</span></p>
+                <p><i class="fa-solid fa-atom icon"></i><strong>Weapon Type: </strong><span property="type">{{ weapon.type|slice:"-1:"|first|default:"Unknown" }}</span></p>
                 <p><i class="fa-solid fa-cogs icon"></i><strong>Model: </strong><span property="model">{{ weapon.model|join:", " }}</span></p>
                 <p><i class="fa-solid fa-industry icon"></i><strong>Manufacturer: </strong><span property="manufacturer">{{ weapon.manufacturer|first }}</span></p>
                 <p><i class="fa-solid fa-ruler-horizontal icon"></i><strong>Length: </strong><span property="length">{{ weapon.length|first }}m</span></p>
